@@ -143,6 +143,10 @@ void fraiseReceiveChar() // receive text
 		while(c--) printf("%c",fraiseGetChar());// send each received byte
 		putchar('\n');				// end of line
 	}	
+	else if(c=='R') { 	// echo text (send it back to host)
+		i2cm_init(I2C_MASTER, I2C_SLEW_ON, FOSC/400000/4-1);
+		ADXL345Init(&adxl1, 0); // 1st ADXL345's SDO pin is high voltage level
+	}
 }
 
 void fraiseReceive() // receive raw
