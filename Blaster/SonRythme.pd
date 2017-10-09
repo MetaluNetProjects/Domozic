@@ -1,4 +1,4 @@
-#N canvas 1974 794 716 391 10;
+#N canvas 620 79 716 391 10;
 #N canvas 2792 83 411 676 ALLSOUND 0;
 #X obj 19 317 lop~ 3000;
 #X obj 20 586 outlet~;
@@ -12,25 +12,25 @@
 #X obj 182 376 *~;
 #X obj 184 105 ead~ 1 100;
 #X obj 244 20 mknob 25 100 0 1 0 0 \$1-r-snd \$1-r-rcv r -2 -6 1 8
--262144 -1 -1 669 1;
+-262144 -1 -1 659 1;
 #X obj 249 85 * 1000;
 #X obj 204 53 mknob 25 100 0 1 0 0 \$1-a-snd \$1-a-rcv a -2 -6 1 8
--262144 -1 -1 569 1;
+-262144 -1 -1 561 1;
 #X obj 204 82 * 100;
 #X obj 228 293 osc~ 80;
 #X msg 133 85 0;
 #X obj 228 271 *~ 120;
 #X obj 342 150 mknob 25 100 0 1 0 0 \$1-f-snd \$1-f-rcv f -2 -6 1 8
--262144 -1 -1 3444 1;
+-262144 -1 -1 3455 1;
 #X obj 341 311 mtof;
 #X obj 269 139 mknob 25 100 0 1 0 0 \$1-env2f-snd \$1-env2f-rcv env2f
--2 -6 1 8 -262144 -1 -1 3901 1;
+-2 -6 1 8 -262144 -1 -1 3955 1;
 #X obj 260 185 *~;
 #X msg 287 185 1 \$1;
 #X obj 287 204 -;
 #X obj 260 206 +~;
 #X obj 110 160 mknob 25 100 0 1 0 0 \$1-volnoise-snd \$1-volnoise-rcv
-volnoise -2 -6 1 8 -262144 -1 -1 199 1;
+volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X obj 66 208 mull~ 0 10;
 #X obj 58 187 noise~;
 #X obj 132 32 inlet;
@@ -336,7 +336,7 @@ volnoise -2 -6 1 8 -262144 -1 -1 199 1;
 #X connect 32 0 8 0;
 #X connect 33 0 28 0;
 #X restore 97 10 pd Vitesse;
-#N canvas 2125 512 804 507 trig 0;
+#N canvas 562 261 804 507 trig 0;
 #X obj 160 387 outlet;
 #X obj 160 223 NDmetro;
 #X obj 160 364 sel 0;
@@ -464,8 +464,8 @@ volnoise -2 -6 1 8 -262144 -1 -1 199 1;
 #X obj 637 47 + 0;
 #X obj 607 5 r \$1-PhraseNum-snd;
 #X obj 48 55 route list;
+#X obj 657 137 s INDICATOR;
 #X obj 581 98 intPos 8;
-#X obj 581 120 s INDICATOR;
 #X connect 1 0 61 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
@@ -528,10 +528,11 @@ volnoise -2 -6 1 8 -262144 -1 -1 199 1;
 #X connect 68 0 73 0;
 #X connect 70 0 71 0;
 #X connect 71 0 69 0;
-#X connect 72 0 74 0;
+#X connect 72 0 75 0;
 #X connect 73 0 3 0;
-#X connect 74 0 28 0;
-#X connect 74 0 75 0;
+#X connect 75 0 28 0;
+#X connect 75 1 28 0;
+#X connect 75 1 74 0;
 #X restore 93 61 pd trig;
 #N canvas 2077 719 313 459 vitesse_push 0;
 #X obj 56 278 outlet;
@@ -718,11 +719,11 @@ volnoise -2 -6 1 8 -262144 -1 -1 199 1;
 #X msg 427 248 0.5;
 #X msg 462 248 0.5;
 #X obj 413 89 mknob 30 100 0 1 0 0 \$1-Tempo-snd \$1-Tempo-rcv tempo_4
--2 -6 0 8 -241291 -1 -4160 4442 1;
+-2 -6 0 8 -241291 -1 -4160 4462 1;
 #X obj 372 117 mknob 30 100 0 1 0 0 \$1-STEPnumCtl-snd \$1-STEPnumCtl-rcv
-step_4 -2 -6 0 8 -159808 -1 -4034 3916 1;
+step_4 -2 -6 0 8 -159808 -1 -4034 3922 1;
 #X obj 337 89 mknob 30 100 0 1 0 0 \$1-PhraseNum-snd \$1-PhraseNum-rcv
-Phrase -2 -6 0 8 -45076 -1 -4034 3512 1;
+Phrase -2 -6 0 8 -45076 -1 -4034 0 1;
 #X obj 305 116 mknob 30 100 0 1 0 0 \$1-Reverb-snd \$1-Reverb-rcv Reverb
 -2 -6 0 8 -4034 -1 -258113 0 1;
 #N canvas 2494 716 285 327 apfs 0;
@@ -737,11 +738,11 @@ Phrase -2 -6 0 8 -45076 -1 -4034 3512 1;
 #X restore 221 15 pd apfs;
 #X obj 207 49 r Sel\$2-snd;
 #X obj 453 117 mknob 30 100 0 1 0 0 \$1-Decay-snd \$1-Decay-rcv Decay
--2 -6 0 8 -241291 -1 -4160 6479 1;
+-2 -6 0 8 -241291 -1 -4160 6494 1;
 #X obj 453 65 mknob 30 100 0 1 0 0 \$1-Note_adjust-snd \$1-Note_adjust-rcv
 Note_adjust -2 -6 0 8 -258113 -1 -4160 9900 1;
 #X obj 509 78 mknob 30 100 0 1 0 0 \$1-NoteBass-snd \$1-NoteBass-rcv
-NoteBass -2 -6 1 8 -203904 -1 -1 3051 1;
+NoteBass -2 -6 1 8 -203904 -1 -1 2994 1;
 #X msg 487 23 0.5;
 #X obj 504 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -191407
 -1 -1;

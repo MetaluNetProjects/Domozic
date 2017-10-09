@@ -1,4 +1,4 @@
-#N canvas 2038 92 899 679 10;
+#N canvas 464 88 899 679 10;
 #X declare -path AutoPreset -stdpath moonlib -stdpath iemlib -lib zexy
 ;
 #X obj 616 325 throw~ OUT-1;
@@ -19,7 +19,7 @@
 #X obj 105 222 pow 2;
 #X obj 105 244 * 4;
 #X obj 141 135 vsl 15 80 0 1 0 1 empty empty OUT 0 -9 0 10 -262130
--1 -1 0 1;
+-1 -1 7882 1;
 #X obj 141 222 pow 2;
 #X obj 141 244 * 4;
 #X obj 312 126 loadbang;
@@ -248,8 +248,9 @@
 #X obj 393 42 intPos 16;
 #X floatatom 326 37 5 0 0 0 - - -, f 5;
 #X obj 446 82 s INDICATOR;
+#X obj 98 499 s INDICATOR;
+#X floatatom 434 127 5 0 0 0 - - -, f 5;
 #X obj 98 427 intPos 16;
-#X obj 98 447 s INDICATOR;
 #X connect 3 0 0 0;
 #X connect 3 1 1 0;
 #X connect 4 0 3 0;
@@ -263,7 +264,7 @@
 #X connect 15 1 12 1;
 #X connect 16 0 13 0;
 #X connect 16 0 14 0;
-#X connect 16 0 32 0;
+#X connect 16 0 34 0;
 #X connect 19 0 18 0;
 #X connect 20 0 21 0;
 #X connect 22 0 24 0;
@@ -272,5 +273,7 @@
 #X connect 27 0 3 1;
 #X connect 28 0 27 1;
 #X connect 29 0 15 1;
-#X connect 29 0 31 0;
-#X connect 32 0 33 0;
+#X connect 29 0 33 0;
+#X connect 29 1 15 1;
+#X connect 29 1 31 0;
+#X connect 34 1 32 0;

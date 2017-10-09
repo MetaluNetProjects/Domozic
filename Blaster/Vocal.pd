@@ -1,4 +1,4 @@
-#N canvas 2266 514 899 636 10;
+#N canvas 467 132 899 636 10;
 #X obj 616 298 throw~ OUT-1;
 #X obj 709 297 throw~ OUT-2;
 #N canvas 546 1195 542 366 masterMain 0;
@@ -214,8 +214,8 @@
 #X obj 210 463 out \$0-Main;
 #X obj 355 513 noisegate~;
 #X obj 214 430 noisegate~ 53 10 10;
-#X obj 120 502 intPos 16;
 #X obj 120 522 s INDICATOR;
+#X obj 119 477 intPos 16;
 #X connect 2 0 0 0;
 #X connect 2 1 1 0;
 #X connect 3 0 2 0;
@@ -225,7 +225,7 @@
 #X connect 9 0 18 0;
 #X connect 12 0 10 0;
 #X connect 12 0 11 0;
-#X connect 12 0 31 0;
+#X connect 12 0 32 0;
 #X connect 16 0 2 0;
 #X connect 18 0 17 0;
 #X connect 19 0 20 0;
@@ -244,4 +244,4 @@
 #X connect 27 0 30 0;
 #X connect 30 0 28 0;
 #X connect 30 0 28 1;
-#X connect 31 0 32 0;
+#X connect 32 1 31 0;

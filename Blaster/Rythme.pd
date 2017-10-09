@@ -1,4 +1,4 @@
-#N canvas 2310 227 899 405 10;
+#N canvas 467 226 899 405 10;
 #X obj 616 298 throw~ OUT-1;
 #X obj 709 297 throw~ OUT-2;
 #N canvas 552 1197 542 366 masterMain 0;
@@ -49,7 +49,7 @@
 #X restore 621 170 pd masterMain;
 #X obj 622 146 inlet~ in;
 #X obj 72 220 out \$0-Main;
-#N canvas 687 990 609 443 Mode 0;
+#N canvas 684 251 609 443 Mode 0;
 #X obj 131 87 i;
 #X obj 131 109 change;
 #X obj 131 131 t f f f;
@@ -131,7 +131,7 @@
 #X obj 407 61 i;
 #X obj 407 41 * 16;
 #X obj 709 89 r Vol\$2-snd;
-#N canvas 2028 421 377 382 play 0;
+#N canvas 674 386 377 382 play 0;
 #X obj 97 324 s Led\$2-rcv;
 #X msg 252 67 0;
 #X obj 156 221 ||;
@@ -182,7 +182,7 @@
 #X obj 383 227 KEPCommon \$1-\$2 \$0 \$1 \$2;
 #X obj 649 57 Sequence \$1-\$2;
 #X obj 98 77 SonRythme \$1-\$2 \$2;
-#X obj 341 150 l FXson \$1-\$2 \$2;
+#X obj 373 148 l FXson \$1-\$2 \$2;
 #X obj 24 94 switch~;
 #X obj 24 76 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
@@ -194,8 +194,8 @@
 #X obj 424 101 ../Ax \$3 z -12 12;
 #X obj 728 136 m;
 #X obj 765 112 r Vol456-snd;
-#X obj 144 256 intPos 16;
-#X obj 144 276 s INDICATOR;
+#X obj 167 279 s INDICATOR;
+#X obj 149 240 intPos 16;
 #X connect 2 0 0 0;
 #X connect 2 1 1 0;
 #X connect 3 0 2 0;
@@ -205,7 +205,7 @@
 #X connect 10 0 20 0;
 #X connect 13 0 11 0;
 #X connect 13 0 12 0;
-#X connect 13 0 28 0;
+#X connect 13 0 29 0;
 #X connect 17 0 24 0;
 #X connect 20 0 19 0;
 #X connect 21 0 22 0;
@@ -214,4 +214,4 @@
 #X connect 24 0 4 1;
 #X connect 26 0 2 1;
 #X connect 27 0 26 1;
-#X connect 28 0 29 0;
+#X connect 29 1 28 0;

@@ -1,4 +1,4 @@
-#N canvas 1381 190 534 900 10;
+#N canvas 1378 189 534 900 10;
 #X declare -path KEP/AutoAbstractions;
 #X declare -path KEP/AutoPreset;
 #X declare -path KEP/absKEP;
@@ -102,7 +102,7 @@
 #X obj 16 16 cnv 15 270 370 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 28 280 mknob 25 100 0 1 0 0 Vol1-snd Vol1-rcv Vol1 -2 -6 0 8
--262144 -1 -1 10 1;
+-262144 -1 -1 0 1;
 #X obj 59 280 mknob 25 100 0 1 0 0 Vol2-snd Vol2-rcv Vol2 -2 -6 0 8
 -262144 -1 -1 0 1;
 #X obj 90 280 mknob 25 100 0 1 0 0 Vol3-snd Vol3-rcv Vol3 -2 -6 0 8
@@ -114,45 +114,45 @@
 #X obj 184 280 mknob 25 100 0 1 0 0 Vol6-snd Vol6-rcv Vol6 -2 -6 0
 8 -262144 -1 -1 0 1;
 #X obj 215 280 mknob 25 100 0 1 0 0 Vol7-snd Vol7-rcv Vol7 -2 -6 0
-8 -262144 -1 -1 8247 1;
+8 -262144 -1 -1 0 1;
 #X obj 246 280 mknob 25 100 0 1 0 0 Vol8-snd Vol8-rcv Vol8 -2 -6 0
-8 -262144 -1 -1 6139 1;
+8 -262144 -1 -1 0 1;
 #X obj 119 76 mknob 25 100 0 1 0 0 Vol9-snd Vol9-rcv Vol9 -2 -6 0 8
 -262144 -1 -1 0 1;
 #X obj 30 236 mknob 25 100 0 1 0 0 FX1-snd FX1-rcv FX1 -2 -6 0 8 -262144
--1 -1 14 1;
+-1 -1 0 1;
 #X obj 61 236 mknob 25 100 0 1 0 0 FX2-snd FX2-rcv FX2 -2 -6 0 8 -262144
 -1 -1 0 1;
 #X obj 92 236 mknob 25 100 0 1 0 0 FX3-snd FX3-rcv FX3 -2 -6 0 8 -262144
--1 -1 6314 1;
+-1 -1 0 1;
 #X obj 123 236 mknob 25 100 0 1 0 0 FX4-snd FX4-rcv FX4 -2 -6 0 8 -262144
--1 -1 2213 1;
+-1 -1 0 1;
 #X obj 155 236 mknob 25 100 0 1 0 0 FX5-snd FX5-rcv FX5 -2 -6 0 8 -262144
 -1 -1 0 1;
 #X obj 186 236 mknob 25 100 0 1 0 0 FX6-snd FX6-rcv FX6 -2 -6 0 8 -262144
--1 -1 9233 1;
+-1 -1 0 1;
 #X obj 217 236 mknob 25 100 0 1 0 0 FX7-snd FX7-rcv FX7 -2 -6 0 8 -262144
--1 -1 6017 1;
+-1 -1 0 1;
 #X obj 248 236 mknob 25 100 0 1 0 0 FX8-snd FX8-rcv FX8 -2 -6 0 8 -262144
--1 -1 6925 1;
+-1 -1 0 1;
 #X obj 119 33 mknob 25 100 0 1 0 0 FX9-snd FX9-rcv FX9 -2 -6 0 8 -262144
 -1 -1 0 1;
 #X obj 29 194 mknob 25 100 0 1 0 0 Sel1-snd Sel1-rcv Sel1 -2 -6 0 8
--262144 -1 -1 511 1;
+-262144 -1 -1 0 1;
 #X obj 60 194 mknob 25 100 0 1 0 0 Sel2-snd Sel2-rcv Sel2 -2 -6 0 8
 -262144 -1 -1 0 1;
 #X obj 91 194 mknob 25 100 0 1 0 0 Sel3-snd Sel3-rcv Sel3 -2 -6 0 8
--262144 -1 -1 512 1;
+-262144 -1 -1 0 1;
 #X obj 122 194 mknob 25 100 0 1 0 0 Sel4-snd Sel4-rcv Sel4 -2 -6 0
-8 -262144 -1 -1 3512 1;
+8 -262144 -1 -1 0 1;
 #X obj 154 194 mknob 25 100 0 1 0 0 Sel5-snd Sel5-rcv Sel5 -2 -6 0
-8 -262144 -1 -1 4595 1;
+8 -262144 -1 -1 0 1;
 #X obj 185 194 mknob 25 100 0 1 0 0 Sel6-snd Sel6-rcv Sel6 -2 -6 0
-8 -262144 -1 -1 6922 1;
+8 -262144 -1 -1 0 1;
 #X obj 216 194 mknob 25 100 0 1 0 0 Sel7-snd Sel7-rcv Sel7 -2 -6 0
 8 -262144 -1 -1 0 1;
 #X obj 247 194 mknob 25 100 0 1 0 0 Sel8-snd Sel8-rcv Sel8 -2 -6 0
-8 -262144 -1 -1 7542 1;
+8 -262144 -1 -1 0 1;
 #X obj 58 147 mknob 25 100 0 1 0 0 Vol123-snd Vol123-rcv Vol123 -2
 -6 0 8 -262144 -1 -1 0 1;
 #X obj 182 145 mknob 25 100 0 1 0 0 Vol456-snd Vol456-rcv Vol456 -2
@@ -194,7 +194,7 @@
 #X obj 121 140 tgl 20 0 Play9-snd Play9-rcv Play9 -2 28 0 8 -262144
 -1 -1 0 1;
 #X obj 124 111 tgl 15 0 Led9-snd Led9-rcv Led9 -2 22 0 8 -262144 -1
--1 0 1;
+-1 1 1;
 #X obj 51 42 tgl 20 0 Shift-snd Shift-rcv Shift -2 28 0 8 -262144 -1
 -1 0 1;
 #X obj 14 505 r CLOCK;
@@ -218,7 +218,7 @@
 #X text 288 516 stop;
 #X obj 15 402 ../domoNet;
 #X obj 14 474 MAINDIR;
-#N canvas 2055 855 324 230 BPM/Vol 0;
+#N canvas 2052 881 324 230 BPM/Vol 1;
 #X obj 9 17 r VolGen-snd;
 #X obj 54 39 r Shift-snd;
 #X obj 54 59 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
@@ -263,7 +263,7 @@
 #X msg 329 626 16;
 #X msg 389 626 145;
 #X obj 330 568 del 250;
-#X obj 334 540 loadbang;
+#X obj 368 503 loadbang;
 #X obj 299 247 INvu 1;
 #X obj 15 544 route list;
 #X obj 397 432 Vocal Mic 9;
@@ -293,5 +293,4 @@
 #X connect 78 0 75 0;
 #X connect 78 0 76 0;
 #X connect 78 0 77 0;
-#X connect 79 0 78 0;
 #X connect 81 0 52 0;
