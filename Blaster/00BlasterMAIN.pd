@@ -1,0 +1,226 @@
+#N canvas 1456 242 401 772 10;
+#X declare -path KEP/AutoAbstractions;
+#X declare -path KEP/AutoPreset;
+#X declare -path KEP/absKEP;
+#X declare -path KEP/absGAMME;
+#X declare -path KEP/absTL;
+#X declare -path KEP/rj;
+#X declare -path KEP/HurFace;
+#X declare -stdpath Fraise;
+#X declare -path KEP;
+#X declare -path KEP/PdTl;
+#X declare -path KEP/abs;
+#X declare -stdpath iemlib -stdlib iemlib;
+#X declare -stdpath moocow -stdlib moocow;
+#X declare -stdpath readdir -stdlib readdir;
+#X declare -stdpath flatgui -stdlib flatgui;
+#X declare -stdpath cxc -stdlib cxc;
+#X declare -stdpath mrpeach -stdlib mrpeach;
+#X declare -stdpath zexy -stdlib zexy;
+#X declare -stdpath maxlib -stdlib maxlib;
+#X declare -stdpath ggee -stdlib ggee;
+#X declare -stdpath creb -stdlib creb;
+#X declare -stdpath hcs -stdlib hcs;
+#X declare -stdpath motex -stdlib motex;
+#X declare -stdpath moonlib -stdlib moonlib;
+#X declare -stdpath osc -stdlib osc;
+#X declare -path KEP/absXtouch-XR18;
+#X declare -stdpath pd-autotuned-master -stdlib pd-autotuned-master
+;
+#X declare -path absGAMME -path ../absGAMME;
+#X declare -path Dec;
+#X declare -path absKEP;
+#X declare -stdpath iemlib -lib iemlib1;
+#X declare -path abs;
+#X declare -stdpath iemlib -lib iemlib;
+#X declare -stdpath iemlib -lib iemlib2;
+#X declare -stdpath motex -lib motex;
+#X declare -path AutoPreset;
+#X declare -path AutoAbstractions;
+#X obj 36 48 fraise_interface;
+#N canvas 170 990 1016 639 declare 0;
+#X obj 10 550 l declare -path /usr/lib/pd-extended/extra/iemlib/;
+#X obj 802 114 moonlib/mknob 25 100 0 127 0 0 -233017 empty empty -2
+-6 0 8 -262144 -262144 -262144 0 1;
+#X obj 576 515 l /home/al1/pd-externals/Bidouille/PdPatchs/0Morsso0/alternateur
+;
+#X obj 2 310 declare -path KEP/AutoAbstractions;
+#X obj 3 331 declare -path KEP/AutoPreset;
+#X obj 4 352 declare -path KEP/absKEP;
+#X obj 4 410 declare -path KEP/absGAMME;
+#X obj 6 433 declare -path KEP/absTL;
+#X obj 550 365 l declare -path KEP/absIEMLIB;
+#X obj 7 477 declare -path KEP/rj;
+#X obj 7 499 declare -path KEP/HurFace;
+#X obj 278 412 declare -stdpath Fraise;
+#X obj 13 574 l declare -path ./SyncJams-master/pure-data;
+#X obj 11 601 l declare -path ./pd-net-sync-master;
+#X obj 2 266 declare -path KEP;
+#X obj 4 378 declare -path KEP/PdTl;
+#X obj 3 289 declare -path KEP/abs;
+#X obj 738 221 l syncjams;
+#X obj 799 271 l uid;
+#X obj 264 34 declare -stdpath iemlib -stdlib iemlib;
+#X obj 263 55 l declare -stdpath cyclone -stdlib cyclone;
+#X obj 264 124 l declare -stdpath unauthorized -stdlib unauthorized
+;
+#X obj 269 247 declare -stdpath moocow -stdlib moocow;
+#X obj 270 271 declare -stdpath readdir -stdlib readdir;
+#X obj 268 293 declare -stdpath flatgui -stdlib flatgui;
+#X obj 554 319 l declare -stdpath arraysize;
+#X obj 554 342 l declare -stdpath comport;
+#X obj 771 341 l declare -stdlib comport;
+#X obj 771 318 l declare -stdlib arraysize;
+#X obj 277 361 declare -stdpath cxc -stdlib cxc;
+#X obj 278 382 declare -stdpath mrpeach -stdlib mrpeach;
+#X obj 267 99 declare -stdpath zexy -stdlib zexy;
+#X obj 266 150 declare -stdpath maxlib -stdlib maxlib;
+#X obj 261 74 declare -stdpath ggee -stdlib ggee;
+#X obj 267 222 declare -stdpath creb -stdlib creb;
+#X obj 265 199 declare -stdpath hcs -stdlib hcs;
+#X obj 267 175 declare -stdpath motex -stdlib motex;
+#X obj 640 206 ead~;
+#X obj 260 12 declare -stdpath moonlib -stdlib moonlib;
+#X obj 556 389 l declare -path KEP/FraisePd;
+#X obj 569 12 declare -stdpath osc -stdlib osc;
+#X obj 11 522 declare -path KEP/absXtouch-XR18;
+#X obj 548 157 declare -stdpath pd-autotuned-master -stdlib pd-autotuned-master
+, f 56;
+#X obj 277 465 declare -path absGAMME -path ../absGAMME;
+#X obj 54 40 declare -path Dec;
+#X obj 19 64 declare -path absKEP;
+#X obj 607 45 declare -stdpath iemlib -lib iemlib1;
+#X obj 25 88 declare -path abs;
+#X obj 636 68 declare -stdpath iemlib -lib iemlib;
+#X obj 676 91 declare -stdpath iemlib -lib iemlib2;
+#X obj 710 195 declare -stdpath motex -lib motex;
+#X obj 25 108 declare -path AutoPreset;
+#X obj 14 138 declare -path AutoAbstractions;
+#X restore 38 23 pd declare;
+#X obj 36 76 cnv 15 270 370 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 48 340 mknob 25 100 0 1 0 0 Vol1-snd Vol1-rcv Vol1 -2 -6 0 8
+-262144 -1 -1 5853 1;
+#X obj 79 340 mknob 25 100 0 1 0 0 Vol2-snd Vol2-rcv Vol2 -2 -6 0 8
+-262144 -1 -1 0 1;
+#X obj 110 340 mknob 25 100 0 1 0 0 Vol3-snd Vol3-rcv Vol3 -2 -6 0
+8 -262144 -1 -1 0 1;
+#X obj 141 340 mknob 25 100 0 1 0 0 Vol4-snd Vol4-rcv Vol4 -2 -6 0
+8 -262144 -1 -1 1218 1;
+#X obj 173 340 mknob 25 100 0 1 0 0 Vol5-snd Vol5-rcv Vol5 -2 -6 0
+8 -262144 -1 -1 0 1;
+#X obj 204 340 mknob 25 100 0 1 0 0 Vol6-snd Vol6-rcv Vol6 -2 -6 0
+8 -262144 -1 -1 163 1;
+#X obj 235 340 mknob 25 100 0 1 0 0 Vol7-snd Vol7-rcv Vol7 -2 -6 0
+8 -262144 -1 -1 4341 1;
+#X obj 266 340 mknob 25 100 0 1 0 0 Vol8-snd Vol8-rcv Vol8 -2 -6 0
+8 -262144 -1 -1 10 1;
+#X obj 139 136 mknob 25 100 0 1 0 0 Vol9-snd Vol9-rcv Vol9 -2 -6 0
+8 -262144 -1 -1 135 1;
+#X obj 50 296 mknob 25 100 0 1 0 0 FX1-snd FX1-rcv FX1 -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 81 296 mknob 25 100 0 1 0 0 FX2-snd FX2-rcv FX2 -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 112 296 mknob 25 100 0 1 0 0 FX3-snd FX3-rcv FX3 -2 -6 0 8 -262144
+-1 -1 2059 1;
+#X obj 143 296 mknob 25 100 0 1 0 0 FX4-snd FX4-rcv FX4 -2 -6 0 8 -262144
+-1 -1 3337 1;
+#X obj 175 296 mknob 25 100 0 1 0 0 FX5-snd FX5-rcv FX5 -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 206 296 mknob 25 100 0 1 0 0 FX6-snd FX6-rcv FX6 -2 -6 0 8 -262144
+-1 -1 2550 1;
+#X obj 237 296 mknob 25 100 0 1 0 0 FX7-snd FX7-rcv FX7 -2 -6 0 8 -262144
+-1 -1 4031 1;
+#X obj 268 296 mknob 25 100 0 1 0 0 FX8-snd FX8-rcv FX8 -2 -6 0 8 -262144
+-1 -1 57 1;
+#X obj 139 93 mknob 25 100 0 1 0 0 FX9-snd FX9-rcv FX9 -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 49 254 mknob 25 100 0 1 0 0 Sel1-snd Sel1-rcv Sel1 -2 -6 0 8
+-262144 -1 -1 3599 1;
+#X obj 80 254 mknob 25 100 0 1 0 0 Sel2-snd Sel2-rcv Sel2 -2 -6 0 8
+-262144 -1 -1 2121 1;
+#X obj 111 254 mknob 25 100 0 1 0 0 Sel3-snd Sel3-rcv Sel3 -2 -6 0
+8 -262144 -1 -1 1758 1;
+#X obj 142 254 mknob 25 100 0 1 0 0 Sel4-snd Sel4-rcv Sel4 -2 -6 0
+8 -262144 -1 -1 7725 1;
+#X obj 174 254 mknob 25 100 0 1 0 0 Sel5-snd Sel5-rcv Sel5 -2 -6 0
+8 -262144 -1 -1 6237 1;
+#X obj 205 254 mknob 25 100 0 1 0 0 Sel6-snd Sel6-rcv Sel6 -2 -6 0
+8 -262144 -1 -1 2416 1;
+#X obj 236 254 mknob 25 100 0 1 0 0 Sel7-snd Sel7-rcv Sel7 -2 -6 0
+8 -262144 -1 -1 0 1;
+#X obj 267 254 mknob 25 100 0 1 0 0 Sel8-snd Sel8-rcv Sel8 -2 -6 0
+8 -262144 -1 -1 9714 1;
+#X obj 78 207 mknob 25 100 0 1 0 0 Vol123-snd Vol123-rcv Vol123 -2
+-6 0 8 -262144 -1 -1 10 1;
+#X obj 202 205 mknob 25 100 0 1 0 0 Vol456-snd Vol456-rcv Vol456 -2
+-6 0 8 -262144 -1 -1 0 1;
+#X obj 225 99 mknob 25 100 0 1 0 0 VolGen-snd VolGen-rcv VolGen -2
+-6 0 8 -262144 -1 -1 9246 1;
+#X obj 50 407 tgl 20 0 Play1-snd Play1-rcv Play1 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 53 378 tgl 15 0 Led1-snd Led1-rcv Led1 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 82 407 tgl 20 0 Play2-snd Play2-rcv Play2 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 85 378 tgl 15 0 Led2-snd Led2-rcv Led2 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 112 407 tgl 20 0 Play3-snd Play3-rcv Play3 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 115 378 tgl 15 0 Led3-snd Led3-rcv Led3 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 144 407 tgl 20 0 Play4-snd Play4-rcv Play4 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 147 378 tgl 15 0 Led4-snd Led4-rcv Led4 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 176 407 tgl 20 0 Play5-snd Play5-rcv Play5 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 179 378 tgl 15 0 Led5-snd Led5-rcv Led5 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 208 407 tgl 20 0 Play6-snd Play6-rcv Play6 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 211 378 tgl 15 0 Led6-snd Led6-rcv Led6 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 238 407 tgl 20 0 Play7-snd Play7-rcv Play7 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 241 378 tgl 15 0 Led7-snd Led7-rcv Led7 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 270 407 tgl 20 0 Play8-snd Play8-rcv Play8 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 273 378 tgl 15 0 Led8-snd Led8-rcv Led8 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 141 200 tgl 20 0 Play9-snd Play9-rcv Play9 -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 144 171 tgl 15 0 Led9-snd Led9-rcv Led9 -2 22 0 8 -262144 -1
+-1 0 1;
+#X obj 71 102 tgl 20 0 Shift-snd Shift-rcv Shift -2 28 0 8 -262144
+-1 -1 0 1;
+#X obj 305 387 ../domoNet;
+#X obj 76 621 r CLOCK;
+#X obj 76 643 unpack f f;
+#X floatatom 76 665 5 0 0 0 - - -, f 5;
+#X floatatom 165 722 5 0 0 0 - - -, f 5;
+#X obj 87 713 bng 50 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 276 713 s /BPM;
+#X floatatom 221 621 5 0 0 0 - - -, f 5;
+#X msg 275 666 160;
+#X obj 19 488 OUTvu 1;
+#X obj 54 485 OUTvu 2;
+#X obj 121 473 MASTERSvol;
+#X obj 300 521 r /BPM;
+#X floatatom 300 543 5 0 0 0 - - -, f 5;
+#X msg 321 673 120;
+#X obj 243 456 BBdec Batteries 1;
+#X msg 299 608 90;
+#X obj 244 475 l BBdec Electros 2;
+#X obj 245 497 l BBdec Percus 3;
+#X connect 52 0 53 0;
+#X connect 53 0 54 0;
+#X connect 53 1 55 0;
+#X connect 54 0 56 0;
+#X connect 58 0 57 0;
+#X connect 59 0 57 0;
+#X connect 63 0 64 0;
+#X connect 65 0 57 0;
+#X connect 67 0 57 0;

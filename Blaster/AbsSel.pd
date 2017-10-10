@@ -1,0 +1,8 @@
+#N canvas 1700 453 249 234 10;
+#X obj 46 54 * -1;
+#X obj 46 31 inlet;
+#X obj 46 78 + 1;
+#X obj 46 102 s Sel\$1-rcv;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
