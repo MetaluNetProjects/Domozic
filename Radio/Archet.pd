@@ -1,10 +1,10 @@
-#N canvas 554 96 811 737 10;
+#N canvas 555 93 811 737 10;
 #X declare -stdpath cyclone -stdlib cyclone -lib cyclone;
 #X declare -stdpath creb -stdlib creb -lib creb;
 #X declare -stdpath iemlib -stdlib iemlib1 -stdlib iemlib2;
 #X obj 44 320 * 100;
 #X obj 44 340 + 18;
-#X obj 18 201 tgl 30 0 empty empty empty 8 -8 0 10 -260818 -1 -1 1
+#X obj 18 201 tgl 30 0 empty empty empty 8 -8 0 10 -260818 -1 -1 0
 1;
 #X obj 18 239 switch~;
 #X obj 169 502 mull~ 0 50;
@@ -351,15 +351,15 @@
 -262144 -1 -1 0 1;
 #X msg 126 109 69;
 #X floatatom 211 229 5 0 0 0 - - -, f 5;
-#X obj 417 144 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 417 144 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 217 204 hsl 128 15 0 1 0 0 empty empty string_pos -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 466 283 hsl 128 15 0 1 0 0 empty empty force -2 -8 0 10 -262144
--1 -1 9525 1;
+-1 -1 9087 1;
 #X floatatom 21 103 5 0 0 0 - - -, f 5;
 #X obj 416 373 hsl 128 15 0 1 0 1 empty empty caisee -2 -8 0 10 -262144
--1 -1 6347 1;
+-1 -1 6363 1;
 #X obj 415 208 * 80;
 #X obj 341 559 declare -stdpath cyclone -stdlib cyclone -lib cyclone
 ;
@@ -369,7 +369,7 @@
 #X obj 618 339 i;
 #X msg 618 385 1 \$1;
 #X obj 618 408 <<;
-#X obj 714 149 r CLOCK;
+#X obj 714 133 r CLOCK;
 #X obj 714 209 ndmetro 2 1;
 #X floatatom 713 252 5 0 0 0 - - -, f 5;
 #X msg 618 435 nd 2 \$1;
@@ -404,7 +404,7 @@
 #X obj 220 425 limiter~ 5;
 #N canvas 233 166 450 300 lfo 0;
 #X obj 145 79 metro 150;
-#X obj 145 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 145 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 145 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -479,6 +479,8 @@
 #X obj 243 37 r PHONEnote;
 #X obj 191 72 moses 0;
 #X obj 256 72 >= 0;
+#X obj 717 400 print;
+#X obj 726 156 route list;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 4 0 19 0;
@@ -517,7 +519,7 @@
 #X connect 38 0 47 1;
 #X connect 38 0 42 0;
 #X connect 39 0 40 0;
-#X connect 39 0 46 0;
+#X connect 39 0 79 0;
 #X connect 40 0 65 0;
 #X connect 42 0 40 0;
 #X connect 43 0 37 0;
@@ -560,3 +562,4 @@
 #X connect 75 0 77 0;
 #X connect 76 1 74 0;
 #X connect 77 0 59 0;
+#X connect 79 0 46 0;

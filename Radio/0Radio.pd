@@ -1,4 +1,4 @@
-#N canvas 767 74 643 424 10;
+#N canvas 769 74 643 424 10;
 #X declare -path ../absGAMME;
 #X declare -stdpath iemlib -lib iemlib1 -stdpath moonlib -lib zexy
 ;
@@ -17,7 +17,7 @@
 #X obj 117 253 *~;
 #X obj 109 339 dac~;
 #X obj 291 25 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 483 1;
+-1 -1 7342 1;
 #X obj 291 161 pow 2;
 #X msg 291 183 \$1 50;
 #X obj 291 205 line~;
@@ -70,7 +70,7 @@
 #X obj 501 137 crossPot fx-ctl;
 #X obj 586 161 crossPot fx-ctl;
 #X obj 286 278 hip~ 20;
-#N canvas 588 203 547 494 time 0;
+#N canvas 590 197 547 494 time 1;
 #X obj 108 150 i;
 #X obj 108 172 change;
 #X msg 142 230 2 1;
@@ -83,7 +83,7 @@
 #X obj 108 200 sel 0 1 2 3 4 5 6 7 8, f 36;
 #X msg 108 286 \$1 \$2;
 #X obj 51 51 inlet;
-#X obj 415 206 r CLOCK;
+#X obj 415 178 r CLOCK;
 #X obj 415 228 unpack f f;
 #X obj 178 54 inlet;
 #X obj 51 77 list prepend 0;
@@ -102,6 +102,7 @@
 #X obj 108 373 spigot;
 #X obj 51 443 outlet~;
 #X floatatom 191 385 5 0 0 0 - - -, f 5;
+#X obj 415 200 route list;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 2 0 10 0;
@@ -122,7 +123,7 @@
 #X connect 9 8 6 0;
 #X connect 10 0 21 0;
 #X connect 11 0 15 0;
-#X connect 12 0 13 0;
+#X connect 12 0 31 0;
 #X connect 13 1 23 0;
 #X connect 14 0 15 1;
 #X connect 14 0 28 1;
@@ -143,6 +144,7 @@
 #X connect 26 0 10 0;
 #X connect 27 0 10 0;
 #X connect 28 0 19 0;
+#X connect 31 0 13 0;
 #X restore 375 211 pd time;
 #X obj 421 167 r AMPLIswitchs;
 #X obj 421 189 route main;
@@ -293,7 +295,7 @@
 #X obj 372 251 lastKeyOn;
 #X obj 499 376 + 60;
 #X obj 477 28 r AMPLIswitchs;
-#X obj 477 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 477 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 494 93 sel 0 1;
 #X msg 494 115 set /GAMME;
@@ -486,8 +488,10 @@
 #X connect 22 0 23 0;
 #X restore 8 284 pd keys;
 #X restore 258 57 pd PHONEgamme;
+#X msg 433 289 1;
 #X connect 1 0 2 0;
 #X connect 9 0 10 0;
 #X connect 15 0 14 0;
 #X connect 16 0 14 0;
 #X connect 17 0 14 0;
+#X connect 20 0 14 0;
