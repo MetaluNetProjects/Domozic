@@ -1,4 +1,4 @@
-#N canvas 444 74 908 737 10;
+#N canvas 445 74 908 737 10;
 #X declare -stdpath cyclone -stdlib cyclone -lib cyclone;
 #X declare -stdpath creb -stdlib creb -lib creb;
 #X declare -stdpath iemlib -stdlib iemlib1 -stdlib iemlib2;
@@ -71,7 +71,7 @@
 #X obj 411 352 line~;
 #X obj 269 289 mtof;
 #X obj 272 219 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7382 1;
+-1 -1 7379 1;
 #X obj 269 335 line~;
 #X obj 281 355 sig~ 2;
 #X obj 257 399 hip~ 5;
@@ -138,7 +138,6 @@
 #X obj 256 181 clone orgueVoice 9;
 #X obj 182 63 route rec input balance;
 #X obj 399 13 r AMPLIswitchs;
-#X obj 399 35 route phono;
 #X obj 399 57 == 0;
 #X obj 399 82 s OrgueCtl;
 #X obj 182 87 crossPot OrgueCtl;
@@ -156,6 +155,7 @@
 #X obj 182 39 spigot 1;
 #X obj 316 13 loadbang;
 #X msg 316 34 0;
+#X obj 399 35 route main;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -181,7 +181,7 @@
 #X connect 26 0 17 2;
 #X connect 27 0 18 0;
 #X connect 30 0 33 0;
-#X connect 32 0 99 0;
+#X connect 32 0 98 0;
 #X connect 33 0 29 0;
 #X connect 34 0 31 0;
 #X connect 35 0 36 0;
@@ -245,19 +245,19 @@
 #X connect 83 8 80 0;
 #X connect 84 0 72 0;
 #X connect 85 0 17 0;
-#X connect 86 0 91 0;
-#X connect 86 1 92 0;
-#X connect 86 2 93 0;
-#X connect 87 0 88 0;
+#X connect 86 0 90 0;
+#X connect 86 1 91 0;
+#X connect 86 2 92 0;
+#X connect 87 0 101 0;
 #X connect 88 0 89 0;
-#X connect 89 0 90 0;
-#X connect 89 0 98 0;
-#X connect 91 0 71 0;
-#X connect 92 0 35 0;
-#X connect 93 0 81 0;
-#X connect 94 0 96 0;
-#X connect 96 0 95 0;
-#X connect 97 0 96 1;
-#X connect 99 0 86 0;
+#X connect 88 0 97 0;
+#X connect 90 0 71 0;
+#X connect 91 0 35 0;
+#X connect 92 0 81 0;
+#X connect 93 0 95 0;
+#X connect 95 0 94 0;
+#X connect 96 0 95 1;
+#X connect 98 0 86 0;
+#X connect 99 0 100 0;
 #X connect 100 0 101 0;
 #X connect 101 0 88 0;
