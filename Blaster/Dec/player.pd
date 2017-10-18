@@ -1,4 +1,4 @@
-#N canvas 444 990 757 361 10;
+#N canvas 441 990 757 361 10;
 #X obj 32 4 inlet;
 #X text 75 3 play fragment;
 #X obj 373 212 s \$0-samplelen;
@@ -49,7 +49,6 @@
 #X obj 200 61 symbol;
 #X obj 168 150 *~ 0.3;
 #X obj 222 150 *~ 0.3;
-#X obj 564 75 iemlib/iem_r;
 #X obj 566 32 iem_r;
 #X obj 373 190 iem_r;
 #X obj 558 145 iem_r;
@@ -83,8 +82,8 @@
 #X connect 22 0 3 0;
 #X connect 23 0 24 0;
 #X connect 24 0 2 0;
-#X connect 26 0 51 0;
-#X connect 27 0 52 0;
+#X connect 26 0 50 0;
+#X connect 27 0 51 0;
 #X connect 28 0 6 0;
 #X connect 30 0 28 0;
 #X connect 31 0 25 0;
@@ -100,5 +99,5 @@
 #X connect 46 0 15 0;
 #X connect 47 0 35 0;
 #X connect 48 0 34 0;
-#X connect 51 0 2 0;
-#X connect 52 0 6 0;
+#X connect 50 0 2 0;
+#X connect 51 0 6 0;

@@ -1,4 +1,4 @@
-#N canvas 35 257 121 60 10;
+#N canvas 2142 179 560 278 10;
 #X obj 236 43 namecanvas \$0-can;
 #X obj 236 23 s \$0-can;
 #X msg 236 3 donecanvasdialog 1 -1 0;
@@ -12,7 +12,7 @@
 #X obj 353 254 apf \$0 vol \$0-vol;
 #X obj 157 4 inlet~;
 #X obj 156 65 outlet~;
-#N canvas 229 20 767 659 hanning-window 0;
+#N canvas 229 50 767 659 hanning-window 0;
 #X obj 92 206 phasor~;
 #X obj 92 234 cos~;
 #X obj 30 252 -~;
@@ -20,7 +20,7 @@
 #X msg 37 180 0;
 #X text 141 13 CALCULATE HANNING;
 #X text 141 27 WINDOW TABLE;
-#N canvas 0 0 450 300 graph1 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-hanning 1024 float 0;
 #X coords 0 1 1023 -1 400 300 1;
 #X restore 275 281 graph;
@@ -61,12 +61,12 @@
 #X msg 17 26 1024;
 #X obj 354 233 apf \$0 bypass \$0-bypass;
 #X obj 295 14 r \$0-bypass-snd;
-#N canvas 0 0 146 204 allsound 0;
+#N canvas 0 50 146 204 allsound 0;
 #X obj 45 20 inlet~;
 #X obj 18 168 outlet~;
 #X obj 99 34 inlet;
 #X obj 63 86 *~;
-#N canvas 0 0 528 523 allsound 0;
+#N canvas 0 50 528 523 allsound 0;
 #X obj 169 76 inlet~;
 #X obj 166 458 outlet~;
 #X obj 117 423 mull~ 0 10;
@@ -138,7 +138,7 @@ time;
 #X obj 64 79 * 3;
 #X obj 389 12 inlet;
 #X obj 389 33 switch~;
-#X obj 371 70 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+#X obj 371 70 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
 #X obj 21 120 inlet~;
 #X obj 199 104 mull~ 0 10;
@@ -191,9 +191,9 @@ time;
 #X restore 124 43 pd guts;
 #X obj 124 22 inlet~;
 #X obj 65 29 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv vol -2 -6
-193 8 -258699 -1 -1 9900 1;
+1 8 -258699 -1 -1 0 1;
 #X obj 7 28 mknob 15 100 0 1 0 0 \$0-volin1-snd \$0-volin1-rcv volin1
--2 -6 193 8 -262144 -1 -1 9900 1;
+-2 -6 1 8 -262144 -1 -1 0 1;
 #X obj 88 29 tgl 15 0 \$0-bypass-snd \$0-bypass-rcv bypass 0 -6 1 8
 -258699 -1 -1 0 1;
 #N canvas 0 102 452 160 setAllPatterns 0;
@@ -208,7 +208,7 @@ time;
 #X restore 360 43 pd setAllPatterns;
 #X msg 361 23 bypass 1;
 #X obj 35 29 mknob 15 100 0 1 0 0 \$0-volin2-snd \$0-volin2-rcv volin2
--2 -6 193 8 -241291 -1 -1 9900 1;
+-2 -6 1 8 -241291 -1 -1 0 1;
 #X obj 172 22 inlet~;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
@@ -217,4 +217,4 @@ time;
 #X connect 9 0 8 0;
 #X connect 14 0 13 0;
 #X connect 16 0 8 1;
-#X coords 0 0 1 1 120 60 1;
+#X coords 0 0 1 1 120 60 1 0 1;

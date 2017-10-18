@@ -1,0 +1,13 @@
+#N canvas 471 1039 450 300 10;
+#X obj 44 20 cnv 15 336 250 \$1-seq0-STEPcan-snd \$1-seq0-STEPcan-rcv
+empty 20 12 0 14 -42246 -233017 0;
+#X obj 50 26 STEPseq \$1 seq1 1;
+#X obj 393 27 tgl 25 1 \$1-StopSeq empty defil 17 7 0 10 -13381 -257985
+-258113 0 1;
+#X obj 215 26 STEPseq \$1 seq2 2;
+#X obj 50 87 STEPseq \$1 seq3 3;
+#X obj 215 87 STEPseq \$1 seq4 4;
+#X obj 50 148 STEPseq \$1 seq5 5;
+#X obj 214 148 STEPseq \$1 seq6 6;
+#X obj 49 209 STEPseq \$1 seq7 7;
+#X obj 215 209 STEPseq \$1 seq8 8;

@@ -1,30 +1,25 @@
-#N canvas 517 236 84 78 10;
+#N canvas 508 990 458 363 10;
 #X obj 193 50 namecanvas \$0-can;
 #X obj 193 29 s \$0-can;
 #X msg 193 8 donecanvasdialog 1 -1 0;
 #X msg 80 9 reduire;
 #X obj 1 2 cnv 15 70 75 empty empty divider 2 6 1 8 -62784 -257472
 0;
-#N canvas 408 105 410 176 guts 0;
-#X obj 212 121 apsubmaster \$0 \$1 \$2;
-#X obj 210 52 apf \$0 vol \$0-vol;
+#N canvas 402 990 410 176 guts 0;
 #X obj 9 51 outlet~;
 #X obj 9 5 inlet~;
-#X obj 210 4 apf \$0 effmicro \$0-effmicro;
-#X obj 212 79 apf \$0 vol2 \$0-vol2;
-#X obj 213 100 apf \$0 bypass \$0-bypass;
 #X obj 88 6 r \$0-bypass-snd;
-#N canvas 0 0 146 204 allsound 0;
+#N canvas 0 50 146 204 allsound 0;
 #X obj 22 21 inlet~;
 #X obj 18 168 outlet~;
 #X obj 79 25 inlet;
 #X obj 40 95 *~;
-#N canvas 0 0 528 523 allsound 0;
+#N canvas 0 50 528 523 allsound 0;
 #X obj 38 15 inlet~;
 #X obj 166 458 outlet~;
 #X obj 389 12 inlet;
 #X obj 389 33 switch~;
-#X obj 371 70 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+#X obj 371 70 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
 ;
 #X obj 75 289 mull~ 0 10;
 #X obj 78 79 fiddle~ 2048;
@@ -42,7 +37,7 @@
 #X obj 124 268 * 2;
 #X obj 193 136 r \$0-effmicro-snd;
 #X obj 147 157 ++;
-#X floatatom 163 195 5 0 0 0 - - -;
+#X floatatom 163 195 5 0 0 0 - - -, f 5;
 #X obj 371 189 samplerate~;
 #X obj 318 188 t f b;
 #X obj 231 338 +~;
@@ -107,25 +102,31 @@
 #X connect 4 0 1 0;
 #X connect 5 0 4 1;
 #X restore 8 26 pd allsound;
-#X obj 211 24 apf \$0 eff \$0-eff;
-#X connect 3 0 8 0;
-#X connect 7 0 8 1;
-#X connect 8 0 2 0;
+#X obj 212 121 apsubmaster \$1-\$3 \$1-\$2 \$3;
+#X obj 211 4 apf \$1-\$3 effmicro \$0-effmicro;
+#X obj 211 24 apf \$1-\$3 eff \$0-eff;
+#X obj 210 52 apf \$1-\$3 vol \$0-vol;
+#X obj 212 79 apf \$1-\$3 vol2 \$0-vol2;
+#X obj 213 100 apf \$1-\$3 bypass \$0-bypass;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 0 0;
+#X coords 0 0 1 1 85 60 0;
 #X restore 76 33 pd guts;
 #X obj 28 33 mknob 15 100 0 1 0 0 \$0-eff-snd \$0-eff-rcv effect -2
--6 193 8 -262131 -1 -1 7000 1;
+-6 1 8 -262131 -1 -1 5200 1;
 #X obj 6 59 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv volume -2
--6 193 8 -258699 -1 -1 9900 1;
+-6 1 8 -258699 -1 -1 0 1;
 #X obj 132 49 outlet~;
 #X obj 143 17 inlet~;
 #X obj 5 23 mknob 15 100 0 1 0 0 \$0-effmicro-snd \$0-effmicro-rcv
-effect-micro -2 -6 193 8 -241291 -1 -1 0 1;
+effect-micro -2 -6 1 8 -241291 -1 -1 2600 1;
 #X obj 49 47 mknob 15 100 0 1 0 0 \$0-vol2-snd \$0-vol2-rcv vol2 -2
--6 193 8 -260818 -1 -1 9900 1;
+-6 1 8 -260818 -1 -1 0 1;
 #X obj 68 61 tgl 15 0 \$0-bypass-snd \$0-bypass-rcv bypass 0 -6 1 8
--258699 -1 -1 1 1;
+-258699 -1 -1 0 1;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 5 0 8 0;
 #X connect 9 0 5 0;
-#X coords 0 0 1 1 75 80 1;
+#X coords 0 -1 1 1 75 80 1 0 0;

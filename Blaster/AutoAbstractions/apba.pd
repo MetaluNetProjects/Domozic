@@ -1,4 +1,4 @@
-#N canvas 786 82 63 55 10;
+#N canvas 780 1043 272 264 10;
 #X obj 165 61 namecanvas \$0-can;
 #X obj 165 40 s \$0-can;
 #X msg 165 19 donecanvasdialog 1 -1 0;
@@ -7,7 +7,7 @@
 0;
 #X obj 653 37 inlet;
 #X obj 653 58 s \$0-setap-snd;
-#N canvas 461 315 303 263 guts 0;
+#N canvas 458 1017 303 263 guts 0;
 #X obj 144 52 apsubmaster \$0 \$1 \$2;
 #X obj 7 75 moses;
 #X obj 7 5 inlet;
@@ -51,7 +51,7 @@
 #X connect 19 0 16 0;
 #X restore 108 24 pd guts;
 #X obj 10 30 mknob 15 100 0 1 0 0 \$0-proba-snd \$0-proba-rcv 141 -2
--6 193 8 -250685 -1 -1 1400 1;
+-6 1 8 -250685 -1 -1 0 1;
 #X obj 65 24 inlet;
 #X obj 108 48 outlet;
 #X obj 64 48 outlet;
@@ -64,4 +64,4 @@
 #X connect 7 1 10 0;
 #X connect 9 0 7 0;
 #X connect 12 0 11 0;
-#X coords 0 0 1 1 60 56 1;
+#X coords 0 0 1 1 60 56 1 0 0;
