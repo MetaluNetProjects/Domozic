@@ -1,0 +1,205 @@
+#N canvas 44 201 866 625 10;
+#X declare -stdpath cyclone -lib cyclone;
+#N canvas 643 84 821 766 (subpatch) 1;
+#X obj 84 29 inlet~;
+#X obj 103 461 outlet~;
+#X obj 85 277 delwrite~ \$0-del 1000;
+#X obj 204 115 vd~ \$0-del 50;
+#X obj 204 34 inlet~;
+#X obj 377 338 hsl 128 15 0 4 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4400 1;
+#X obj 319 380 pow 3;
+#X msg 319 400 \$1 5;
+#X obj 319 420 line~;
+#X obj 303 447 *~;
+#X obj 362 158 noise~;
+#X obj 362 178 lop~ 8000;
+#X obj 205 142 hip~ 20;
+#X obj 362 198 *~ 0.2;
+#X floatatom 376 408 5 0 0 0 - - -, f 5;
+#X obj 456 37 inlet;
+#X obj 310 43 block~ 8 1 2;
+#X obj 468 267 atan~;
+#X obj 304 469 atan~;
+#X obj 468 245 +~ 4.5;
+#X floatatom 331 131 5 0 0 0 - - -, f 5;
+#X obj 331 107 hsl 128 15 0 20 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8400 1;
+#X floatatom 289 108 5 0 0 0 - - -, f 5;
+#X obj 289 84 hsl 128 15 -20 20 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6300 1;
+#X obj 302 324 hip~ 5;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-anche 100 float 3;
+#A 0 -0.150287 -0.150146 -0.149999 -0.149846 -0.149686 -0.149518 -0.149343
+-0.14916 -0.148967 -0.148766 -0.148553 -0.14833 -0.148095 -0.147847
+-0.147584 -0.147307 -0.147013 -0.1467 -0.146368 -0.146014 -0.145636
+-0.145231 -0.144796 -0.144329 -0.143824 -0.143279 -0.142687 -0.142042
+-0.141338 -0.140565 -0.139713 -0.138769 -0.137717 -0.13654 -0.135213
+-0.133705 -0.131979 -0.129985 -0.127656 -0.124905 -0.121609 -0.117601
+-0.112638 -0.10637 -0.0982794 -0.0876058 -0.0732815 -0.0540419 -0.0291457
+0 0.0634832 0.12573 0.185641 0.242361 0.295317 0.344216 0.388997 0.429771
+0.466761 0.500254 0.530561 0.557999 0.582867 0.605444 0.625983 0.644711
+0.661829 0.677514 0.691922 0.70519 0.717438 0.72877 0.73928 0.749048
+0.758146 0.766638 0.77458 0.782021 0.789004 0.79557 0.801754 0.807587
+0.813097 0.818309 0.823246 0.82793 0.832377 0.836607 0.840633 0.84447
+0.84813 0.851626 0.854968 0.858165 0.861228 0.864163 0.866979 0.869682
+0.87228 0.874778;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 502 106 graph;
+#X obj 609 315 until;
+#X msg 609 273 100;
+#X obj 609 295 t f b;
+#X obj 609 337 i;
+#X obj 640 337 + 1;
+#X msg 651 315 0;
+#X obj 609 389 - 49;
+#X obj 609 411 / 50;
+#X obj 648 497 atan;
+#X obj 609 359 t f f;
+#X obj 609 565 tabwrite \$0-anche;
+#X obj 648 519 / 1.57;
+#X obj 609 453 moses 0;
+#X obj 609 500 atan;
+#X obj 609 476 * 3;
+#X obj 609 522 / 10;
+#X obj 302 260 tabread4~ \$0-anche;
+#X obj 303 217 *~ 100;
+#X obj 303 239 +~ 50;
+#X obj 386 482 outlet~;
+#X msg 517 477 10;
+#X msg 521 551 1;
+#X obj 609 432 * 5;
+#X obj 302 304 lop~ 1000;
+#X obj 131 192 lop~ 1000;
+#X obj 131 213 *~ 0.7;
+#X obj 303 183 *~ -0.2;
+#X connect 0 0 2 0;
+#X connect 3 0 12 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 14 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 18 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 1 0;
+#X connect 12 0 50 0;
+#X connect 12 0 52 0;
+#X connect 15 0 6 0;
+#X connect 18 0 2 0;
+#X connect 19 0 17 0;
+#X connect 20 0 19 1;
+#X connect 21 0 20 0;
+#X connect 22 0 52 1;
+#X connect 23 0 22 0;
+#X connect 24 0 9 0;
+#X connect 26 0 29 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 28 1 31 0;
+#X connect 29 0 30 0;
+#X connect 29 0 35 0;
+#X connect 30 0 29 1;
+#X connect 31 0 29 1;
+#X connect 32 0 33 0;
+#X connect 33 0 48 0;
+#X connect 34 0 37 0;
+#X connect 35 0 32 0;
+#X connect 35 1 36 1;
+#X connect 37 0 36 0;
+#X connect 38 0 40 0;
+#X connect 38 1 34 0;
+#X connect 39 0 41 0;
+#X connect 40 0 39 0;
+#X connect 41 0 36 0;
+#X connect 42 0 45 0;
+#X connect 42 0 49 0;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
+#X connect 46 0 41 1;
+#X connect 47 0 41 1;
+#X connect 48 0 38 0;
+#X connect 49 0 24 0;
+#X connect 50 0 51 0;
+#X connect 51 0 2 0;
+#X connect 52 0 43 0;
+#X restore 192 199 pd;
+#X obj 186 323 dac~, f 5;
+#X floatatom 280 96 5 0 0 0 - - -, f 5;
+#X obj 280 115 mtof;
+#X msg 280 135 1000 \$1;
+#X obj 279 156 /;
+#X floatatom 309 160 5 0 0 0 - - -, f 5;
+#X obj 188 135 vline~;
+#X obj 83 67 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 80 87 pow 3;
+#X msg 80 107 \$1 5;
+#X obj 80 127 line~;
+#X obj 151 156 *~;
+#X obj 125 94 noise~;
+#X obj 192 239 clip~ -1 1;
+#X obj 192 219 hip~ 5;
+#X obj 303 9 key;
+#X obj 413 64 keyup;
+#X obj 303 29 - 97;
+#X msg 364 115 1;
+#X msg 415 100 0;
+#X obj 342 71 change;
+#X obj 383 170 line;
+#X obj 125 134 *~ 0.5;
+#X obj 303 49 + 40;
+#X msg 347 24 5;
+#X obj 300 248 declare -stdpath cyclone -lib cyclone;
+#X obj 286 321 scope~ 280 116 23 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X floatatom 379 206 5 0 0 0 - - -, f 5;
+#X obj 192 261 *~ 0.5;
+#X msg 383 149 3 \, 1.8 100;
+#X obj 285 441 scope~ 280 116 23 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 582 165 crossPot;
+#X obj 124 113 lop~ 3000;
+#X obj 191 168 hip~ 50;
+#X msg 240 134 0 50;
+#X floatatom 384 21 5 0 0 0 - - -, f 5;
+#X msg 188 114 1 10 \, 0.1 100 10;
+#X connect 0 0 15 0;
+#X connect 0 0 27 0;
+#X connect 0 1 31 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 0 1;
+#X connect 7 0 12 1;
+#X connect 7 0 34 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 0 0;
+#X connect 13 0 33 0;
+#X connect 14 0 29 0;
+#X connect 15 0 14 0;
+#X connect 18 0 24 0;
+#X connect 20 0 22 0;
+#X connect 20 0 35 0;
+#X connect 22 0 0 2;
+#X connect 23 0 12 0;
+#X connect 24 0 2 0;
+#X connect 24 0 37 0;
+#X connect 24 0 19 0;
+#X connect 24 0 30 0;
+#X connect 25 0 24 0;
+#X connect 28 0 27 0;
+#X connect 29 0 1 0;
+#X connect 29 0 1 1;
+#X connect 30 0 22 0;
+#X connect 33 0 23 0;
+#X connect 34 0 0 0;
+#X connect 35 0 7 0;
+#X connect 36 0 24 0;
+#X connect 37 0 7 0;

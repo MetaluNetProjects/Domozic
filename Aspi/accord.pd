@@ -1,0 +1,28 @@
+#N canvas 368 493 450 300 10;
+#X declare -path ../absGAMME;
+#X obj 48 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 105 97 set /GAMME;
+#X msg 128 126 set /CHORD;
+#X obj 267 149 pow 2;
+#X obj 267 173 * 40;
+#X obj 232 47 declare -path ../absGAMME;
+#X obj 80 204 gammeRound /CHORD 5;
+#X obj 80 14 inlet;
+#X obj 80 226 outlet;
+#X obj 105 47 r choixGamme;
+#X obj 267 126 r gammeAccord;
+#X msg 152 156 set /DODECA;
+#X obj 105 75 sel 1 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 1;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 9 0 12 0;
+#X connect 10 0 3 0;
+#X connect 11 0 6 0;
+#X connect 12 0 1 0;
+#X connect 12 1 2 0;
+#X connect 12 2 11 0;
