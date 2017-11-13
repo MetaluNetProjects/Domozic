@@ -1,4 +1,4 @@
-#N canvas 292 74 1108 796 10;
+#N canvas 295 74 1108 796 10;
 #X declare -path Fraise -stdpath Fraise;
 #X declare -stdpath iemlib -lib iemlib1 -stdpath moonlib;
 #X obj 22 237 analog/parse;
@@ -31,9 +31,9 @@
 #X obj 429 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 25 487 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7489 1;
+-1 -1 2924 1;
 #X obj 7 527 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9707 1;
+-1 -1 12688 1;
 #X obj 89 450 test1;
 #X obj 22 259 unpack f f;
 #X obj 22 306 pack f f;
@@ -85,7 +85,7 @@
 #X obj 267 580 t b f;
 #X obj 242 574 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 268 539 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 268 539 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 297 482 == 0;
 #X floatatom 74 593 5 0 0 0 - - -, f 5;
@@ -101,7 +101,7 @@
 -1 -1 0 1;
 #X obj 783 473 atan2;
 #X obj 991 652 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6612 1;
+-1 -1 6624 1;
 #X obj 354 604 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 382 606 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -172,7 +172,7 @@
 #X connect 10 0 0 0;
 #X restore 891 742 pd length;
 #X obj 894 766 hsl 128 15 0 3 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 37 1;
+-1 -1 54 1;
 #N canvas 4 74 450 300 length 0;
 #X obj 94 90 unpack f f f;
 #X obj 94 112 t f f;
@@ -339,6 +339,10 @@
 #X obj 355 454 r CLOCK;
 #X obj 355 476 ndmetro 4 4;
 #X obj 355 498 == 0;
+#X floatatom 330 537 5 0 0 0 - - -, f 5;
+#X obj 962 296 r CLOCK;
+#X obj 962 318 ndmetro 4 1;
+#X floatatom 962 340 5 0 0 0 - - -, f 5;
 #X connect 0 0 22 0;
 #X connect 0 1 8 0;
 #X connect 1 0 6 1;
@@ -487,4 +491,7 @@
 #X connect 147 1 148 0;
 #X connect 150 0 151 0;
 #X connect 151 0 152 0;
+#X connect 151 0 153 0;
 #X connect 152 0 70 0;
+#X connect 154 0 155 0;
+#X connect 155 0 156 0;
