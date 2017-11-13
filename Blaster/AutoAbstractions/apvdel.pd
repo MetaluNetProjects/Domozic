@@ -1,4 +1,4 @@
-#N canvas 695 248 125 60 10;
+#N canvas 692 990 409 356 10;
 #X obj 312 46 namecanvas \$0-can;
 #X obj 312 25 s \$0-can;
 #X msg 312 4 donecanvasdialog 1 -1 0;
@@ -8,7 +8,7 @@
 #X obj 221 36 outlet~;
 #X obj 653 37 inlet;
 #X obj 653 58 s \$0-setap-snd;
-#N canvas 106 151 496 254 guts 0;
+#N canvas 103 990 496 254 guts 0;
 #X obj 327 127 apsubmaster \$0 \$1 \$2;
 #X obj 325 6 apf \$0 vol \$0-vol;
 #X obj 8 13 inlet~;
@@ -26,12 +26,12 @@
 #X obj 264 160 s \$0-vtime-rcv;
 #X obj 323 106 apf \$0 bypass \$0-bypass;
 #X obj 88 15 r \$0-bypass-snd;
-#N canvas 0 0 146 204 allsound 0;
+#N canvas 0 1044 146 204 allsound 0;
 #X obj 22 21 inlet~;
 #X obj 18 168 outlet~;
 #X obj 79 25 inlet;
 #X obj 40 95 *~;
-#N canvas 0 0 528 523 allsound 0;
+#N canvas 0 990 631 523 allsound 0;
 #X obj 38 15 inlet~;
 #X obj 166 458 outlet~;
 #X obj 440 2 inlet;
@@ -132,20 +132,20 @@
 #X restore 168 37 pd guts;
 #X obj 125 37 inlet~;
 #X obj 82 14 mknob 15 100 0 1 0 0 \$0-feed-snd \$0-feed-rcv feed -2
--6 193 8 -257472 -1 -1 6500 1;
+-6 1 8 -257472 -1 -1 4000 1;
 #X obj 105 10 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv vol -2 -6
-193 8 -258699 -1 -1 9900 1;
+1 8 -258699 -1 -1 3500 1;
 #X obj 4 24 mknob 15 100 0 1 0 0 \$0-time-snd \$0-time-rcv time -2
--6 193 8 -241291 -1 -1 7300 1;
+-6 1 8 -241291 -1 -1 5800 1;
 #X obj 98 38 mknob 15 100 0 1 0 0 \$0-filtre-snd \$0-filtre-rcv filtre
--2 -6 193 8 -225280 -1 -1 5900 1;
+-2 -6 1 8 -225280 -1 -1 9900 1;
 #X obj 28 36 mknob 15 100 0 1 0 0 \$0-vtime-snd \$0-vtime-rcv vtime
--2 -6 193 8 -260818 -1 -1 100 1;
+-2 -6 1 8 -260818 -1 -1 6700 1;
 #X obj 59 41 tgl 15 0 \$0-bypass-snd \$0-bypass-rcv bypass 0 -6 1 8
--258699 -1 -1 1 1;
+-258699 -1 -1 0 1;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 6 0 7 0;
 #X connect 8 0 5 0;
 #X connect 9 0 8 0;
-#X coords 0 0 1 1 122 56 1;
+#X coords 0 0 1 1 122 56 1 0 0;

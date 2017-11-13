@@ -1,4 +1,4 @@
-#N canvas 1456 242 401 772 10;
+#N canvas 1381 190 534 900 10;
 #X declare -path KEP/AutoAbstractions;
 #X declare -path KEP/AutoPreset;
 #X declare -path KEP/absKEP;
@@ -37,8 +37,9 @@
 #X declare -stdpath motex -lib motex;
 #X declare -path AutoPreset;
 #X declare -path AutoAbstractions;
-#X obj 36 48 fraise_interface;
-#N canvas 170 990 1016 639 declare 0;
+#X declare -path rj;
+#X obj 7 451 fraise_interface;
+#N canvas 164 990 1016 639 declare 0;
 #X obj 10 550 l declare -path /usr/lib/pd-extended/extra/iemlib/;
 #X obj 802 114 moonlib/mknob 25 100 0 127 0 0 -233017 empty empty -2
 -6 0 8 -262144 -262144 -262144 0 1;
@@ -96,131 +97,201 @@
 #X obj 710 195 declare -stdpath motex -lib motex;
 #X obj 25 108 declare -path AutoPreset;
 #X obj 14 138 declare -path AutoAbstractions;
-#X restore 38 23 pd declare;
-#X obj 36 76 cnv 15 270 370 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 20 173 declare -path rj;
+#X restore 9 426 pd declare;
+#X obj 16 16 cnv 15 270 370 empty empty empty 20 12 0 14 -204786 -66577
 0;
-#X obj 48 340 mknob 25 100 0 1 0 0 Vol1-snd Vol1-rcv Vol1 -2 -6 0 8
--262144 -1 -1 5853 1;
-#X obj 79 340 mknob 25 100 0 1 0 0 Vol2-snd Vol2-rcv Vol2 -2 -6 0 8
+#X obj 28 280 mknob 25 100 0 1 0 0 Vol1-snd Vol1-rcv Vol1 -2 -6 0 8
+-262144 -1 -1 10 1;
+#X obj 59 280 mknob 25 100 0 1 0 0 Vol2-snd Vol2-rcv Vol2 -2 -6 0 8
 -262144 -1 -1 0 1;
-#X obj 110 340 mknob 25 100 0 1 0 0 Vol3-snd Vol3-rcv Vol3 -2 -6 0
+#X obj 90 280 mknob 25 100 0 1 0 0 Vol3-snd Vol3-rcv Vol3 -2 -6 0 8
+-262144 -1 -1 0 1;
+#X obj 121 280 mknob 25 100 0 1 0 0 Vol4-snd Vol4-rcv Vol4 -2 -6 0
 8 -262144 -1 -1 0 1;
-#X obj 141 340 mknob 25 100 0 1 0 0 Vol4-snd Vol4-rcv Vol4 -2 -6 0
-8 -262144 -1 -1 1218 1;
-#X obj 173 340 mknob 25 100 0 1 0 0 Vol5-snd Vol5-rcv Vol5 -2 -6 0
+#X obj 153 280 mknob 25 100 0 1 0 0 Vol5-snd Vol5-rcv Vol5 -2 -6 0
 8 -262144 -1 -1 0 1;
-#X obj 204 340 mknob 25 100 0 1 0 0 Vol6-snd Vol6-rcv Vol6 -2 -6 0
-8 -262144 -1 -1 163 1;
-#X obj 235 340 mknob 25 100 0 1 0 0 Vol7-snd Vol7-rcv Vol7 -2 -6 0
-8 -262144 -1 -1 4341 1;
-#X obj 266 340 mknob 25 100 0 1 0 0 Vol8-snd Vol8-rcv Vol8 -2 -6 0
-8 -262144 -1 -1 10 1;
-#X obj 139 136 mknob 25 100 0 1 0 0 Vol9-snd Vol9-rcv Vol9 -2 -6 0
-8 -262144 -1 -1 135 1;
-#X obj 50 296 mknob 25 100 0 1 0 0 FX1-snd FX1-rcv FX1 -2 -6 0 8 -262144
--1 -1 0 1;
-#X obj 81 296 mknob 25 100 0 1 0 0 FX2-snd FX2-rcv FX2 -2 -6 0 8 -262144
--1 -1 0 1;
-#X obj 112 296 mknob 25 100 0 1 0 0 FX3-snd FX3-rcv FX3 -2 -6 0 8 -262144
--1 -1 2059 1;
-#X obj 143 296 mknob 25 100 0 1 0 0 FX4-snd FX4-rcv FX4 -2 -6 0 8 -262144
--1 -1 3337 1;
-#X obj 175 296 mknob 25 100 0 1 0 0 FX5-snd FX5-rcv FX5 -2 -6 0 8 -262144
--1 -1 0 1;
-#X obj 206 296 mknob 25 100 0 1 0 0 FX6-snd FX6-rcv FX6 -2 -6 0 8 -262144
--1 -1 2550 1;
-#X obj 237 296 mknob 25 100 0 1 0 0 FX7-snd FX7-rcv FX7 -2 -6 0 8 -262144
--1 -1 4031 1;
-#X obj 268 296 mknob 25 100 0 1 0 0 FX8-snd FX8-rcv FX8 -2 -6 0 8 -262144
--1 -1 57 1;
-#X obj 139 93 mknob 25 100 0 1 0 0 FX9-snd FX9-rcv FX9 -2 -6 0 8 -262144
--1 -1 0 1;
-#X obj 49 254 mknob 25 100 0 1 0 0 Sel1-snd Sel1-rcv Sel1 -2 -6 0 8
--262144 -1 -1 3599 1;
-#X obj 80 254 mknob 25 100 0 1 0 0 Sel2-snd Sel2-rcv Sel2 -2 -6 0 8
--262144 -1 -1 2121 1;
-#X obj 111 254 mknob 25 100 0 1 0 0 Sel3-snd Sel3-rcv Sel3 -2 -6 0
-8 -262144 -1 -1 1758 1;
-#X obj 142 254 mknob 25 100 0 1 0 0 Sel4-snd Sel4-rcv Sel4 -2 -6 0
-8 -262144 -1 -1 7725 1;
-#X obj 174 254 mknob 25 100 0 1 0 0 Sel5-snd Sel5-rcv Sel5 -2 -6 0
-8 -262144 -1 -1 6237 1;
-#X obj 205 254 mknob 25 100 0 1 0 0 Sel6-snd Sel6-rcv Sel6 -2 -6 0
-8 -262144 -1 -1 2416 1;
-#X obj 236 254 mknob 25 100 0 1 0 0 Sel7-snd Sel7-rcv Sel7 -2 -6 0
+#X obj 184 280 mknob 25 100 0 1 0 0 Vol6-snd Vol6-rcv Vol6 -2 -6 0
 8 -262144 -1 -1 0 1;
-#X obj 267 254 mknob 25 100 0 1 0 0 Sel8-snd Sel8-rcv Sel8 -2 -6 0
-8 -262144 -1 -1 9714 1;
-#X obj 78 207 mknob 25 100 0 1 0 0 Vol123-snd Vol123-rcv Vol123 -2
--6 0 8 -262144 -1 -1 10 1;
-#X obj 202 205 mknob 25 100 0 1 0 0 Vol456-snd Vol456-rcv Vol456 -2
+#X obj 215 280 mknob 25 100 0 1 0 0 Vol7-snd Vol7-rcv Vol7 -2 -6 0
+8 -262144 -1 -1 8247 1;
+#X obj 246 280 mknob 25 100 0 1 0 0 Vol8-snd Vol8-rcv Vol8 -2 -6 0
+8 -262144 -1 -1 6139 1;
+#X obj 119 76 mknob 25 100 0 1 0 0 Vol9-snd Vol9-rcv Vol9 -2 -6 0 8
+-262144 -1 -1 0 1;
+#X obj 30 236 mknob 25 100 0 1 0 0 FX1-snd FX1-rcv FX1 -2 -6 0 8 -262144
+-1 -1 14 1;
+#X obj 61 236 mknob 25 100 0 1 0 0 FX2-snd FX2-rcv FX2 -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 92 236 mknob 25 100 0 1 0 0 FX3-snd FX3-rcv FX3 -2 -6 0 8 -262144
+-1 -1 6314 1;
+#X obj 123 236 mknob 25 100 0 1 0 0 FX4-snd FX4-rcv FX4 -2 -6 0 8 -262144
+-1 -1 2213 1;
+#X obj 155 236 mknob 25 100 0 1 0 0 FX5-snd FX5-rcv FX5 -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 186 236 mknob 25 100 0 1 0 0 FX6-snd FX6-rcv FX6 -2 -6 0 8 -262144
+-1 -1 9233 1;
+#X obj 217 236 mknob 25 100 0 1 0 0 FX7-snd FX7-rcv FX7 -2 -6 0 8 -262144
+-1 -1 6017 1;
+#X obj 248 236 mknob 25 100 0 1 0 0 FX8-snd FX8-rcv FX8 -2 -6 0 8 -262144
+-1 -1 6925 1;
+#X obj 119 33 mknob 25 100 0 1 0 0 FX9-snd FX9-rcv FX9 -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 29 194 mknob 25 100 0 1 0 0 Sel1-snd Sel1-rcv Sel1 -2 -6 0 8
+-262144 -1 -1 511 1;
+#X obj 60 194 mknob 25 100 0 1 0 0 Sel2-snd Sel2-rcv Sel2 -2 -6 0 8
+-262144 -1 -1 0 1;
+#X obj 91 194 mknob 25 100 0 1 0 0 Sel3-snd Sel3-rcv Sel3 -2 -6 0 8
+-262144 -1 -1 512 1;
+#X obj 122 194 mknob 25 100 0 1 0 0 Sel4-snd Sel4-rcv Sel4 -2 -6 0
+8 -262144 -1 -1 3512 1;
+#X obj 154 194 mknob 25 100 0 1 0 0 Sel5-snd Sel5-rcv Sel5 -2 -6 0
+8 -262144 -1 -1 4595 1;
+#X obj 185 194 mknob 25 100 0 1 0 0 Sel6-snd Sel6-rcv Sel6 -2 -6 0
+8 -262144 -1 -1 6922 1;
+#X obj 216 194 mknob 25 100 0 1 0 0 Sel7-snd Sel7-rcv Sel7 -2 -6 0
+8 -262144 -1 -1 0 1;
+#X obj 247 194 mknob 25 100 0 1 0 0 Sel8-snd Sel8-rcv Sel8 -2 -6 0
+8 -262144 -1 -1 7542 1;
+#X obj 58 147 mknob 25 100 0 1 0 0 Vol123-snd Vol123-rcv Vol123 -2
 -6 0 8 -262144 -1 -1 0 1;
-#X obj 225 99 mknob 25 100 0 1 0 0 VolGen-snd VolGen-rcv VolGen -2
--6 0 8 -262144 -1 -1 9246 1;
-#X obj 50 407 tgl 20 0 Play1-snd Play1-rcv Play1 -2 28 0 8 -262144
+#X obj 182 145 mknob 25 100 0 1 0 0 Vol456-snd Vol456-rcv Vol456 -2
+-6 0 8 -262144 -1 -1 0 1;
+#X obj 205 39 mknob 25 100 0 1 0 0 VolGen-snd VolGen-rcv VolGen -2
+-6 0 8 -262144 -1 -1 0 1;
+#X obj 30 347 tgl 20 0 Play1-snd Play1-rcv Play1 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 53 378 tgl 15 0 Led1-snd Led1-rcv Led1 -2 22 0 8 -262144 -1
+#X obj 33 318 tgl 15 0 Led1-snd Led1-rcv Led1 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 82 407 tgl 20 0 Play2-snd Play2-rcv Play2 -2 28 0 8 -262144
+#X obj 62 347 tgl 20 0 Play2-snd Play2-rcv Play2 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 85 378 tgl 15 0 Led2-snd Led2-rcv Led2 -2 22 0 8 -262144 -1
+#X obj 65 318 tgl 15 0 Led2-snd Led2-rcv Led2 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 112 407 tgl 20 0 Play3-snd Play3-rcv Play3 -2 28 0 8 -262144
+#X obj 92 347 tgl 20 0 Play3-snd Play3-rcv Play3 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 115 378 tgl 15 0 Led3-snd Led3-rcv Led3 -2 22 0 8 -262144 -1
+#X obj 95 318 tgl 15 0 Led3-snd Led3-rcv Led3 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 144 407 tgl 20 0 Play4-snd Play4-rcv Play4 -2 28 0 8 -262144
+#X obj 124 347 tgl 20 0 Play4-snd Play4-rcv Play4 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 147 378 tgl 15 0 Led4-snd Led4-rcv Led4 -2 22 0 8 -262144 -1
+#X obj 127 318 tgl 15 0 Led4-snd Led4-rcv Led4 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 176 407 tgl 20 0 Play5-snd Play5-rcv Play5 -2 28 0 8 -262144
+#X obj 156 347 tgl 20 0 Play5-snd Play5-rcv Play5 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 179 378 tgl 15 0 Led5-snd Led5-rcv Led5 -2 22 0 8 -262144 -1
+#X obj 159 318 tgl 15 0 Led5-snd Led5-rcv Led5 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 208 407 tgl 20 0 Play6-snd Play6-rcv Play6 -2 28 0 8 -262144
+#X obj 188 347 tgl 20 0 Play6-snd Play6-rcv Play6 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 211 378 tgl 15 0 Led6-snd Led6-rcv Led6 -2 22 0 8 -262144 -1
+#X obj 191 318 tgl 15 0 Led6-snd Led6-rcv Led6 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 238 407 tgl 20 0 Play7-snd Play7-rcv Play7 -2 28 0 8 -262144
+#X obj 218 347 tgl 20 0 Play7-snd Play7-rcv Play7 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 241 378 tgl 15 0 Led7-snd Led7-rcv Led7 -2 22 0 8 -262144 -1
+#X obj 221 318 tgl 15 0 Led7-snd Led7-rcv Led7 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 270 407 tgl 20 0 Play8-snd Play8-rcv Play8 -2 28 0 8 -262144
+#X obj 250 347 tgl 20 0 Play8-snd Play8-rcv Play8 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 273 378 tgl 15 0 Led8-snd Led8-rcv Led8 -2 22 0 8 -262144 -1
+#X obj 253 318 tgl 15 0 Led8-snd Led8-rcv Led8 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 141 200 tgl 20 0 Play9-snd Play9-rcv Play9 -2 28 0 8 -262144
+#X obj 121 140 tgl 20 0 Play9-snd Play9-rcv Play9 -2 28 0 8 -262144
 -1 -1 0 1;
-#X obj 144 171 tgl 15 0 Led9-snd Led9-rcv Led9 -2 22 0 8 -262144 -1
+#X obj 124 111 tgl 15 0 Led9-snd Led9-rcv Led9 -2 22 0 8 -262144 -1
 -1 0 1;
-#X obj 71 102 tgl 20 0 Shift-snd Shift-rcv Shift -2 28 0 8 -262144
--1 -1 0 1;
-#X obj 305 387 ../domoNet;
-#X obj 76 621 r CLOCK;
-#X obj 76 643 unpack f f;
-#X floatatom 76 665 5 0 0 0 - - -, f 5;
-#X floatatom 165 722 5 0 0 0 - - -, f 5;
-#X obj 87 713 bng 50 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 51 42 tgl 20 0 Shift-snd Shift-rcv Shift -2 28 0 8 -262144 -1
+-1 0 1;
+#X obj 14 505 r CLOCK;
+#X obj 19 593 unpack f f;
+#X floatatom 19 615 5 0 0 0 - - -, f 5;
+#X floatatom 63 630 5 0 0 0 - - -, f 5;
+#X obj 30 663 bng 50 50 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 276 713 s /BPM;
-#X floatatom 221 621 5 0 0 0 - - -, f 5;
-#X msg 275 666 160;
-#X obj 19 488 OUTvu 1;
-#X obj 54 485 OUTvu 2;
-#X obj 121 473 MASTERSvol;
-#X obj 300 521 r /BPM;
-#X floatatom 300 543 5 0 0 0 - - -, f 5;
-#X msg 321 673 120;
-#X obj 243 456 BBdec Batteries 1;
-#X msg 299 608 90;
-#X obj 244 475 l BBdec Electros 2;
-#X obj 245 497 l BBdec Percus 3;
+#X obj 205 647 s /BPM;
+#X floatatom 241 553 5 0 0 0 - - -, f 5;
+#X msg 184 572 160;
+#X obj 347 246 OUTvu 1;
+#X obj 377 246 OUTvu 2;
+#X obj 427 231 MASTERSvol;
+#X obj 120 514 r /BPM;
+#X floatatom 120 536 5 0 0 0 - - -, f 5;
+#X msg 230 579 120;
+#X msg 229 621 90;
+#X obj 315 18 MasterBlaster;
+#X msg 297 536 1;
+#X text 288 516 stop;
+#X obj 15 402 ../domoNet;
+#X obj 14 474 MAINDIR;
+#N canvas 2055 855 324 230 BPM/Vol 0;
+#X obj 9 17 r VolGen-snd;
+#X obj 54 39 r Shift-snd;
+#X obj 54 59 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 68 180 s /BPM;
+#X obj 68 157 * 300;
+#X obj 154 143 bng 15 250 50 0 empty empty stop 17 7 0 10 -262144 -1
+-1;
+#X msg 154 164 1;
+#X obj 9 162 outlet;
+#X floatatom 154 127 5 0 0 0 - - -, f 5;
+#X obj 68 134 crossPot2;
+#X obj 146 62 r /BPM;
+#X obj 9 101 crossPot;
+#X obj 108 90 / 300;
+#X obj 54 80 == 0;
+#X obj 161 16 loadbang;
+#X msg 161 38 0;
+#X floatatom 26 130 5 0 0 0 - - -, f 5;
+#X connect 0 0 11 0;
+#X connect 0 0 9 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 1;
+#X connect 2 0 13 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 9 0 4 0;
+#X connect 10 0 8 0;
+#X connect 10 0 12 0;
+#X connect 11 0 7 0;
+#X connect 11 0 16 0;
+#X connect 12 0 9 2;
+#X connect 13 0 11 1;
+#X connect 14 0 15 0;
+#X connect 15 0 2 0;
+#X coords 0 -1 1 1 60 60 1 150 100;
+#X restore 427 72 pd BPM/Vol;
+#X obj 263 652 s /GAMME;
+#X obj 330 650 s /BASS;
+#X obj 392 652 s /CHORD;
+#X msg 267 632 2741;
+#X msg 329 626 16;
+#X msg 389 626 145;
+#X obj 330 568 del 250;
+#X obj 334 540 loadbang;
+#X obj 299 247 INvu 1;
+#X obj 15 544 route list;
+#X obj 397 432 Vocal Mic 9;
+#X obj 395 402 Melo Juno 8;
+#X obj 283 398 Rythme Kick 4;
+#X obj 132 398 BBdec Batteries 1;
+#X obj 133 418 BBdec Electros 2;
+#X obj 135 439 BBdec Percus 3;
+#X obj 278 418 Rythme Snare 5;
+#X obj 274 439 Rythme HH 6;
+#X obj 276 466 Rythme Bass 7;
+#X connect 51 0 81 0;
 #X connect 52 0 53 0;
-#X connect 53 0 54 0;
-#X connect 53 1 55 0;
-#X connect 54 0 56 0;
-#X connect 58 0 57 0;
-#X connect 59 0 57 0;
-#X connect 63 0 64 0;
-#X connect 65 0 57 0;
-#X connect 67 0 57 0;
+#X connect 52 1 54 0;
+#X connect 53 0 55 0;
+#X connect 57 0 56 0;
+#X connect 58 0 56 0;
+#X connect 62 0 63 0;
+#X connect 64 0 56 0;
+#X connect 65 0 56 0;
+#X connect 67 0 56 0;
+#X connect 71 0 61 0;
+#X connect 75 0 72 0;
+#X connect 76 0 73 0;
+#X connect 77 0 74 0;
+#X connect 78 0 65 0;
+#X connect 78 0 75 0;
+#X connect 78 0 76 0;
+#X connect 78 0 77 0;
+#X connect 79 0 78 0;
+#X connect 81 0 52 0;

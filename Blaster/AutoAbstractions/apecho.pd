@@ -1,4 +1,4 @@
-#N canvas 205 191 486 119 10;
+#N canvas 202 990 486 119 10;
 #X obj 312 46 namecanvas \$0-can;
 #X obj 312 25 s \$0-can;
 #X msg 312 4 donecanvasdialog 1 -1 0;
@@ -8,14 +8,14 @@
 #X obj 221 36 outlet~;
 #X obj 653 37 inlet;
 #X obj 653 58 s \$0-setap-snd;
-#N canvas 100 440 530 335 guts 0;
+#N canvas 97 990 530 335 guts 0;
 #X obj 105 17 inlet~;
 #X obj 38 302 outlet~;
 #X obj 38 276 mull~ 0 10;
 #X obj 73 255 r \$0-vol-snd;
 #X obj 106 202 delwrite~ \$0-D 1000;
 #X obj 14 57 delread~ \$0-D 1000;
-#N canvas 2164 596 472 593 tempo 0;
+#N canvas 2158 594 472 593 tempo 1;
 #X obj 102 64 i;
 #X msg 309 172 1 16;
 #X msg 291 151 1 12;
@@ -41,9 +41,10 @@
 #X msg 331 150 1 32;
 #X msg 348 173 1 48;
 #X msg 366 150 1 64;
-#X obj 42 284 r SYNCHRO-clock;
 #X obj 102 -2 - 1;
 #X obj 102 18 abs;
+#X obj 39 242 r CLOCK;
+#X obj 40 283 route list;
 #X connect 0 0 20 0;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
@@ -59,7 +60,7 @@
 #X connect 12 0 4 0;
 #X connect 13 0 4 0;
 #X connect 15 0 18 1;
-#X connect 16 0 26 0;
+#X connect 16 0 25 0;
 #X connect 17 1 18 0;
 #X connect 18 0 14 0;
 #X connect 19 0 0 0;
@@ -83,9 +84,10 @@
 #X connect 22 0 4 0;
 #X connect 23 0 4 0;
 #X connect 24 0 4 0;
-#X connect 25 0 17 0;
-#X connect 26 0 27 0;
-#X connect 27 0 19 0;
+#X connect 25 0 26 0;
+#X connect 26 0 19 0;
+#X connect 27 0 28 0;
+#X connect 28 0 17 0;
 #X restore 13 36 pd tempo;
 #X obj 95 116 lop~ 100;
 #X obj 147 56 r \$0-filtre-snd;
@@ -124,13 +126,13 @@
 #X restore 168 37 pd guts;
 #X obj 125 37 inlet~;
 #X obj 41 32 mknob 15 100 0 1 0 0 \$0-feed-snd \$0-feed-rcv feed -2
--6 193 8 -257472 -1 -1 0 1;
+-6 1 8 -257472 -1 -1 0 1;
 #X obj 105 28 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv vol -2 -6
-193 8 -258699 -1 -1 9900 1;
+1 8 -258699 -1 -1 6257 1;
 #X obj 10 30 mknob 15 100 0 1 0 0 \$0-time-snd \$0-time-rcv time -2
--6 193 8 -241291 -1 -1 9900 1;
+-6 1 8 -241291 -1 -1 6764 1;
 #X obj 72 31 mknob 15 100 0 1 0 0 \$0-filtre-snd \$0-filtre-rcv filtre
--2 -6 193 8 -225280 -1 -1 0 1;
+-2 -6 1 8 -225280 -1 -1 0 1;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 6 0 7 0;

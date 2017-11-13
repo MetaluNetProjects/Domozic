@@ -1,5 +1,5 @@
-#N canvas 1913 595 568 304 8;
-#N canvas 1806 143 909 756 guts 0;
+#N canvas 1597 794 568 304 8;
+#N canvas 1797 140 909 756 guts 1;
 #X obj 151 170 sig~;
 #X obj 172 143 mtof;
 #X obj 172 28 inlet;
@@ -10,7 +10,7 @@
 #X obj 208 225 sig~;
 #X obj 208 245 s~ \$0-keyscale;
 #X obj 89 401 sig~;
-#N canvas 1 297 901 408 envelopes 0;
+#N canvas 0 990 901 408 envelopes 0;
 #X obj 499 192 t a a;
 #X obj 60 184 t a a b;
 #X obj 276 189 t a a b;
@@ -89,7 +89,7 @@
 #X obj 158 298 sig~;
 #X obj 158 261 r \$0-mod1b;
 #X obj 144 490 r~ \$0-keyscale;
-#N canvas 0 0 848 695 vibdel 0;
+#N canvas 0 50 848 695 vibdel 0;
 #X obj 392 194 f 0;
 #X msg 392 219 0 \, 1 \$1;
 #X obj 409 161 * 3000;
@@ -121,7 +121,7 @@
 #X obj 172 75 unpack f f f;
 #X obj 240 111 sel 1;
 #X obj 133 560 s~ \$0-f0;
-#N canvas 0 0 450 300 lfo 0;
+#N canvas 0 50 450 300 lfo 0;
 #X obj 99 104 *~ -1;
 #X obj 77 155 min~;
 #X obj 99 129 +~ 1;
@@ -162,7 +162,7 @@
 #X obj 530 483 +~ 30;
 #X obj 388 522 vcf~ 1.6;
 #X obj 358 347 *~;
-#N canvas 0 0 348 187 oct 0;
+#N canvas 0 50 348 187 oct 0;
 #X obj 86 133 pow;
 #X obj 86 108 swap 2;
 #X obj 88 65 - 2;
@@ -184,7 +184,7 @@
 #X restore 370 305 pd oct;
 #X obj 370 326 sig~;
 #X obj 543 344 *~;
-#N canvas 0 0 348 187 oct 0;
+#N canvas 0 50 348 187 oct 0;
 #X obj 88 114 pow;
 #X obj 88 89 swap 2;
 #X obj 88 65 - 2;
@@ -207,7 +207,7 @@
 #X obj 388 539 vcf~ 1.6;
 #X obj 451 374 s_blsquare;
 #X obj 450 322 *~;
-#N canvas 0 0 348 187 oct 0;
+#N canvas 0 50 348 187 oct 0;
 #X obj 88 114 pow;
 #X obj 88 89 swap 2;
 #X obj 88 65 - 2;
@@ -234,7 +234,7 @@
 #X text 439 471 resonance;
 #X obj 564 282 r \$0-osc3a;
 #X obj 371 275 r \$0-osc1a;
-#N canvas 0 0 450 300 xf 0;
+#N canvas 0 50 450 300 xf 0;
 #X obj 76 87 inlet~;
 #X obj 142 87 inlet~;
 #X obj 77 198 outlet~;
@@ -250,7 +250,7 @@
 #X restore 387 447 pd xf;
 #X obj 410 406 r \$0-osc1b;
 #X obj 409 424 sig~;
-#N canvas 0 0 450 300 xf 0;
+#N canvas 0 50 450 300 xf 0;
 #X obj 76 87 inlet~;
 #X obj 142 87 inlet~;
 #X obj 77 198 outlet~;
@@ -301,7 +301,7 @@
 #X obj 248 430 *~;
 #X obj 249 448 *~;
 #X obj 259 369 *~ 2;
-#N canvas 0 0 450 300 xf 0;
+#N canvas 0 50 450 300 xf 0;
 #X obj 76 87 inlet~;
 #X obj 142 87 inlet~;
 #X obj 77 198 outlet~;
@@ -501,6 +501,8 @@ synthesiser sounds \, ajf 2010;
 #X obj 15 41 juno-param \$0 \$1 \$2 env1a AMP-ATTACK;
 #X obj 15 55 juno-param \$0 \$1 \$2 env1d AMP-DECAY;
 #X obj 353 136 apsubmaster \$1-\$3 \$1-\$2 \$3;
+#X floatatom 429 39 5 0 0 0 - - -, f 5;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
+#X connect 1 0 51 0;
 #X coords 0 -1 1 1 311 232 1 10 10;
