@@ -1,4 +1,4 @@
-#N canvas 782 74 639 649 10;
+#N canvas 727 79 639 649 10;
 #X declare -path ../absGAMME;
 #X declare -stdpath iemlib -lib iemlib1 -stdpath moonlib -lib zexy
 ;
@@ -7,14 +7,14 @@
 #X obj 42 11 loadbang;
 #X msg 42 33 \; pd dsp 1;
 #X obj 41 72 declare -path ../absGAMME;
-#N canvas 195 229 1061 545 MASTERaudio 0;
+#N canvas 188 221 1061 545 MASTERaudio 1;
 #X obj 118 60 catch~ MASTER;
-#X obj 80 329 z~ 64;
-#X obj 116 363 *~;
-#X obj 117 253 *~;
-#X obj 111 390 dac~;
+#X obj 87 375 z~ 64;
+#X obj 123 409 *~;
+#X obj 124 299 *~;
+#X obj 114 500 dac~;
 #X obj 291 14 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12684 1;
+-1 -1 12681 1;
 #X obj 291 161 pow 2;
 #X msg 291 183 \$1 50;
 #X obj 291 205 line~;
@@ -119,24 +119,25 @@
 #X obj 151 137 mull~ 0 50;
 #X obj 286 255 mull~ 0 50;
 #X obj 335 67 r MASTERVOL;
-#X obj 135 332 limiter~ 10 1;
+#X obj 142 378 limiter~ 10 1;
 #X obj 227 58 r FXMIX;
 #X obj 227 80 pow 2;
 #X obj 152 87 lop~ 1000;
 #X obj 152 113 hip~ 150;
 #X obj 9 105 catch~ MASTER-CLEAN;
-#X connect 0 0 3 0;
+#X obj 118 253 hp6_butt~ 80;
+#X obj 124 435 hp6_butt~ 90;
 #X connect 0 0 37 0;
+#X connect 0 0 40 0;
 #X connect 1 0 2 0;
-#X connect 2 0 4 0;
-#X connect 2 0 4 1;
+#X connect 2 0 41 0;
 #X connect 3 0 1 0;
 #X connect 3 0 34 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 3 1;
-#X connect 9 0 3 0;
+#X connect 9 0 40 0;
 #X connect 10 0 11 0;
 #X connect 11 0 9 1;
 #X connect 12 0 13 0;
@@ -164,6 +165,9 @@
 #X connect 37 0 32 0;
 #X connect 37 0 38 0;
 #X connect 38 0 31 0;
+#X connect 40 0 3 0;
+#X connect 41 0 4 1;
+#X connect 41 0 4 0;
 #X restore 121 11 pd MASTERaudio;
 #X obj 512 44 r /BPM;
 #X floatatom 512 66 5 0 0 0 - - -, f 5;
@@ -409,7 +413,7 @@
 #X obj 271 383 accord;
 #X obj 211 265 moses 3;
 #X obj 211 286 s choixGamme;
-#N canvas 44 149 990 682 mic 1;
+#N canvas 41 86 990 682 mic 0;
 #X obj 75 10 adc~;
 #X obj 76 107 *~;
 #X obj 77 167 throw~ MASTER;
@@ -459,7 +463,7 @@
 #X obj 458 103 + 12;
 #X obj 708 480 r GROS_BOUTON;
 #X obj 708 502 sel 1;
-#X obj 708 526 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 708 526 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 769 574 s GROSSE_LED;
 #X obj 689 559 switch~;
