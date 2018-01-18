@@ -45,24 +45,25 @@
 #X obj 229 115 linkSJ \$0/syncer /BPM-;
 #X obj 39 66 l syncjams \$0/syncer \, bpm 10 \, namespace syncjams
 \, port 23232;
-#N canvas 290 490 559 300 SYNC 0;
-#X obj 155 24 r \$0/syncer;
-#X obj 155 50 route set-state;
-#X obj 128 178 spigot 0;
-#X obj 117 227 t f f;
-#X obj 118 205 netsend -u;
-#X obj 117 251 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#N canvas 290 363 559 427 SYNC 0;
+#X obj 75 71 r \$0/syncer;
+#X obj 75 97 route set-state;
+#X obj 94 223 spigot 0;
+#X obj 75 279 t f f;
+#X obj 75 257 netsend -u;
+#X obj 75 303 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 118 157 disconnect;
-#X obj 155 71 list prepend send;
-#X obj 155 92 list trim;
-#X msg 105 139 connect 255.255.255.255 17010;
-#X obj 253 247 print;
+#X msg 75 202 disconnect;
+#X obj 75 118 list prepend send;
+#X obj 75 139 list trim;
+#X msg 114 183 connect 255.255.255.255 17010;
+#X obj 223 306 print;
 #X obj 332 121 netreceive -u 17010;
 #X obj 332 164 list trim;
 #X obj 332 186 s \$0/syncer/r;
-#X obj 105 117 loadbang;
+#X obj 373 60 loadbang;
 #X obj 332 143 list prepend state null;
+#X obj 75 160 t b a b;
 #X connect 0 0 1 0;
 #X connect 1 0 7 0;
 #X connect 2 0 4 0;
@@ -71,12 +72,14 @@
 #X connect 4 0 3 0;
 #X connect 6 0 4 0;
 #X connect 7 0 8 0;
-#X connect 8 0 2 0;
+#X connect 8 0 16 0;
 #X connect 9 0 4 0;
 #X connect 11 0 15 0;
 #X connect 12 0 13 0;
-#X connect 14 0 9 0;
 #X connect 15 0 12 0;
+#X connect 16 0 6 0;
+#X connect 16 1 2 0;
+#X connect 16 2 9 0;
 #X restore 229 93 pd SYNC;
 #X obj 166 366 loadbang;
 #X msg 166 387 0 500;
