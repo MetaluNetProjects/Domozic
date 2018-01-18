@@ -1,118 +1,274 @@
-#N canvas 144 197 619 494 10;
+#N canvas 616 151 636 246 10;
 #X declare -path Fraise -stdpath Fraise;
-#X obj 22 237 analog/parse;
 #X obj 21 16 declare -path Fraise -stdpath Fraise;
-#X obj 145 278 route s;
-#X obj 145 300 route 0 1 2 3 4 5 6 7 8, f 31;
-#X obj 145 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 165 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 185 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 206 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 226 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 246 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 267 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 287 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 307 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 22 259 unpack f f;
-#X obj 22 306 pack f f;
-#X obj 79 281 / 16384;
 #X obj 21 38 pied/pied 0 41424;
-#X obj 259 277 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 34 337 unpack f f;
-#X floatatom 34 359 5 0 0 0 - - -, f 5;
-#X floatatom 102 364 5 0 0 0 - - -, f 5;
 #X text 271 19 8 hall-analogiques;
 #X text 271 32 2 axl dans les fers (?);
 #X text 273 77 un poussoir "mode" -> (+fer ou +chime);
 #X text 271 46 8 contacteurs (clés suspendues:chime);
 #X obj 18 140 fruit/fruit 1 fer1 10 fw;
-#X obj 22 207 fruit/receive fer1;
-#X obj 369 341 moses 6, f 14;
-#X obj 369 317 unpack f f, f 16;
-#X obj 369 382 pack f f;
-#X obj 450 384 pack f f;
-#X obj 369 407 s play_chime;
-#X obj 450 407 s play_repassage;
-#X obj 450 363 - 6;
-#N canvas 1 81 852 447 tmp 0;
-#X obj 339 334 unpack f f f f f f;
-#X floatatom 319 371 5 0 0 0 - - -, f 5;
-#X floatatom 372 370 5 0 0 0 - - -, f 5;
-#X floatatom 416 370 5 0 0 0 - - -, f 5;
-#X obj 340 301 r AXLSLOW1;
-#X obj 340 218 fruit/receive blaster3;
-#X obj 340 241 route 1;
-#X obj 340 263 axlprocess 1;
-#X obj 505 307 s AX-x;
-#X obj 620 306 s AX-y;
-#X obj 744 302 s AX-z;
-#X text 619 324 0=haut 1=bas;
-#X text 480 324 0=droite 1=gauche;
-#X text 725 318 0=verso 1=recto;
-#X obj 565 179 r AXLSLOW1;
-#X obj 565 210 unpack f f f;
-#X obj 507 258 + 1;
-#X obj 507 278 / 2;
-#X obj 622 260 + 1;
-#X obj 622 280 / 2;
-#X obj 743 252 + 1;
-#X obj 744 275 / 2;
-#X obj 59 77 fruit/fruit 1 blaster2 11 fw 1;
-#X obj 263 77 fruit/fruit 1 blaster3 12 fwAxl 1;
+#X text 270 62 analogs: vol_fer \, vol_chime \, fx_fers \, fx_chime
+;
+#N canvas 1 81 570 373 AXL 0;
+#X obj 25 173 unpack f f f f f f;
+#X floatatom 25 203 5 0 0 0 - - -, f 5;
+#X floatatom 78 203 5 0 0 0 - - -, f 5;
+#X floatatom 122 203 5 0 0 0 - - -, f 5;
+#X obj 25 143 r AXLSLOW1;
+#X obj 25 111 axlprocess 1;
+#X obj 230 143 s AX-x;
+#X obj 345 142 s AX-y;
+#X obj 469 138 s AX-z;
+#X text 344 160 0=haut 1=bas;
+#X text 205 160 0=droite 1=gauche;
+#X text 450 154 0=verso 1=recto;
+#X obj 232 36 r AXLSLOW1;
+#X obj 232 58 unpack f f f;
+#X obj 232 94 + 1;
+#X obj 232 114 / 2;
+#X obj 347 96 + 1;
+#X obj 347 116 / 2;
+#X obj 468 88 + 1;
+#X obj 469 111 / 2;
+#X obj 25 49 fruit/receive fer2;
+#X obj 25 72 route 1 2;
+#X obj 50 93 axlprocess 2;
+#X obj 28 286 unpack f f f f f f;
+#X floatatom 28 316 5 0 0 0 - - -, f 5;
+#X floatatom 81 316 5 0 0 0 - - -, f 5;
+#X floatatom 125 316 5 0 0 0 - - -, f 5;
+#X obj 28 256 r AXLSLOW2;
+#X obj 312 300 fruit/send fer2;
+#X msg 399 272 R;
+#X text 429 270 reset i2c/axl;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
 #X connect 4 0 0 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 15 1 18 0;
-#X connect 15 2 20 0;
-#X connect 16 0 17 0;
-#X connect 17 0 8 0;
-#X connect 18 0 19 0;
-#X connect 19 0 9 0;
-#X connect 20 0 21 0;
-#X connect 21 0 10 0;
-#X restore 444 18 pd tmp;
-#X text 270 62 analogs: vol_fer \, vol_chime \, fx_fers \, fx_chime
-;
-#X connect 0 0 13 0;
-#X connect 0 1 2 0;
-#X connect 2 0 3 0;
-#X connect 2 0 28 0;
-#X connect 3 0 4 0;
-#X connect 3 1 5 0;
-#X connect 3 2 6 0;
-#X connect 3 3 7 0;
-#X connect 3 4 8 0;
-#X connect 3 5 9 0;
-#X connect 3 6 10 0;
-#X connect 3 7 11 0;
-#X connect 3 8 12 0;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
-#X connect 13 1 15 0;
-#X connect 14 0 18 0;
-#X connect 15 0 14 1;
+#X connect 13 1 16 0;
+#X connect 13 2 18 0;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;
+#X connect 16 0 17 0;
+#X connect 17 0 7 0;
 #X connect 18 0 19 0;
-#X connect 18 1 20 0;
-#X connect 26 0 0 0;
+#X connect 19 0 8 0;
+#X connect 20 0 21 0;
+#X connect 21 0 5 0;
+#X connect 21 1 22 0;
+#X connect 23 0 24 0;
+#X connect 23 1 25 0;
+#X connect 23 2 26 0;
+#X connect 27 0 23 0;
+#X connect 29 0 28 1;
+#X restore 241 197 pd AXL;
+#N canvas 354 125 465 460 fer1 0;
+#X obj 9 85 analog/parse;
+#X obj 199 153 route s;
+#X obj 226 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 246 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 266 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 287 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 307 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 327 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 348 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 368 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 388 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 9 107 unpack f f;
+#X obj 9 154 pack f f;
+#X obj 66 129 / 16384;
+#X obj 258 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 84 182 unpack f f;
+#X floatatom 84 204 5 0 0 0 - - -, f 5;
+#X floatatom 152 209 5 0 0 0 - - -, f 5;
+#X obj 9 60 fruit/receive fer1;
+#X obj 199 240 unpack f f, f 11;
+#X obj 199 305 pack f f;
+#X obj 328 73 pack f f;
+#X obj 305 121 s play_chime;
+#X obj 328 96 s play_repassage;
+#X text 8 8 fer1 analogs: K5 \, K6 \, K7;
+#X text 37 22 switches: VNH2 (K10 \, K9 \, MB2 \, MBEN2 \, MBEN \,
+MB1) \, K1 \, K2 \, K3 \, K12, f 65;
+#X text 36 37 leds: K4;
+#X obj 9 233 route 0 1 2;
+#X obj 143 419 s REPASSE;
+#X msg 9 280 vol \$1;
+#X obj 226 199 route 0 1 2 3 4 5 6 7 8 9, f 35;
+#X obj 411 221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 280 349 mode \$1;
+#X obj 199 264 moses 9, f 14;
+#X obj 280 287 - 9;
+#X obj 280 308 sel 0;
+#X obj 280 329 f;
+#X msg 199 326 play \$1 \$2;
+#X obj 226 178 spigot;
+#X msg 54 281 fx \$1;
+#X msg 100 282 transpose \$1;
+#X msg 366 394 l0\$1;
+#X obj 366 374 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 273 425 fruit/send2 fer1;
+#X obj 366 337 r REPASSEled;
+#X connect 0 0 11 0;
+#X connect 0 1 1 0;
+#X connect 1 0 19 0;
+#X connect 1 0 38 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 12 0 15 0;
+#X connect 12 0 27 0;
+#X connect 13 0 12 1;
+#X connect 14 0 38 1;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 18 0 0 0;
+#X connect 19 0 33 0;
+#X connect 19 1 20 1;
+#X connect 19 1 36 1;
+#X connect 20 0 37 0;
+#X connect 21 0 23 0;
 #X connect 27 0 29 0;
-#X connect 27 1 33 0;
-#X connect 28 0 27 0;
-#X connect 28 1 29 1;
-#X connect 28 1 30 1;
-#X connect 29 0 31 0;
-#X connect 30 0 32 0;
-#X connect 33 0 30 0;
+#X connect 27 1 39 0;
+#X connect 27 2 40 0;
+#X connect 29 0 28 0;
+#X connect 30 0 2 0;
+#X connect 30 1 3 0;
+#X connect 30 2 4 0;
+#X connect 30 3 5 0;
+#X connect 30 4 6 0;
+#X connect 30 5 7 0;
+#X connect 30 6 8 0;
+#X connect 30 7 9 0;
+#X connect 30 8 10 0;
+#X connect 30 9 31 0;
+#X connect 32 0 28 0;
+#X connect 33 0 20 0;
+#X connect 33 1 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 32 0;
+#X connect 37 0 28 0;
+#X connect 38 0 30 0;
+#X connect 39 0 28 0;
+#X connect 40 0 28 0;
+#X connect 41 0 43 1;
+#X connect 42 0 41 0;
+#X connect 44 0 42 0;
+#X restore 17 194 pd fer1;
+#X obj 241 143 fruit/fruit 1 AXL 11 fwAxl 1;
+#X obj 463 143 fruit/fruit 1 fer2 12 fw 1;
+#N canvas 46 232 468 452 fer2 0;
+#X obj 15 54 fruit/receive fer2;
+#X obj 272 415 fruit/send2 fer2;
+#X msg 365 384 l0\$1;
+#X obj 365 364 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 15 80 analog/parse;
+#X obj 205 148 route s;
+#X obj 232 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 252 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 272 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 293 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 313 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 333 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 354 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 374 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 394 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 15 102 unpack f f;
+#X obj 15 149 pack f f;
+#X obj 72 124 / 16384;
+#X obj 264 151 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 90 177 unpack f f;
+#X floatatom 90 199 5 0 0 0 - - -, f 5;
+#X floatatom 158 204 5 0 0 0 - - -, f 5;
+#X obj 205 235 unpack f f, f 11;
+#X obj 205 300 pack f f;
+#X obj 15 228 route 0 1 2;
+#X msg 15 275 vol \$1;
+#X obj 232 194 route 0 1 2 3 4 5 6 7 8 9, f 35;
+#X obj 417 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 286 344 mode \$1;
+#X obj 205 259 moses 9, f 14;
+#X obj 286 282 - 9;
+#X obj 286 303 sel 0;
+#X obj 286 324 f;
+#X msg 205 321 play \$1 \$2;
+#X obj 232 173 spigot;
+#X msg 60 276 fx \$1;
+#X msg 106 277 transpose \$1;
+#X obj 149 414 s PORTANT;
+#X obj 365 341 r PORTANTled;
+#X text 40 21 switches: VNH2 (K10 \, K9 \, MB2 \, MBEN2 \, MBEN \,
+MB1) \, K1 \, K2 \, K3 \, K12, f 65;
+#X text 39 36 leds: K4;
+#X text 11 7 fer2 analogs: K5 \, K6 \, K7;
+#X connect 0 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 4 0 15 0;
+#X connect 4 1 5 0;
+#X connect 5 0 22 0;
+#X connect 5 0 34 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 16 0 19 0;
+#X connect 16 0 24 0;
+#X connect 17 0 16 1;
+#X connect 18 0 34 1;
+#X connect 19 0 20 0;
+#X connect 19 1 21 0;
+#X connect 22 0 29 0;
+#X connect 22 1 23 1;
+#X connect 22 1 32 1;
+#X connect 23 0 33 0;
+#X connect 24 0 25 0;
+#X connect 24 1 35 0;
+#X connect 24 2 36 0;
+#X connect 25 0 37 0;
+#X connect 26 0 6 0;
+#X connect 26 1 7 0;
+#X connect 26 2 8 0;
+#X connect 26 3 9 0;
+#X connect 26 4 10 0;
+#X connect 26 5 11 0;
+#X connect 26 6 12 0;
+#X connect 26 7 13 0;
+#X connect 26 8 14 0;
+#X connect 26 9 27 0;
+#X connect 28 0 37 0;
+#X connect 29 0 23 0;
+#X connect 29 1 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 28 0;
+#X connect 33 0 37 0;
+#X connect 34 0 26 0;
+#X connect 35 0 37 0;
+#X connect 36 0 37 0;
+#X connect 38 0 3 0;
+#X restore 462 198 pd fer2;

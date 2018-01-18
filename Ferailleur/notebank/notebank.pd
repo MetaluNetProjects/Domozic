@@ -1,4 +1,4 @@
-#N canvas 779 334 537 506 10;
+#N canvas 779 262 537 506 10;
 #X obj 24 79 table notelength-\$1 \$2;
 #X obj 26 174 tabread notelength-\$1;
 #X floatatom 26 196 8 0 0 0 - - -, f 8;
@@ -37,6 +37,11 @@
 #X obj 24 273 route setaccord getprops, f 52;
 #X text 62 299 auto-save;
 #X obj 24 299 t a b;
+#X obj 386 293 s notelength-\$1;
+#X obj 397 270 s noteaccord-\$1;
+#X msg 397 245 resize \$1;
+#X obj 397 203 f \$2;
+#X obj 397 224 + 1;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
 #X connect 5 0 10 0;
@@ -44,6 +49,7 @@
 #X connect 8 0 31 0;
 #X connect 10 0 24 0;
 #X connect 11 0 12 0;
+#X connect 11 0 37 0;
 #X connect 12 0 13 0;
 #X connect 15 0 12 0;
 #X connect 17 0 18 1;
@@ -61,3 +67,7 @@
 #X connect 31 1 26 0;
 #X connect 33 0 16 0;
 #X connect 33 1 30 0;
+#X connect 36 0 35 0;
+#X connect 36 0 34 0;
+#X connect 37 0 38 0;
+#X connect 38 0 36 0;
