@@ -47,8 +47,8 @@
 #X obj 45 644 b;
 #X obj 45 665 del 10;
 #X obj 318 14 declare -stdpath moonlib -stdpath ggee;
-#X obj 365 143 getdir;
-#X obj 365 213 shell;
+#X obj 365 201 getdir;
+#X obj 365 271 shell;
 #X obj 365 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 132 188 disconnect \, connect localhost 17000;
@@ -57,32 +57,34 @@
 #X obj 330 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 123 585 ndmetro 4 2;
-#X obj 412 439 switch~;
+#X obj 403 657 switch~;
 #X obj 204 9 inlet BPM;
 #X obj 302 588 outlet BEAT/BPM;
 #X obj 302 547 pack f f;
 #X msg 302 567 \$2 \$1;
 #X obj 295 150 del 500;
-#X obj 459 330 del 2000;
-#X obj 452 271 sel 0 1;
-#X obj 452 251 change;
-#X msg 496 301 stop;
-#X msg 459 351 1;
-#X obj 459 391 metro 5000;
-#X msg 495 351 0;
-#X obj 459 371 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 452 386 del 2000;
+#X obj 445 327 sel 0 1;
+#X obj 445 307 change;
+#X msg 489 357 stop;
+#X msg 452 407 1;
+#X obj 452 447 metro 5000;
+#X msg 488 407 0;
+#X obj 452 427 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 414 143 sudo pkill -f /Carabiner;
-#X msg 365 173 systemd-run --user \$1/linux64/Carabiner;
+#X msg 414 201 pkill -f /Carabiner;
+#X msg 365 231 systemd-run --user \$1/linux64/Carabiner;
 #X obj 511 78 Fraise/pied/intern/demux_arch;
 #X obj 484 37 loadbang;
 #X obj 484 58 t b b;
-#X msg 682 101 set sudo systemd-run --system \, adddollsym 1/rPi/Carabiner
+#X msg 663 146 set sudo systemd-run --system \, adddollsym 1/rPi/Carabiner
 , f 25;
-#X msg 518 100 set systemd-run --user \, adddollsym 1/linux64/Carabiner
+#X msg 499 145 set systemd-run --user \, adddollsym 1/linux64/Carabiner
 , f 25;
 #X obj 454 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X msg 651 111 set sudo pkill -f /Carabiner;
+#X msg 503 111 set pkill -f /Carabiner;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 2 0 51 0;
@@ -169,7 +171,9 @@
 #X connect 69 0 48 0;
 #X connect 70 0 48 0;
 #X connect 71 1 75 0;
+#X connect 71 1 78 0;
 #X connect 71 2 74 0;
+#X connect 71 2 77 0;
 #X connect 72 0 73 0;
 #X connect 73 0 49 0;
 #X connect 73 0 61 0;
@@ -177,3 +181,5 @@
 #X connect 74 0 70 0;
 #X connect 75 0 70 0;
 #X connect 76 0 73 0;
+#X connect 77 0 69 0;
+#X connect 78 0 69 0;
