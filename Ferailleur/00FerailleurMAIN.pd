@@ -15,7 +15,7 @@
 #X obj 29 93 ../domoNet;
 #X obj 365 29 route list;
 #X obj 365 154 GAMMEKBV /GAMME;
-#N canvas 70 396 522 372 notebanks 1;
+#N canvas 70 396 522 372 notebanks 0;
 #X obj 27 9 declare -path notebank;
 #X obj 246 20 accorder;
 #X obj 25 63 notebank 1 7 Chants/ChantsAurore;
@@ -176,7 +176,7 @@
 #X obj 348 307 r REPASSE;
 #X obj 348 328 route fx;
 #X obj 675 265 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8000 1;
+-1 -1 0 1;
 #X obj 212 38 metro 1000;
 #X obj 219 17 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
