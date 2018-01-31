@@ -1,4 +1,4 @@
-#N canvas 773 81 643 424 10;
+#N canvas 773 81 407 357 10;
 #X declare -path ../absGAMME;
 #X declare -stdpath iemlib -lib iemlib1 -stdpath moonlib -lib zexy
 -stdpath cyclone -lib cyclone;
@@ -8,7 +8,6 @@
 #X msg 42 33 \; pd dsp 1;
 #X obj 41 105 Archet 1;
 #X obj 41 72 declare -path ../absGAMME;
-#X obj 258 80 ../domoNet;
 #N canvas 38 98 870 605 MASTERaudio 0;
 #X obj 83 119 catch~ MASTER;
 #X obj 83 491 z~ 64;
@@ -16,7 +15,7 @@
 #X obj 84 418 *~;
 #X obj 83 562 dac~;
 #X obj 291 25 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 2272 1;
 #X obj 291 161 pow 2;
 #X msg 291 183 \$1 50;
 #X obj 291 205 line~;
@@ -128,7 +127,7 @@
 -lib zexy -stdpath cyclone -lib cyclone;
 #X obj 83 164 atan~;
 #X obj 242 6 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4804 1;
+-1 -1 0 1;
 #X obj 242 142 pow 3;
 #X obj 242 164 * 100;
 #X msg 133 154 \$1 50;
@@ -264,15 +263,15 @@
 #X connect 58 0 56 0;
 #X restore 121 11 pd MASTERaudio;
 #X obj 42 134 Orgue 2;
-#X obj 512 44 r /BPM;
-#X floatatom 512 66 5 0 0 0 - - -, f 5;
-#X obj 477 148 GAMMEKBV /BASS 1;
-#X obj 477 84 GAMMEKBV /GAMME;
-#X obj 477 211 GAMMEKBV /CHORD;
-#X obj 503 322 s /BPM;
-#X floatatom 485 290 5 0 0 0 - - -, f 5;
-#X msg 535 291 120;
-#X msg 569 292 150;
+#X obj 280 106 r /BPM;
+#X floatatom 280 128 5 0 0 0 - - -, f 5;
+#X obj 176 171 GAMMEKBV /BASS 1;
+#X obj 176 107 GAMMEKBV /GAMME;
+#X obj 176 234 GAMMEKBV /CHORD;
+#X obj 83 272 s /BPM;
+#X floatatom 65 240 5 0 0 0 - - -, f 5;
+#X msg 106 238 120;
+#X msg 139 238 150;
 #N canvas 379 269 846 556 PHONEnotes 0;
 #X obj 40 254 r PHONEkeys;
 #X msg 215 156 -1;
@@ -434,7 +433,7 @@
 #X restore 258 34 pd PHONEnotes;
 #N canvas 170 196 841 316 PHONEgamme 1;
 #X obj 6 11 seq8 GAMMESEQ;
-#N canvas 37 527 847 329 keys 1;
+#N canvas 357 429 847 329 keys 1;
 #X obj 50 25 declare -path ../seqGAMME;
 #X obj 51 58 r PHONEkeysPage;
 #X obj 51 102 unpack f f;
@@ -539,10 +538,11 @@
 #X connect 50 4 40 0;
 #X restore 8 284 pd keys;
 #X restore 258 57 pd PHONEgamme;
-#X msg 433 289 1;
+#X msg 34 238 1;
+#X obj 258 80 ../domoNet Radio;
 #X connect 1 0 2 0;
-#X connect 8 0 9 0;
-#X connect 14 0 13 0;
-#X connect 15 0 13 0;
-#X connect 16 0 13 0;
-#X connect 19 0 13 0;
+#X connect 7 0 8 0;
+#X connect 13 0 12 0;
+#X connect 14 0 12 0;
+#X connect 15 0 12 0;
+#X connect 18 0 12 0;
