@@ -718,27 +718,27 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X obj 203 300 param \$1 SETTING gamnum;
 #X msg 427 248 0.5;
 #X msg 462 248 0.5;
-#X obj 413 89 mknob 30 100 0 1 0 0 \$1-Tempo-snd \$1-Tempo-rcv tempo_4
--2 -6 0 8 -241291 -1 -4160 4462 1;
+#X obj 413 89 mknob 30 100 0 1 0 0 \$1-Tempo-snd \$1-Tempo-rcv tempo_8
+-2 -6 0 8 -241291 -1 -4160 6662 1;
 #X obj 372 117 mknob 30 100 0 1 0 0 \$1-STEPnumCtl-snd \$1-STEPnumCtl-rcv
 step_4 -2 -6 0 8 -159808 -1 -4034 3922 1;
 #X obj 337 89 mknob 30 100 0 1 0 0 \$1-PhraseNum-snd \$1-PhraseNum-rcv
-Phrase -2 -6 0 8 -45076 -1 -4034 0 1;
+Phrase -2 -6 0 8 -45076 -1 -4034 10 1;
 #X obj 305 116 mknob 30 100 0 1 0 0 \$1-Reverb-snd \$1-Reverb-rcv Reverb
 -2 -6 0 8 -4034 -1 -258113 0 1;
-#N canvas 2494 716 285 327 apfs 0;
+#N canvas 2494 770 285 327 apfs 0;
 #X obj 34 49 param \$1 FX STEPnumCtl;
-#X obj 38 24 param \$1 FX Tempo;
 #X obj 39 133 param \$1 FX Reverb;
 #X obj 47 175 param \$1 FX Decay;
 #X obj 44 220 param \$1 FX Note_adjust;
 #X obj 34 79 l param \$1 FX Tempo;
 #X obj 49 247 param \$1 FX NoteBass;
 #X obj 36 104 l param \$1 FX PhraseNum;
+#X obj 38 24 paramI \$1 FX Tempo;
 #X restore 221 15 pd apfs;
 #X obj 207 49 r Sel\$2-snd;
 #X obj 453 117 mknob 30 100 0 1 0 0 \$1-Decay-snd \$1-Decay-rcv Decay
--2 -6 0 8 -241291 -1 -4160 6494 1;
+-2 -6 0 8 -241291 -1 -4160 2500 1;
 #X obj 453 65 mknob 30 100 0 1 0 0 \$1-Note_adjust-snd \$1-Note_adjust-rcv
 Note_adjust -2 -6 0 8 -258113 -1 -4160 9900 1;
 #X obj 509 78 mknob 30 100 0 1 0 0 \$1-NoteBass-snd \$1-NoteBass-rcv

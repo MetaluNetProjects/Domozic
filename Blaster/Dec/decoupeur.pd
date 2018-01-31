@@ -1,12 +1,12 @@
-#N canvas 61 109 868 657 10;
+#N canvas 41 775 868 657 10;
 #X obj 61 191 f;
 #X obj 461 203 bng 15 250 50 0 \$1-calcenv \$1-calcenv pre:100% 20
 6 0 10 -4034 -1 -1;
 #X msg 519 91 const 0;
 #X obj 645 266 / 512;
 #X msg 645 289 resize \$1;
-#X obj 538 203 bng 15 250 50 0 \$1-refrag \$1-refrag cut:50 20 6 0
-10 -257985 -1 -1;
+#X obj 538 203 bng 15 250 50 0 \$1-refrag \$1-refrag cut:0 20 6 0 10
+-257985 -1 -1;
 #X obj 63 57 t b f;
 #X obj 256 411 t b f;
 #X floatatom 648 26 5 0 0 0 - - -, f 5;
@@ -414,4 +414,4 @@
 #X connect 66 0 6 0;
 #X connect 66 1 0 1;
 #X connect 68 0 69 0;
-#X coords 0 -1 1 1 300 20 1 300 200;
+#X coords 0 -1 1 1 350 20 1 250 200;

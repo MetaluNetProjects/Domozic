@@ -1,4 +1,4 @@
-#N canvas 165 453 575 421 10;
+#N canvas 125 775 575 421 10;
 #X obj 106 114 hsl 80 15 0 1 0 0 \$0-seuil-snd \$0-seuil-rcv seuil:2dB
 85 7 0 10 -257985 -1 -1 1580 1;
 #X obj 105 133 hsl 80 15 0 1 0 0 \$0-lmin-snd \$0-lmin-rcv lmin:23.22ms
@@ -41,8 +41,10 @@
 #X obj 70 312 s \$0-seuil-rcv;
 #X obj 70 212 * 100;
 #X obj 70 256 / 10;
-#X msg 331 52 0.2;
+#X msg 331 57 0.2;
 #X obj 331 26 loadbang;
+#X obj 280 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 3 0 38 0;
 #X connect 4 0 36 0;
 #X connect 6 0 8 0;
@@ -70,4 +72,5 @@
 #X connect 39 0 1 0;
 #X connect 39 0 2 0;
 #X connect 40 0 39 0;
-#X coords 0 -1 1 1 180 70 1 100 100;
+#X connect 41 0 39 0;
+#X coords 0 -1 1 1 200 70 1 100 100;

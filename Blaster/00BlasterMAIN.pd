@@ -1,4 +1,4 @@
-#N canvas 1378 189 534 900 10;
+#N canvas 905 229 534 646 10;
 #X declare -path KEP/AutoAbstractions;
 #X declare -path KEP/AutoPreset;
 #X declare -path KEP/absKEP;
@@ -38,7 +38,7 @@
 #X declare -path AutoPreset;
 #X declare -path AutoAbstractions;
 #X declare -path rj;
-#X obj 7 451 fraise_interface;
+#X obj 15 444 fraise_interface;
 #N canvas 164 990 1016 639 declare 0;
 #X obj 10 550 l declare -path /usr/lib/pd-extended/extra/iemlib/;
 #X obj 802 114 moonlib/mknob 25 100 0 127 0 0 -233017 empty empty -2
@@ -98,8 +98,8 @@
 #X obj 25 108 declare -path AutoPreset;
 #X obj 14 138 declare -path AutoAbstractions;
 #X obj 20 173 declare -path rj;
-#X restore 9 426 pd declare;
-#X obj 16 16 cnv 15 270 370 empty empty empty 20 12 0 14 -204786 -66577
+#X restore 15 423 pd declare;
+#X obj 16 17 cnv 15 270 370 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 28 280 mknob 25 100 0 1 0 0 Vol1-snd Vol1-rcv Vol1 -2 -6 0 8
 -262144 -1 -1 0 1;
@@ -120,39 +120,39 @@
 #X obj 119 76 mknob 25 100 0 1 0 0 Vol9-snd Vol9-rcv Vol9 -2 -6 0 8
 -262144 -1 -1 0 1;
 #X obj 30 236 mknob 25 100 0 1 0 0 FX1-snd FX1-rcv FX1 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 8482 1;
 #X obj 61 236 mknob 25 100 0 1 0 0 FX2-snd FX2-rcv FX2 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 8539 1;
 #X obj 92 236 mknob 25 100 0 1 0 0 FX3-snd FX3-rcv FX3 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 6768 1;
 #X obj 123 236 mknob 25 100 0 1 0 0 FX4-snd FX4-rcv FX4 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 3222 1;
 #X obj 155 236 mknob 25 100 0 1 0 0 FX5-snd FX5-rcv FX5 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 8721 1;
 #X obj 186 236 mknob 25 100 0 1 0 0 FX6-snd FX6-rcv FX6 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 9791 1;
 #X obj 217 236 mknob 25 100 0 1 0 0 FX7-snd FX7-rcv FX7 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 7366 1;
 #X obj 248 236 mknob 25 100 0 1 0 0 FX8-snd FX8-rcv FX8 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 9888 1;
 #X obj 119 33 mknob 25 100 0 1 0 0 FX9-snd FX9-rcv FX9 -2 -6 0 8 -262144
--1 -1 0 1;
+-1 -1 3609 1;
 #X obj 29 194 mknob 25 100 0 1 0 0 Sel1-snd Sel1-rcv Sel1 -2 -6 0 8
--262144 -1 -1 0 1;
+-262144 -1 -1 3287 1;
 #X obj 60 194 mknob 25 100 0 1 0 0 Sel2-snd Sel2-rcv Sel2 -2 -6 0 8
--262144 -1 -1 0 1;
+-262144 -1 -1 5446 1;
 #X obj 91 194 mknob 25 100 0 1 0 0 Sel3-snd Sel3-rcv Sel3 -2 -6 0 8
--262144 -1 -1 0 1;
+-262144 -1 -1 804 1;
 #X obj 122 194 mknob 25 100 0 1 0 0 Sel4-snd Sel4-rcv Sel4 -2 -6 0
-8 -262144 -1 -1 0 1;
+8 -262144 -1 -1 1284 1;
 #X obj 154 194 mknob 25 100 0 1 0 0 Sel5-snd Sel5-rcv Sel5 -2 -6 0
-8 -262144 -1 -1 0 1;
+8 -262144 -1 -1 1429 1;
 #X obj 185 194 mknob 25 100 0 1 0 0 Sel6-snd Sel6-rcv Sel6 -2 -6 0
-8 -262144 -1 -1 0 1;
+8 -262144 -1 -1 4642 1;
 #X obj 216 194 mknob 25 100 0 1 0 0 Sel7-snd Sel7-rcv Sel7 -2 -6 0
-8 -262144 -1 -1 0 1;
+8 -262144 -1 -1 6284 1;
 #X obj 247 194 mknob 25 100 0 1 0 0 Sel8-snd Sel8-rcv Sel8 -2 -6 0
-8 -262144 -1 -1 0 1;
+8 -262144 -1 -1 4277 1;
 #X obj 58 147 mknob 25 100 0 1 0 0 Vol123-snd Vol123-rcv Vol123 -2
 -6 0 8 -262144 -1 -1 0 1;
 #X obj 182 145 mknob 25 100 0 1 0 0 Vol456-snd Vol456-rcv Vol456 -2
@@ -197,28 +197,27 @@
 -1 1 1;
 #X obj 51 42 tgl 20 0 Shift-snd Shift-rcv Shift -2 28 0 8 -262144 -1
 -1 0 1;
-#X obj 14 505 r CLOCK;
-#X obj 19 593 unpack f f;
-#X floatatom 19 615 5 0 0 0 - - -, f 5;
-#X floatatom 63 630 5 0 0 0 - - -, f 5;
-#X obj 30 663 bng 50 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 433 394 r CLOCK;
+#X obj 433 435 unpack f f;
+#X floatatom 433 455 5 0 0 0 - - -, f 5;
+#X floatatom 490 455 5 0 0 0 - - -, f 5;
+#X obj 433 474 bng 50 50 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 205 647 s /BPM;
-#X floatatom 241 553 5 0 0 0 - - -, f 5;
-#X msg 184 572 160;
-#X obj 347 246 OUTvu 1;
-#X obj 377 246 OUTvu 2;
-#X obj 427 231 MASTERSvol;
-#X obj 120 514 r /BPM;
-#X floatatom 120 536 5 0 0 0 - - -, f 5;
-#X msg 230 579 120;
-#X msg 229 621 90;
-#X obj 315 18 MasterBlaster;
-#X msg 297 536 1;
-#X text 288 516 stop;
-#X obj 15 402 ../domoNet;
-#X obj 14 474 MAINDIR;
-#N canvas 2052 881 324 230 BPM/Vol 1;
+#X obj 45 598 s /BPM;
+#X floatatom 81 504 5 0 0 0 - - -, f 5;
+#X msg 24 523 160;
+#X obj 346 87 OUTvu 1;
+#X obj 376 87 OUTvu 2;
+#X obj 426 72 MASTERSvol;
+#X obj 372 455 r /BPM;
+#X floatatom 372 477 5 0 0 0 - - -, f 5;
+#X msg 70 530 120;
+#X msg 69 572 90;
+#X obj 299 203 MasterBlaster;
+#X msg 137 487 1;
+#X text 128 467 stop;
+#X obj 14 462 MAINDIR;
+#N canvas 2020 494 324 230 BPM/Vol 0;
 #X obj 9 17 r VolGen-snd;
 #X obj 54 39 r Shift-snd;
 #X obj 54 59 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
@@ -255,27 +254,29 @@
 #X connect 14 0 15 0;
 #X connect 15 0 2 0;
 #X coords 0 -1 1 1 60 60 1 150 100;
-#X restore 427 72 pd BPM/Vol;
-#X obj 263 652 s /GAMME;
-#X obj 330 650 s /BASS;
-#X obj 392 652 s /CHORD;
-#X msg 267 632 2741;
-#X msg 329 626 16;
-#X msg 389 626 145;
-#X obj 330 568 del 250;
-#X obj 368 503 loadbang;
-#X obj 299 247 INvu 1;
-#X obj 15 544 route list;
-#X obj 397 432 Vocal Mic 9;
-#X obj 395 402 Melo Juno 8;
-#X obj 283 398 Rythme Kick 4;
-#X obj 132 398 BBdec Batteries 1;
-#X obj 133 418 BBdec Electros 2;
-#X obj 135 439 BBdec Percus 3;
-#X obj 278 418 Rythme Snare 5;
-#X obj 274 439 Rythme HH 6;
-#X obj 276 466 Rythme Bass 7;
-#X connect 51 0 81 0;
+#X restore 426 8 pd BPM/Vol;
+#X obj 103 603 s /GAMME;
+#X obj 170 601 s /BASS;
+#X obj 232 603 s /CHORD;
+#X msg 107 583 2741;
+#X msg 169 577 16;
+#X msg 229 577 145;
+#X obj 170 519 del 250;
+#X obj 184 481 loadbang;
+#X obj 298 88 INvu 1;
+#X obj 433 416 route list;
+#X obj 354 421 Vocal Mic 9;
+#X obj 354 396 Melo Juno 8;
+#X obj 252 396 Rythme Kick 4;
+#X obj 252 415 Rythme Snare 5;
+#X obj 252 434 Rythme HH 6;
+#X obj 252 453 Rythme Bass 7;
+#X obj 408 203 SongBlaster;
+#X obj 137 396 BBdec Batteries 1;
+#X obj 137 415 BBdec Electros 2;
+#X obj 137 434 BBdec Percus 3;
+#X obj 15 402 ../domoNet Blaster;
+#X connect 51 0 80 0;
 #X connect 52 0 53 0;
 #X connect 52 1 54 0;
 #X connect 53 0 55 0;
@@ -285,12 +286,13 @@
 #X connect 64 0 56 0;
 #X connect 65 0 56 0;
 #X connect 67 0 56 0;
-#X connect 71 0 61 0;
+#X connect 70 0 61 0;
+#X connect 74 0 71 0;
 #X connect 75 0 72 0;
 #X connect 76 0 73 0;
+#X connect 77 0 65 0;
 #X connect 77 0 74 0;
-#X connect 78 0 65 0;
-#X connect 78 0 75 0;
-#X connect 78 0 76 0;
+#X connect 77 0 75 0;
+#X connect 77 0 76 0;
 #X connect 78 0 77 0;
-#X connect 81 0 52 0;
+#X connect 80 0 52 0;

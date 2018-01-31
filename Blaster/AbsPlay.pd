@@ -1,0 +1,16 @@
+#N canvas 2332 489 337 406 10;
+#X obj 28 47 inlet;
+#X obj 28 165 s Play\$1-rcv;
+#X obj 28 83 demux 0 1;
+#X obj 79 34 init 0;
+#X obj 90 58 r Shift-snd;
+#X obj 79 145 s NumSet;
+#X obj 79 105 sel 1;
+#X obj 79 125 f \$1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 6 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
