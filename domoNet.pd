@@ -70,6 +70,12 @@
 #X obj 318 155 route symbol;
 #X obj 318 52 + 2800;
 #X obj 318 31 random 700;
+#X obj 411 206 route /SIG;
+#X obj 239 269 spigot;
+#X obj 272 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 441 22 inlet;
+#X obj 411 227 s /SIG;
 #X connect 0 0 6 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
@@ -80,6 +86,7 @@
 #X connect 7 0 13 0;
 #X connect 8 0 3 0;
 #X connect 9 0 12 0;
+#X connect 9 0 25 0;
 #X connect 10 0 15 0;
 #X connect 11 0 24 0;
 #X connect 12 0 10 0;
@@ -96,6 +103,8 @@
 #X connect 22 0 18 0;
 #X connect 23 0 16 0;
 #X connect 24 0 23 0;
+#X connect 25 0 29 0;
+#X connect 27 0 26 1;
 #X restore 229 93 pd SYNC;
 #X obj 166 366 loadbang;
 #X msg 166 387 0 500;
@@ -130,6 +139,11 @@
 #X obj 260 382 == 0;
 #X obj 260 404 change;
 #X obj 261 423 s TEMPOLED;
+#X obj 436 44 spigot;
+#X obj 483 22 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 436 22 r /SIG;
+#X obj 436 65 print;
 #X connect 0 0 1 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
@@ -166,3 +180,6 @@
 #X connect 49 0 50 0;
 #X connect 50 0 51 0;
 #X connect 51 0 52 0;
+#X connect 53 0 56 0;
+#X connect 54 0 53 1;
+#X connect 55 0 53 0;
