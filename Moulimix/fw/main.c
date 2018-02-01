@@ -33,12 +33,10 @@ void highInterrupts()
 {
 	if(PIR1bits.TMR1IF) {
 		DCMOTOR_CAPTURE_SERVICE(D);
-		InitTimerUS(31);
+		InitTimerUS(30);//13
 	}
 }
 // -----------------
-
-
 
 void setup(void) {	
 //----------- Setup ----------------
@@ -49,33 +47,22 @@ void setup(void) {
 	digitalClear(MODELED);
 	delayStart(mainDelay, 5000); 	// init the mainDelay to 5 ms 
 
-/*	pinModeDigitalOut(LED0); 	// set the LED pin mode to digital out
-	digitalClear(LED0);
-	pinModeDigitalOut(LED1); 	// set the LED pin mode to digital out
-	digitalClear(LED1);
-	pinModeDigitalOut(LED2); 	// set the LED pin mode to digital out
-	digitalClear(LED2);*/
-
 //----------- Analog setup ----------------
 	analogInit();		// init analog module
-	analogSelect(0,VOLPOT);	
-	analogSelect(1,FXPOT);	
-	analogSelect(2,CROQUEPOT);	
+	analogSelect(0,SPEEDPOT);	
+	analogSelect(1,VOLPOT);	
+	analogSelect(2,FXPOT);	
+	analogSelect(3,SONPOT);	
+
+	analogSelect(4,CROQUESON);	
+	analogSelect(5,CROQUEFX);	
+	analogSelect(6,CROQUEVOL);	
+	analogSelect(7,CROQUEPOT);	
 
 	switchInit();
 	INTCON2bits.RBPU = 0; // enable pullups on PORTB
 	
 	switchSelect(0,MODESW);
-	/*switchSelect(1,K9);
-	switchSelect(2,MB2);
-	switchSelect(3,MBEN2);
-	switchSelect(4,MBEN);
-	switchSelect(5,MB1);
-	switchSelect(6,K1);
-	switchSelect(7,K2);
-	switchSelect(8,K3);
-	switchSelect(9,K12);*/
-
 // ---------- capture timer : TMR1 ------------
 	T1CON=0b00110011;//src=fosc/4,ps=8,16bit r/w,on.
 	PIE1bits.TMR1IE=1;  //1;
@@ -94,8 +81,10 @@ void loop() {
 		delayStart(mainDelay, 5000); 	// re-init mainDelay
 		if(!switchSend()) analogSend();		// send switches channels that changed, if none send analogs that changed
 		DCMOTOR_COMPUTE(D, ASYM);
-		fraiseService();	// listen to Fraise events
-		printf("CM %d\n",DCMOTOR_GETPOS(D)%0xffff);
+		//fraiseService();	// listen to Fraise events
+		printf("CM %ld %d %ld %ld\n",DCMOTOR_GETSPEED(D), (int)dcmotorDeltaPos, dcmotorDeltaT, DCMOTOR_GETPOS(D));
+		//printf("CP %ld\n",DCMOTOR_GETPOS(D));
+		//printf("CM %ld\n",DCMOTOR_GETSPEED(D)/*(long)DCMOTOR(D).VolVars.computedSpeed*/);
 	}
 }
 
