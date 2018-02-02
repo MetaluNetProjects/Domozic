@@ -1,4 +1,4 @@
-#N canvas 196 259 322 277 10;
+#N canvas 196 259 538 283 10;
 #X declare -stdpath moonlib -path moonlib;
 #N canvas 584 151 507 552 guts 0;
 #N canvas 569 541 450 192 getnote 0;
@@ -221,10 +221,10 @@
 #X obj 20 252 namecanvas accorder-canvas;
 #X obj 7 3 cnv 15 300 220 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 15 66 hradio 15 1 0 7 \$0-note \$0-note-rcv note 0 -8 0 10 -262144
--1 -1 0;
-#X obj 15 25 hradio 15 1 0 16 \$0-bank \$0-bank-rcv bank-1:Chants/ChantsAurore
-0 -8 0 10 -262144 -1 -1 0;
+#X obj 15 66 hradio 15 1 0 16 \$0-note \$0-note-rcv note 0 -8 0 10
+-262144 -1 -1 0;
+#X obj 15 25 hradio 10 1 0 48 \$0-bank \$0-bank-rcv bank-16:RTWOS/ChantNathalie
+0 -8 0 10 -262144 -1 -1 15;
 #X obj 112 108 bng 20 250 50 0 \$0-play empty play 0 -7 0 10 -4034
 -1 -1;
 #X obj 19 108 hsl 80 20 0 1 0 1 \$0-volsample empty volume-sample -2
@@ -237,8 +237,8 @@
 #X text 135 137 original;
 #X text 135 157 analyse;
 #X obj 19 188 hsl 240 20 30 100 0 0 \$0-accord \$0-accord-rcv accord:55.4431
--2 -8 0 10 -257985 -1 -1 8687 1;
+-2 -8 0 10 -257985 -1 -1 0 1;
 #X obj 266 188 bng 20 250 50 0 \$0-save empty save 0 -7 0 10 -258113
 -1 -1;
-#X obj 257 70 tgl 20 0 \$0-on empty ON 4 10 0 10 -260097 -1 -1 1 1
+#X obj 257 70 tgl 20 0 \$0-on empty ON 4 10 0 10 -260097 -1 -1 0 1
 ;
