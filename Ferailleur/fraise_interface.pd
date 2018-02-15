@@ -9,10 +9,10 @@
 #X obj 18 140 fruit/fruit 1 fer1 10 fw;
 #X text 270 62 analogs: vol_fer \, vol_chime \, fx_fers \, fx_chime
 ;
-#N canvas 814 90 570 392 AXL 0;
+#N canvas 814 90 570 453 AXL 1;
 #X floatatom 48 206 5 0 0 0 - - -, f 5;
 #X floatatom 101 206 5 0 0 0 - - -, f 5;
-#X floatatom 145 206 5 0 0 0 - - -, f 5;
+#X floatatom 145 206 0 0 0 0 - - -;
 #X obj 25 143 r AXLSLOW1;
 #X obj 25 111 axlprocess 1;
 #X obj 230 143 s AX-x;
@@ -32,10 +32,10 @@
 #X obj 25 72 route 1 2;
 #X obj 50 93 axlprocess 2;
 #X obj 28 256 r AXLSLOW2;
-#X msg 399 272 R;
-#X text 429 270 reset i2c/axl;
+#X msg 272 406 R;
+#X text 302 404 reset i2c/axl;
 #X obj 25 49 fruit/receive AXL;
-#X obj 312 300 fruit/send AXL;
+#X obj 192 425 fruit/send AXL;
 #X obj 153 136 print;
 #X obj 25 225 s FER1;
 #X obj 48 176 unpack f f f;
@@ -46,6 +46,24 @@
 #X obj 250 232 s AXL_SEPARATION;
 #X obj 250 189 loadbang;
 #X msg 250 210 5;
+#X obj 261 264 r FER1;
+#X obj 261 285 unpack f;
+#X obj 261 306 change;
+#X obj 124 356 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 108 370 r FER1;
+#X obj 108 391 unpack f;
+#X obj 108 412 change;
+#X obj 184 264 loadbang;
+#X obj 239 266 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 184 288 metro 2000;
+#X obj 184 309 t b b;
+#X obj 211 358 spigot;
+#X msg 184 328 1;
+#X msg 261 327 0;
+#X obj 211 384 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 3 0 27 0;
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
@@ -72,6 +90,20 @@
 #X connect 31 0 32 0;
 #X connect 34 0 35 0;
 #X connect 35 0 33 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 49 0;
+#X connect 40 0 41 0;
+#X connect 41 0 42 0;
+#X connect 43 0 45 0;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 46 0 48 0;
+#X connect 46 1 47 0;
+#X connect 47 0 50 0;
+#X connect 48 0 47 1;
+#X connect 49 0 47 1;
+#X connect 50 0 22 0;
 #X restore 241 197 pd AXL;
 #N canvas 465 177 605 504 fer1 0;
 #X obj 9 85 analog/parse;
@@ -124,7 +156,7 @@ MB1) \, K1 \, K2 \, K3 \, K12, f 65;
 #X msg 141 281 fx \$1;
 #X msg 9 283 transpose \$1;
 #X msg 520 367 l0\$1;
-#X obj 520 347 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 520 347 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 427 398 fruit/send2 fer1;
 #X obj 520 310 r REPASSEled;
@@ -218,7 +250,7 @@ MB1) \, K1 \, K2 \, K3 \, K12, f 65;
 #X obj 15 54 fruit/receive fer2;
 #X obj 473 228 fruit/send2 fer2;
 #X msg 566 202 l0\$1;
-#X obj 566 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 566 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 15 80 analog/parse;
 #X obj 205 148 route s;
