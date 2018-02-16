@@ -61,16 +61,19 @@ void setup(void) {
 
 //----------- Analog setup ----------------
 	analogInit();		// init analog module	
-	//analogSelect(0,K1);	// assign connector K1 to analog channel 0
+	analogSelect(0,POT);
 
+	INTCON2bits.RBPU = 0; // enable pullups on PORTB
 	switchInit();
-//	switchSelect(0,K4);
+	switchSelect(0,SWA);
+	switchSelect(1,SWB);
+	switchSelect(2,PUSH);
 
 //----------- setup I2C master ----------------
 	i2cm_init(I2C_MASTER, I2C_SLEW_ON, FOSC/400000/4-1);
 	
 //----------- setup ADXL345 ----------------
-	ADXL345Init(&adxl1, 0); // 1st ADXL345's SDO pin is high voltage level
+	//ADXL345Init(&adxl1, 0); // 1st ADXL345's SDO pin is high voltage level
 	//ADXL345Init(&adxl2, 1); // 2nd ADXL345's SDO pin is hi voltage level
 	PCA9655_Config(&pca1,PCA1ADD,255,0);
 
@@ -95,7 +98,7 @@ void loop() {
 		if(!switchSend()) analogSend();		// send analog channels that changed
 		cycle++;
 		fraiseService();	// listen to Fraise events
-		ADXL345Service(&adxl1);
+		//ADXL345Service(&adxl1);
 //		fraiseService();	// listen to Fraise events
 		//ADXL345Service(&adxl2);
 	}
@@ -123,6 +126,7 @@ void fraiseReceiveChar() // receive text
 		i2cm_init(I2C_MASTER, I2C_SLEW_ON, FOSC/400000/4-1);
 		ADXL345Init(&adxl1, 0);
 		//ADXL345Init(&adxl2, 1);
+		PCA9655_Config(&pca1,PCA1ADD,255,0);
 	}
 }
 

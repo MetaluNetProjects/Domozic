@@ -12,10 +12,9 @@
 -1;
 #X obj 442 105 r /BPM;
 #X floatatom 442 127 5 0 0 0 - - -, f 5;
-#X obj 29 93 ../domoNet;
 #X obj 365 29 route list;
 #X obj 365 154 GAMMEKBV /GAMME;
-#N canvas 70 396 522 372 notebanks 1;
+#N canvas 70 396 522 372 notebanks 0;
 #X obj 27 9 declare -path notebank;
 #X obj 246 20 accorder;
 #X obj 25 63 notebank 1 7 Chants/ChantsAurore;
@@ -176,7 +175,7 @@
 #X obj 348 307 r REPASSE;
 #X obj 348 328 route fx;
 #X obj 675 265 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8000 1;
+-1 -1 0 1;
 #X obj 212 38 metro 1000;
 #X obj 219 17 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -343,22 +342,23 @@
 #X msg 378 394 145;
 #X obj 387 341 loadbang;
 #X msg 148 178 symbol \$1/Datas/Domozic/Ferailleur;
-#X connect 1 0 9 0;
+#X obj 29 93 ../domoNet Harpiro;
+#X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 2 1 4 0;
 #X connect 3 0 5 0;
 #X connect 6 0 7 0;
-#X connect 9 0 2 0;
-#X connect 14 0 16 0;
-#X connect 15 0 14 0;
-#X connect 15 0 19 0;
-#X connect 16 0 34 0;
-#X connect 18 0 15 0;
-#X connect 19 0 20 0;
-#X connect 21 0 14 0;
-#X connect 24 0 25 0;
-#X connect 30 0 29 0;
+#X connect 8 0 2 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 14 0 18 0;
+#X connect 15 0 33 0;
+#X connect 17 0 14 0;
+#X connect 18 0 19 0;
+#X connect 20 0 13 0;
+#X connect 23 0 24 0;
+#X connect 29 0 28 0;
+#X connect 31 0 30 0;
 #X connect 32 0 31 0;
-#X connect 33 0 32 0;
-#X connect 33 0 30 0;
-#X connect 34 0 17 0;
+#X connect 32 0 29 0;
+#X connect 33 0 16 0;
