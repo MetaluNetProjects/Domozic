@@ -2,17 +2,18 @@
 #X obj 1 204 cnv 15 206 29 \$0-label-snd \$0-label-rcv phrase-\$3 20
 12 0 14 -262144 -262144 0;
 #X obj 113 217 nbx 2 14 1 16 0 1 \$2-\$3-num-snd \$2-\$3-num-rcv num
-0 -8 1 10 -262144 -1 -1 16 256;
+0 -8 1 10 -262144 -1 -1 1 256;
 #X obj 156 217 nbx 2 14 1 8 0 1 \$2-\$3-denum-snd \$2-\$3-denum-rcv
-denum 0 -8 1 10 -262144 -1 -1 8 256;
+denum 0 -8 1 10 -262144 -1 -1 1 256;
 #X msg 266 518 volume 3 0.345;
 #X msg 267 494 pitch 3 -5;
 #X obj 405 499 - 1;
-#N canvas 2406 262 348 294 set_out 0;
-#N canvas 1924 281 391 437 pack 0;
+#N canvas 1366 370 348 294 set_out 0;
+#N canvas 1366 713 751 487 pack 0;
 #X obj 42 15 inlet;
 #X obj 50 405 s set-\$2-notemod-\$3;
-#X obj 43 106 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17;
+#X obj 32 62 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17, f
+84;
 #X obj 53 164 t b f;
 #X obj 68 188 t b f;
 #X obj 86 212 t b f;
@@ -24,14 +25,14 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X obj 182 170 t b f;
 #X obj 197 194 t b f;
 #X obj 215 218 t b f;
-#X obj 230 242 t b f;
-#X obj 244 177 t b f;
-#X obj 259 201 t b f;
-#X obj 277 225 t b f;
-#X obj 292 249 t b f;
-#X obj 306 173 t b f;
-#X obj 321 197 t b f;
-#X obj 50 361 pack f f f f f f f f f f f f f f f f f f f;
+#X obj 324 152 t b f;
+#X obj 372 162 t b f;
+#X obj 409 201 t b f;
+#X obj 430 166 t b f;
+#X obj 461 243 t b f;
+#X obj 489 205 t b f;
+#X obj 531 263 t b f;
+#X obj 50 361 pack f f f f f f f f f f f f f f f f f f f, f 77;
 #X connect 0 0 2 0;
 #X connect 2 0 21 0;
 #X connect 2 1 3 0;
@@ -98,7 +99,7 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X obj 82 60 r \$2-\$3-denum-snd;
 #X msg 82 104 1;
 #X obj 82 81 t b f;
-#N canvas 2903 103 450 351 notes_1-8 0;
+#N canvas 1557 103 450 351 notes_1-8 0;
 #X obj 7 7 r \$2-\$3-note1-snd;
 #X obj 7 28 t b f;
 #X msg 7 51 2;
@@ -159,7 +160,7 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X connect 24 0 10 0;
 #X connect 25 0 11 0;
 #X restore 254 130 pd notes_1-8;
-#N canvas 2901 114 450 351 notes_9-16 0;
+#N canvas 20 775 450 351 notes_9-16 0;
 #X obj 7 28 t b f;
 #X obj 7 315 outlet;
 #X obj 7 291 pack f f;
@@ -231,7 +232,7 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X connect 9 0 0 0;
 #X connect 10 0 0 0;
 #X restore 380 295 pd set_out;
-#N canvas 1812 407 524 585 set_in 0;
+#N canvas 842 775 524 585 set_in 0;
 #X obj 130 122 tabread \$2-notemod-\$3;
 #X obj 85 188 pack f f;
 #X obj 85 86 t f f;
@@ -243,7 +244,6 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X msg 86 431 set \$1;
 #X msg 102 479 set \$1;
 #X obj 86 452 s \$2-\$3-num-rcv;
-#X obj 86 214 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 14 16 17;
 #X obj 118 259 s \$2-\$3-note1-rcv;
 #X msg 247 239 set \$1;
 #X msg 263 283 set \$1;
@@ -276,8 +276,9 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X msg 199 450 set \$1;
 #X msg 215 491 set \$1;
 #X msg 231 535 set \$1;
+#X obj 86 214 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17;
 #X connect 0 0 1 1;
-#X connect 1 0 10 0;
+#X connect 1 0 42 0;
 #X connect 2 0 1 0;
 #X connect 2 1 0 0;
 #X connect 3 0 6 0;
@@ -285,24 +286,7 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X connect 6 0 2 0;
 #X connect 7 0 9 0;
 #X connect 8 0 4 0;
-#X connect 10 0 7 0;
-#X connect 10 1 8 0;
-#X connect 10 2 35 0;
-#X connect 10 3 36 0;
-#X connect 10 4 37 0;
-#X connect 10 5 38 0;
-#X connect 10 6 39 0;
-#X connect 10 7 40 0;
-#X connect 10 8 41 0;
-#X connect 10 9 42 0;
-#X connect 10 10 12 0;
-#X connect 10 11 13 0;
-#X connect 10 12 14 0;
-#X connect 10 13 15 0;
-#X connect 10 14 16 0;
-#X connect 10 15 17 0;
-#X connect 10 16 18 0;
-#X connect 10 17 19 0;
+#X connect 11 0 26 0;
 #X connect 12 0 27 0;
 #X connect 13 0 28 0;
 #X connect 14 0 29 0;
@@ -310,15 +294,32 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X connect 16 0 31 0;
 #X connect 17 0 32 0;
 #X connect 18 0 33 0;
-#X connect 19 0 34 0;
-#X connect 35 0 11 0;
+#X connect 34 0 10 0;
+#X connect 35 0 19 0;
 #X connect 36 0 20 0;
 #X connect 37 0 21 0;
 #X connect 38 0 22 0;
 #X connect 39 0 23 0;
 #X connect 40 0 24 0;
 #X connect 41 0 25 0;
-#X connect 42 0 26 0;
+#X connect 42 0 7 0;
+#X connect 42 1 8 0;
+#X connect 42 2 34 0;
+#X connect 42 3 35 0;
+#X connect 42 4 36 0;
+#X connect 42 5 37 0;
+#X connect 42 6 38 0;
+#X connect 42 7 39 0;
+#X connect 42 8 40 0;
+#X connect 42 9 41 0;
+#X connect 42 10 11 0;
+#X connect 42 11 12 0;
+#X connect 42 12 13 0;
+#X connect 42 13 14 0;
+#X connect 42 14 15 0;
+#X connect 42 15 16 0;
+#X connect 42 16 17 0;
+#X connect 42 17 18 0;
 #X restore 274 309 pd set_in;
 #X obj 258 401 l apf \$0-PHRASE INroll \$0-INroll 2;
 #X floatatom 86 400 5 0 0 0 - - -, f 5;
@@ -338,7 +339,7 @@ denum 0 -8 1 10 -262144 -1 -1 8 256;
 #X obj 371 255 r \$2-SETTING-prepareSave;
 #X obj 284 283 del 50;
 #X obj 328 284 del 50;
-#N canvas 118 481 294 282 phrase 0;
+#N canvas 20 802 294 282 phrase 0;
 #X coords 0 -1 1 1 206 202 1 10 10;
 #X restore 449 -1 pd phrase;
 #X obj 262 437 l apf \$0-PHRASE num \$2-\$3-num 2;
@@ -351,7 +352,7 @@ empty 17 7 0 10 -262144 -1 -1;
 -1 -1;
 #X obj 168 343 s \$0-set-phrase-message-rcv;
 #X obj 181 284 del 500;
-#N canvas 167 990 464 660 Defile 0;
+#N canvas 1366 540 464 660 Defile 0;
 #X obj 103 97 unpack f f f;
 #X obj 103 194 pack f f;
 #X obj 184 122 sel \$3;
@@ -371,7 +372,7 @@ empty 17 7 0 10 -262144 -1 -1;
 #X floatatom 111 134 5 0 0 0 - - -, f 5;
 #X floatatom 254 123 5 0 0 0 - - -, f 5;
 #X obj 103 37 r \$2-DefileSeq;
-#N canvas 823 110 480 365 Rbut 0;
+#N canvas 1366 110 480 365 Rbut 0;
 #X obj 115 36 inlet;
 #X obj 115 62 unpack f f;
 #X floatatom 191 109 5 0 0 0 - - -, f 5;
@@ -488,37 +489,37 @@ empty 17 7 0 10 -262144 -1 -1;
 #X obj 2 26 cnv 8 204 8 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 2 10 cnv 8 204 8 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 18 2 vradio 8 1 0 25 \$2-\$3-note1-snd \$2-\$3-note1-rcv empty
-0 -8 0 10 -262131 -258699 -99865 18;
+0 -8 0 10 -262131 -258699 -99865 23;
 #X obj 30 2 vradio 8 1 0 25 \$2-\$3-note2-snd \$2-\$3-note2-rcv empty
-0 -8 0 10 -262131 -258699 -99865 24;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 42 2 vradio 8 1 0 25 \$2-\$3-note3-snd \$2-\$3-note3-rcv empty
-0 -8 0 10 -262131 -258699 -99865 14;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 54 2 vradio 8 1 0 25 \$2-\$3-note4-snd \$2-\$3-note4-rcv empty
-0 -8 0 10 -262131 -258699 -99865 24;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 66 2 vradio 8 1 0 25 \$2-\$3-note5-snd \$2-\$3-note5-rcv empty
-0 -8 0 10 -262131 -258699 -99865 18;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 78 2 vradio 8 1 0 25 \$2-\$3-note6-snd \$2-\$3-note6-rcv empty
-0 -8 0 10 -262131 -258699 -99865 24;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 90 2 vradio 8 1 0 25 \$2-\$3-note7-snd \$2-\$3-note7-rcv empty
-0 -8 0 10 -262131 -258699 -99865 14;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 102 2 vradio 8 1 0 25 \$2-\$3-note8-snd \$2-\$3-note8-rcv empty
-0 -8 0 10 -262131 -258699 -99865 24;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 114 2 vradio 8 1 0 25 \$2-\$3-note9-snd \$2-\$3-note9-rcv empty
-0 -8 0 10 -262131 -258699 -99865 11;
+0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 126 2 vradio 8 1 0 25 \$2-\$3-note10-snd \$2-\$3-note10-rcv
-empty 0 -8 0 10 -262131 -258699 -99865 24;
+empty 0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 138 2 vradio 8 1 0 25 \$2-\$3-note11-snd \$2-\$3-note11-rcv
-empty 0 -8 0 10 -262131 -258699 -99865 11;
+empty 0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 150 2 vradio 8 1 0 25 \$2-\$3-note12-snd \$2-\$3-note12-rcv
-empty 0 -8 0 10 -262131 -258699 -99865 24;
+empty 0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 162 2 vradio 8 1 0 25 \$2-\$3-note13-snd \$2-\$3-note13-rcv
-empty 0 -8 0 10 -262131 -258699 -99865 11;
+empty 0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 174 2 vradio 8 1 0 25 \$2-\$3-note14-snd \$2-\$3-note14-rcv
-empty 0 -8 0 10 -262131 -258699 -99865 24;
+empty 0 -8 0 10 -262131 -258699 -99865 0;
 #X obj 186 2 vradio 8 1 0 25 \$2-\$3-note15-snd \$2-\$3-note15-rcv
-empty 0 -8 0 10 -262131 -258699 -99865 11;
+empty 0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 198 2 vradio 8 1 0 25 \$2-\$3-note16-snd \$2-\$3-note16-rcv
-empty 0 -8 0 10 -262131 -258699 -99865 24;
+empty 0 -8 0 10 -262131 -258699 -99865 1;
 #X obj 3 3 cnv 6 14 6 empty empty empty 20 12 0 14 -262144 -66577 0
 ;
 #X obj 3 19 cnv 6 14 6 empty empty empty 20 12 0 14 -262144 -66577
