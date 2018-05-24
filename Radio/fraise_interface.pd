@@ -1,4 +1,4 @@
-#N canvas 295 74 1108 796 10;
+#N canvas 116 126 1024 503 10;
 #X declare -path Fraise -stdpath Fraise;
 #X declare -stdpath iemlib -lib iemlib1 -stdpath moonlib;
 #X obj 22 237 analog/parse;
@@ -16,24 +16,24 @@
 1;
 #X obj 287 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 307 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 307 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 328 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 348 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 368 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 368 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 389 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 389 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 409 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 429 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 429 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 25 487 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2924 1;
+-1 -1 0 1;
 #X obj 7 527 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12688 1;
+-1 -1 0 1;
 #X obj 89 450 test1;
 #X obj 22 259 unpack f f;
 #X obj 22 306 pack f f;
@@ -76,7 +76,7 @@
 #X obj 551 638 * 0.999;
 #X obj 417 182 route s;
 #X obj 417 204 route 0;
-#X obj 419 225 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 419 225 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 187 653 fruit/send phone1;
 #X msg 242 631 L\$1;
@@ -85,7 +85,7 @@
 #X obj 267 580 t b f;
 #X obj 242 574 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 268 539 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 357 520 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 297 482 == 0;
 #X floatatom 74 593 5 0 0 0 - - -, f 5;
@@ -101,7 +101,7 @@
 -1 -1 0 1;
 #X obj 783 473 atan2;
 #X obj 991 652 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6624 1;
+-1 -1 6665 1;
 #X obj 354 604 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 382 606 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -172,7 +172,7 @@
 #X connect 10 0 0 0;
 #X restore 891 742 pd length;
 #X obj 894 766 hsl 128 15 0 3 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 54 1;
+-1 -1 49 1;
 #N canvas 4 74 450 300 length 0;
 #X obj 94 90 unpack f f f;
 #X obj 94 112 t f f;
@@ -239,19 +239,19 @@
 1;
 #X obj 458 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 478 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 478 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 499 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 519 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 539 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 539 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 560 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 560 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 580 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 600 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 600 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 65 120 unpack f f;
 #X obj 65 167 pack f f;
@@ -336,13 +336,16 @@
 #X obj 428 355 route straight 30Hz 7kHz;
 #X obj 483 378 s OrgueOn;
 #X obj 309 353 s PHONEhome;
-#X obj 355 454 r CLOCK;
-#X obj 355 476 ndmetro 4 4;
 #X obj 355 498 == 0;
 #X floatatom 330 537 5 0 0 0 - - -, f 5;
 #X obj 962 296 r CLOCK;
 #X obj 962 318 ndmetro 4 1;
 #X floatatom 962 340 5 0 0 0 - - -, f 5;
+#X obj 286 538 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 371 421 r TEMPOLED;
+#X obj 356 454 r CLOCK-;
+#X obj 355 476 ndmetro 4 4;
 #X connect 0 0 22 0;
 #X connect 0 1 8 0;
 #X connect 1 0 6 1;
@@ -421,7 +424,6 @@
 #X connect 68 0 66 0;
 #X connect 68 1 66 1;
 #X connect 69 0 66 0;
-#X connect 70 0 67 0;
 #X connect 71 0 69 0;
 #X connect 74 0 75 0;
 #X connect 75 2 136 0;
@@ -489,9 +491,11 @@
 #X connect 146 0 147 0;
 #X connect 147 0 137 0;
 #X connect 147 1 148 0;
-#X connect 150 0 151 0;
-#X connect 151 0 152 0;
-#X connect 151 0 153 0;
-#X connect 152 0 70 0;
-#X connect 154 0 155 0;
-#X connect 155 0 156 0;
+#X connect 150 0 70 0;
+#X connect 152 0 153 0;
+#X connect 153 0 154 0;
+#X connect 155 0 67 0;
+#X connect 156 0 155 0;
+#X connect 157 0 158 0;
+#X connect 158 0 150 0;
+#X connect 158 0 151 0;

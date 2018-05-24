@@ -1,4 +1,4 @@
-#N canvas 242 111 855 752 10;
+#N canvas 242 79 855 689 10;
 #X declare -stdpath moonlib;
 #X declare -path ../absGAMME;
 #X declare -stdpath AutoPreset;
@@ -8,20 +8,20 @@
 #X obj 153 113 +~ 800;
 #X obj 163 175 *~;
 #X obj 279 103 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 279 239 pow 2;
 #X msg 279 261 \$1 50;
 #X obj 279 283 line~;
 #X floatatom 229 90 5 0 0 0 - - -, f 5;
 #X obj 149 45 mtof;
 #X obj 152 23 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4842 1;
+-1 -1 0 1;
 #X obj 21 121 mtof;
 #X obj 24 57 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 20 1;
+-1 -1 0 1;
 #X obj 293 78 mtof;
 #X obj 235 57 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6018 1;
+-1 -1 8101 1;
 #X obj 453 30 declare -stdpath moonlib;
 #X msg 449 90 0 500;
 #X obj 441 122 ndmetro 64 8;
@@ -44,7 +44,7 @@
 #X obj 418 376 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 497 290 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12687 1;
+-1 -1 0 1;
 #X obj 499 308 pow 2;
 #X obj 453 56 declare -path ../absGAMME;
 #X obj 456 5 declare -stdpath AutoPreset;
@@ -65,7 +65,7 @@
 #X obj 206 507 +~;
 #X obj 182 663 *~;
 #X obj 544 524 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8858 1;
+-1 -1 0 1;
 #X obj 544 660 pow 2;
 #X msg 544 682 \$1 50;
 #X obj 544 704 line~;
@@ -75,7 +75,7 @@
 #X floatatom 127 332 5 0 0 0 - - -, f 5;
 #X obj 399 565 mtof;
 #X obj 402 543 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6018 1;
+-1 -1 8101 1;
 #X obj 401 605 line~;
 #X obj 57 425 osc~ 4;
 #X obj 299 526 mtof;
@@ -120,7 +120,7 @@
 #X obj 726 120 route 0 1 2 3 4 5;
 #X obj 726 153 switch~;
 #X obj 153 5 * 130;
-#X obj 699 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 699 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 675 585 5 0 0 0 - - -, f 5;
 #X obj 675 563 r GAMME;
@@ -264,7 +264,6 @@
 #X connect 101 3 35 0;
 #X connect 101 4 120 0;
 #X connect 101 5 121 0;
-#X connect 102 0 103 0;
 #X connect 102 0 105 0;
 #X connect 104 0 11 0;
 #X connect 104 0 61 0;
