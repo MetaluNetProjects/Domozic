@@ -1,7 +1,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-#define ANALOG_FILTER 4 
+#define ANALOG_FILTER 3 
 #define ANALOG_THRESHOLD 10
 #define RAMP_UINCPOW 6
 #define RAMP_MAXERROR 1

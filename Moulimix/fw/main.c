@@ -82,7 +82,8 @@ void loop() {
 		if(!switchSend()) analogSend();		// send switches channels that changed, if none send analogs that changed
 		DCMOTOR_COMPUTE(D, ASYM);
 		//fraiseService();	// listen to Fraise events
-		printf("CM %ld %d %ld %ld\n",DCMOTOR_GETSPEED(D), (int)dcmotorDeltaPos, dcmotorDeltaT, DCMOTOR_GETPOS(D));
+		//printf("CM %ld %d %ld %ld\n",DCMOTOR_GETSPEED(D), (int)dcmotorDeltaPos, dcmotorDeltaT, DCMOTOR_GETPOS(D));
+		printf("CM %ld\n",DCMOTOR_GETSPEED(D));
 		//printf("CP %ld\n",DCMOTOR_GETPOS(D));
 		//printf("CM %ld\n",DCMOTOR_GETSPEED(D)/*(long)DCMOTOR(D).VolVars.computedSpeed*/);
 	}
