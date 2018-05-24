@@ -1,5 +1,5 @@
-#N canvas 620 79 716 391 10;
-#N canvas 2792 83 411 676 ALLSOUND 0;
+#N canvas 1861 654 716 391 10;
+#N canvas 2612 174 411 676 ALLSOUND 0;
 #X obj 19 317 lop~ 3000;
 #X obj 20 586 outlet~;
 #X obj 165 232 s \$0-caninstru;
@@ -7,30 +7,30 @@
 #X msg 166 211 vis 1;
 #X obj 18 131 inlet;
 #X obj 19 517 +~;
-#N canvas 1429 506 770 575 synth 0;
+#N canvas 1366 103 770 575 synth 0;
 #X obj 181 487 outlet~;
 #X obj 182 376 *~;
 #X obj 184 105 ead~ 1 100;
 #X obj 244 20 mknob 25 100 0 1 0 0 \$1-r-snd \$1-r-rcv r -2 -6 1 8
--262144 -1 -1 659 1;
+-262144 -1 -1 7300 1;
 #X obj 249 85 * 1000;
 #X obj 204 53 mknob 25 100 0 1 0 0 \$1-a-snd \$1-a-rcv a -2 -6 1 8
--262144 -1 -1 561 1;
+-262144 -1 -1 3500 1;
 #X obj 204 82 * 100;
 #X obj 228 293 osc~ 80;
 #X msg 133 85 0;
 #X obj 228 271 *~ 120;
 #X obj 342 150 mknob 25 100 0 1 0 0 \$1-f-snd \$1-f-rcv f -2 -6 1 8
--262144 -1 -1 3455 1;
+-262144 -1 -1 2900 1;
 #X obj 341 311 mtof;
 #X obj 269 139 mknob 25 100 0 1 0 0 \$1-env2f-snd \$1-env2f-rcv env2f
--2 -6 1 8 -262144 -1 -1 3955 1;
+-2 -6 1 8 -262144 -1 -1 0 1;
 #X obj 260 185 *~;
 #X msg 287 185 1 \$1;
 #X obj 287 204 -;
 #X obj 260 206 +~;
 #X obj 110 160 mknob 25 100 0 1 0 0 \$1-volnoise-snd \$1-volnoise-rcv
-volnoise -2 -6 1 8 -262144 -1 -1 205 1;
+volnoise -2 -6 1 8 -262144 -1 -1 0 1;
 #X obj 66 208 mull~ 0 10;
 #X obj 58 187 noise~;
 #X obj 132 32 inlet;
@@ -75,7 +75,6 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 -1;
 #X obj 394 37 r \$1-Decay-snd;
 #X obj 463 225 r \$1-Note_adjust-snd;
-#X obj 336 284 gammeRound /CHORD;
 #X obj 463 247 * 40;
 #X floatatom 389 317 5 0 0 0 - - -, f 5;
 #X obj 393 156 * 24;
@@ -84,6 +83,7 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X obj 396 178 - 12;
 #X obj 338 248 ++;
 #X obj 341 221 * 130;
+#X obj 336 284 gammeRound /BASS;
 #X connect 1 0 29 0;
 #X connect 2 0 1 1;
 #X connect 2 0 13 1;
@@ -94,7 +94,7 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X connect 7 0 1 0;
 #X connect 8 0 7 1;
 #X connect 9 0 7 0;
-#X connect 10 0 41 0;
+#X connect 10 0 40 0;
 #X connect 11 0 9 1;
 #X connect 11 0 21 0;
 #X connect 12 0 13 0;
@@ -117,17 +117,17 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X connect 29 0 0 0;
 #X connect 31 0 22 1;
 #X connect 32 0 28 0;
-#X connect 32 0 34 0;
-#X connect 33 0 11 0;
-#X connect 33 0 35 0;
-#X connect 34 0 33 1;
-#X connect 36 0 39 0;
-#X connect 37 0 36 0;
-#X connect 39 0 38 0;
-#X connect 39 0 40 1;
-#X connect 40 0 33 0;
-#X connect 41 0 26 0;
-#X connect 41 0 40 0;
+#X connect 32 0 33 0;
+#X connect 33 0 41 1;
+#X connect 35 0 38 0;
+#X connect 36 0 35 0;
+#X connect 38 0 37 0;
+#X connect 38 0 39 1;
+#X connect 39 0 41 0;
+#X connect 40 0 26 0;
+#X connect 40 0 39 0;
+#X connect 41 0 11 0;
+#X connect 41 0 34 0;
 #X restore 18 153 pd synth;
 #X obj 20 543 *~ 2;
 #X obj 19 565 hip~ 10;
@@ -170,7 +170,7 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X restore 108 120 pd ALLSOUND;
 #X obj 97 292 Vmull~ 0 10;
 #X obj 42 321 outlet~;
-#N canvas 491 1119 242 392 touches 0;
+#N canvas 1366 808 242 392 touches 0;
 #X obj 51 46 ++;
 #X obj 51 94 ++;
 #X obj 51 70 ++;
@@ -191,13 +191,13 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X obj 66 24 r \$1-1/2-lock;
 #X obj 82 48 r \$1-1/3-lock;
 #X obj 80 73 r \$1-1/4-lock;
-#N canvas 2022 473 377 382 play 0;
+#N canvas 676 802 377 382 play 0;
 #X msg 252 67 0;
 #X obj 156 221 ||;
 #X obj 173 196 t b f;
-#X obj 152 244 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 152 244 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 177 167 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 177 167 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 193 290 outlet on-off;
 #X obj 134 85 sel 0 1;
@@ -608,7 +608,7 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 203 279 param \$1 SETTING mute-reverse;
 #X obj 8 141 s \$1-lvert;
-#N canvas 1615 174 381 330 Gamme 0;
+#N canvas 1366 201 381 330 Gamme 0;
 #N canvas 493 1192 450 382 i2l 0;
 #X obj 221 41 inlet;
 #X obj 221 243 outlet;
@@ -718,12 +718,12 @@ volnoise -2 -6 1 8 -262144 -1 -1 205 1;
 #X obj 203 300 param \$1 SETTING gamnum;
 #X msg 427 248 0.5;
 #X msg 462 248 0.5;
-#X obj 413 89 mknob 30 100 0 1 0 0 \$1-Tempo-snd \$1-Tempo-rcv tempo_8
--2 -6 0 8 -241291 -1 -4160 6662 1;
+#X obj 413 89 mknob 30 100 0 1 0 0 \$1-Tempo-snd \$1-Tempo-rcv tempo_2
+-2 -6 0 8 -241291 -1 -4160 1800 1;
 #X obj 372 117 mknob 30 100 0 1 0 0 \$1-STEPnumCtl-snd \$1-STEPnumCtl-rcv
-step_4 -2 -6 0 8 -159808 -1 -4034 3922 1;
+step_8 -2 -6 0 8 -159808 -1 -4034 7511 1;
 #X obj 337 89 mknob 30 100 0 1 0 0 \$1-PhraseNum-snd \$1-PhraseNum-rcv
-Phrase -2 -6 0 8 -45076 -1 -4034 10 1;
+Phrase -2 -6 0 8 -45076 -1 -4034 2157 1;
 #X obj 305 116 mknob 30 100 0 1 0 0 \$1-Reverb-snd \$1-Reverb-rcv Reverb
 -2 -6 0 8 -4034 -1 -258113 0 1;
 #N canvas 2494 770 285 327 apfs 0;
@@ -738,11 +738,11 @@ Phrase -2 -6 0 8 -45076 -1 -4034 10 1;
 #X restore 221 15 pd apfs;
 #X obj 207 49 r Sel\$2-snd;
 #X obj 453 117 mknob 30 100 0 1 0 0 \$1-Decay-snd \$1-Decay-rcv Decay
--2 -6 0 8 -241291 -1 -4160 2500 1;
+-2 -6 0 8 -241291 -1 -4160 9900 1;
 #X obj 453 65 mknob 30 100 0 1 0 0 \$1-Note_adjust-snd \$1-Note_adjust-rcv
-Note_adjust -2 -6 0 8 -258113 -1 -4160 9900 1;
+Note_adjust -2 -6 0 8 -258113 -1 -4160 9839 1;
 #X obj 509 78 mknob 30 100 0 1 0 0 \$1-NoteBass-snd \$1-NoteBass-rcv
-NoteBass -2 -6 1 8 -203904 -1 -1 2994 1;
+NoteBass -2 -6 1 8 -203904 -1 -1 1525 1;
 #X msg 487 23 0.5;
 #X obj 504 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -191407
 -1 -1;
