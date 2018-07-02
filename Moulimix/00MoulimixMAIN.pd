@@ -1,4 +1,4 @@
-#N canvas 832 289 534 479 10;
+#N canvas 272 461 534 479 10;
 #X declare -path notebank;
 #X declare -path absGAMME -path ../absGAMME;
 #X declare -stdpath motex -path motex -lib motex;
@@ -15,7 +15,7 @@
 #X floatatom 442 127 5 0 0 0 - - -, f 5;
 #X obj 365 29 route list;
 #X obj 365 154 GAMMEKBV /GAMME;
-#N canvas 59 535 400 233 notebanks 1;
+#N canvas 59 589 400 233 notebanks 0;
 #X obj 27 9 declare -path notebank;
 #X obj 246 20 accorder;
 #X obj 25 63 notebank 1 23 SonsCourts/Hi;
@@ -26,12 +26,12 @@
 #X restore 28 154 pd notebanks;
 #X obj 27 9 declare -path absGAMME -path ../absGAMME;
 #X obj 27 28 declare -stdpath motex -path motex -lib motex;
-#X obj 148 137 getenv HOME;
-#X obj 148 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X symbolatom 148 158 10 0 0 0 - - -, f 10;
-#X obj 148 199 s DATASDIR;
-#X obj 148 97 loadbang;
+#X obj 168 355 getenv HOME;
+#X obj 175 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X symbolatom 168 376 10 0 0 0 - - -, f 10;
+#X obj 175 158 s DATASDIR;
+#X obj 175 73 loadbang;
 #X obj 124 225 del 100;
 #X obj 124 246 s LOADTABLES;
 #X obj 232 116 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -66,11 +66,11 @@
 #X msg 378 394 145;
 #X obj 387 341 loadbang;
 #X obj 29 93 ../domoNet Moulimix;
-#X msg 148 178 symbol \$1/Datas/Domozic/Moulimix;
-#N canvas 126 218 877 538 CROQUE 1;
+#X msg 168 396 symbol \$1/Datas/Domozic/Moulimix;
+#N canvas 181 586 877 538 CROQUE 0;
 #X obj 63 19 r CROQUE;
 #X obj 256 307 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12684 1;
+-1 -1 6784 1;
 #X obj 254 327 pow 2;
 #X obj 100 498 throw~ master;
 #X obj 253 265 r CROQUE;
@@ -223,7 +223,7 @@
 #X connect 71 0 67 0;
 #X connect 72 0 66 0;
 #X restore 31 320 pd CROQUE;
-#N canvas 102 181 864 694 MOULI 0;
+#N canvas 211 139 864 694 MOULI 0;
 #X obj 104 129 * 130;
 #X obj 104 150 mtof;
 #X obj 104 109 abs;
@@ -245,7 +245,7 @@
 #X obj 82 410 line~;
 #X msg 82 390 \$1 10;
 #X obj 171 398 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 12684 1;
+-1 -1 6553 1;
 #X obj 168 418 pow 2;
 #X obj 331 72 t a b;
 #X obj 331 128 list prepend;
@@ -435,6 +435,8 @@
 #X connect 98 1 97 1;
 #X connect 99 0 98 0;
 #X restore 31 341 pd MOULI;
+#X obj 175 114 getdir;
+#X msg 175 135 symbol \$1/wavs;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 2 1 4 0;
@@ -442,15 +444,15 @@
 #X connect 6 0 7 0;
 #X connect 8 0 2 0;
 #X connect 13 0 15 0;
-#X connect 14 0 13 0;
+#X connect 14 0 35 0;
 #X connect 14 0 18 0;
 #X connect 15 0 32 0;
 #X connect 17 0 14 0;
 #X connect 18 0 19 0;
-#X connect 20 0 13 0;
 #X connect 22 0 23 0;
 #X connect 27 0 26 0;
 #X connect 29 0 28 0;
 #X connect 30 0 29 0;
 #X connect 30 0 27 0;
-#X connect 32 0 16 0;
+#X connect 35 0 36 0;
+#X connect 36 0 16 0;
