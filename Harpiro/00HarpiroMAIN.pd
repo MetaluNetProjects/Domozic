@@ -1,4 +1,4 @@
-#N canvas 769 289 534 479 10;
+#N canvas 203 477 534 479 10;
 #X declare -path notebank;
 #X declare -stdpath motex -path motex -lib motex;
 #X declare -stdpath iemlib -lib iemlib1;
@@ -9,12 +9,12 @@
 #X obj 28 113 fraise_interface;
 #X obj 386 8 r CLOCK;
 #X obj 386 51 unpack f f;
-#X floatatom 386 73 5 0 0 0 - - -, f 5;
-#X floatatom 443 73 5 0 0 0 - - -, f 5;
+#X floatatom 386 73 5 0 0 0 - - -;
+#X floatatom 443 73 5 0 0 0 - - -;
 #X obj 386 98 bng 50 50 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 463 105 r /BPM;
-#X floatatom 463 127 5 0 0 0 - - -, f 5;
+#X floatatom 463 127 5 0 0 0 - - -;
 #X obj 386 29 route list;
 #X obj 365 154 GAMMEKBV /GAMME;
 #N canvas 70 396 522 372 notebanks 0;
@@ -23,10 +23,9 @@
 #X obj 25 63 notebank 1 8 RTWOS/Epinette 4.23 1.467;
 #X restore 28 154 pd notebanks;
 #X obj 15 28 declare -stdpath motex -path motex -lib motex;
-#X obj 148 137 getenv HOME;
 #X obj 148 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X symbolatom 148 158 10 0 0 0 - - -, f 10;
+#X symbolatom 148 158 10 0 0 0 - - -;
 #X obj 148 199 s DATASDIR;
 #X obj 148 97 loadbang;
 #X obj 124 225 del 100;
@@ -78,7 +77,7 @@
 #X msg 378 394 145;
 #X obj 387 341 loadbang;
 #X obj 29 93 ../domoNet Harpiro;
-#N canvas 537 105 829 557 Basse 1;
+#N canvas 537 106 829 557 Basse 0;
 #X obj 115 32 r ASSIETTE1;
 #X obj 208 27 r CONTROL;
 #X obj 231 142 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -126,7 +125,7 @@
 #X obj 359 451 f;
 #X obj 359 472 sel 0;
 #X msg 359 493 0;
-#X floatatom 512 326 5 0 0 0 - - -, f 5;
+#X floatatom 512 326 5 0 0 0 - - -;
 #X obj 524 260 + 20;
 #X obj 402 191 + 8;
 #X obj 444 167 t b f;
@@ -140,7 +139,7 @@
 #X msg 759 372 1 8;
 #X msg 583 373 2 4;
 #X obj 115 53 unpack f f;
-#X floatatom 41 185 5 0 0 0 - - -, f 5;
+#X floatatom 41 185 5 0 0 0 - - -;
 #X obj 107 89 * 200;
 #X obj 115 74 - 0.75;
 #X obj 106 212 spigot;
@@ -148,7 +147,7 @@
 #X obj 106 128 mavg 20;
 #X obj 106 149 mavg 20;
 #X obj 31 65 unpack f f f;
-#X floatatom 24 162 5 0 0 0 - - -, f 5;
+#X floatatom 24 162 5 0 0 0 - - -;
 #X obj 31 94 + 1;
 #X obj 107 110 + 0;
 #X obj 31 44 r AXLRAW1;
@@ -161,24 +160,24 @@
 #X obj 115 314 pow 4;
 #X obj 115 335 * 200;
 #X obj 181 369 + 1;
-#X floatatom 231 392 5 0 0 0 - - -, f 5;
-#X floatatom 146 359 5 0 0 0 - - -, f 5;
+#X floatatom 231 392 5 0 0 0 - - -;
+#X floatatom 146 359 5 0 0 0 - - -;
 #X obj 41 205 mtof;
-#X floatatom 41 226 5 0 0 0 - - -, f 5;
+#X floatatom 41 226 5 0 0 0 - - -;
 #X obj 60 297 *~ 20;
 #X obj 60 276 bp~ 180 10;
 #X obj 524 279 gammeRound /GAMME 50;
 #X obj 408 352 sel -1 0 1 2 3 4 5 6 7, f 66;
 #X obj 278 371 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X floatatom 277 327 5 0 0 0 - - -, f 5;
+#X floatatom 277 327 5 0 0 0 - - -;
 #X msg 495 372 3 2;
 #X msg 627 373 1 3;
 #X obj 524 147 moses 8;
 #X obj 115 356 + 1;
 #X obj 363 54 route 0;
 #X obj 311 122 >= 0;
-#X floatatom 173 273 5 0 0 0 - - -, f 5;
+#X floatatom 173 273 5 0 0 0 - - -;
 #X obj 117 243 songParam SONGS bassDisto 0.1;
 #X obj 595 32 r BASSE_KB;
 #X obj 653 51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -330,7 +329,6 @@
 #X connect 110 1 111 1;
 #X connect 111 0 96 1;
 #X connect 114 0 32 0;
-#X connect 114 0 113 0;
 #X connect 115 0 116 0;
 #X connect 116 0 62 0;
 #X connect 117 0 115 0;
@@ -354,7 +352,7 @@
 #X msg 34 117 play \$1 \$2 \$3;
 #X obj 34 19 r Harpe-play;
 #X obj 34 143 s Harpe-notes;
-#X floatatom 177 27 5 0 0 0 - - -, f 5;
+#X floatatom 177 27 5 0 0 0 - - -;
 #X msg 135 118 transpose \$1;
 #X obj 135 98 * 1.5706;
 #X obj 270 75 t f f, f 11;
@@ -365,7 +363,7 @@
 #X obj 270 202 list append;
 #X obj 333 180 + 1;
 #X obj 270 222 s Harpe-play;
-#X floatatom 400 146 5 0 0 0 - - -, f 5;
+#X floatatom 400 146 5 0 0 0 - - -;
 #X msg 270 55 1;
 #X obj 585 12 r CONTROL;
 #X obj 585 33 route push swC;
@@ -399,7 +397,7 @@
 #X obj 314 306 pow 2;
 #X obj 314 369 line~;
 #X obj 203 275 *~;
-#X floatatom 275 315 5 0 0 0 - - -, f 5;
+#X floatatom 275 315 5 0 0 0 - - -;
 #X obj 314 285 songParam SONGS harpAir 0.1;
 #X obj 314 327 * 1;
 #X msg 314 348 \$1 500;
@@ -539,7 +537,6 @@
 #X connect 92 0 90 0;
 #X connect 92 1 30 1;
 #X restore 99 284 pd Harpe;
-#X msg 148 178 symbol \$1/Datas/Domozic/Harpiro;
 #N canvas 59 177 669 698 Micro 0;
 #X obj 193 209 limiter~;
 #X obj 153 210 z~ 64;
@@ -564,7 +561,7 @@
 #X obj 234 92 *;
 #X obj 259 93 t b f;
 #X obj 189 342 shifter;
-#X floatatom 229 280 5 0 0 0 - - -, f 5;
+#X floatatom 229 280 5 0 0 0 - - -;
 #X obj 271 230 fiddle~ 2048;
 #X obj 317 255 unpack f f;
 #X obj 317 276 t f f;
@@ -602,13 +599,13 @@
 #X obj 6 372 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 430 396 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8648 1;
+-1 -1 7497 1;
 #X obj 43 453 clocked_delay;
 #X obj 26 268 r CONTROL;
 #X obj 26 289 route fx;
 #X obj 56 99 r ASSIETTE1;
 #X obj 56 120 unpack f f f;
-#X floatatom 30 227 5 0 0 0 - - -, f 5;
+#X floatatom 30 227 5 0 0 0 - - -;
 #X obj 84 150 - 0.75;
 #X obj 92 210 * 8;
 #X obj 87 268 clip 0 1;
@@ -710,26 +707,28 @@
 ;
 #X obj 174 380 5clicks;
 #X obj 174 400 RecallSongMaster SONGS;
+#X obj 148 137 getdir;
+#X msg 148 178 symbol \$1/WAVS;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 2 1 4 0;
 #X connect 3 0 5 0;
 #X connect 6 0 7 0;
 #X connect 8 0 2 0;
-#X connect 12 0 14 0;
-#X connect 13 0 12 0;
-#X connect 13 0 17 0;
-#X connect 14 0 33 0;
-#X connect 16 0 13 0;
-#X connect 17 0 18 0;
-#X connect 19 0 12 0;
-#X connect 21 0 22 0;
-#X connect 26 0 25 0;
+#X connect 12 0 16 0;
+#X connect 12 0 39 0;
+#X connect 13 0 40 0;
+#X connect 15 0 12 0;
+#X connect 16 0 17 0;
+#X connect 18 0 39 0;
+#X connect 20 0 21 0;
+#X connect 25 0 24 0;
+#X connect 27 0 26 0;
 #X connect 28 0 27 0;
-#X connect 29 0 28 0;
-#X connect 29 0 26 0;
-#X connect 33 0 15 0;
-#X connect 35 0 36 0;
-#X connect 36 0 37 0;
-#X connect 37 0 39 0;
-#X connect 39 0 40 0;
+#X connect 28 0 25 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 37 0;
+#X connect 37 0 38 0;
+#X connect 39 0 13 0;
+#X connect 40 0 14 0;
