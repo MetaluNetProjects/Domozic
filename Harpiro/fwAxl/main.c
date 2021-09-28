@@ -3,7 +3,7 @@
  *	Analog capture on connectors K1, K2, K3 and K5. 
  *********************************************************************/
 
-#define BOARD Versa1
+#define BOARD Versa2
 
 #include <fruit.h>
 #include <analog.h>
@@ -65,9 +65,9 @@ void setup(void) {
 
 	INTCON2bits.RBPU = 0; // enable pullups on PORTB
 	switchInit();
-	switchSelect(0,SWA);
+	switchSelect(2,SWA);
 	switchSelect(1,SWB);
-	switchSelect(2,PUSH);
+	switchSelect(0,PUSH);
 
 //----------- setup I2C master ----------------
 	i2cm_init(I2C_MASTER, I2C_SLEW_ON, FOSC/400000/4-1);

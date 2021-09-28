@@ -3,7 +3,7 @@
  *	Analog capture on connectors K1, K2, K3 and K5. 
  *********************************************************************/
 
-#define BOARD Versa1
+#define BOARD Versa2
 
 #include <fruit.h>
 #include <analog.h>
