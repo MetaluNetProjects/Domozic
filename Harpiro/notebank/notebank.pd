@@ -1,4 +1,4 @@
-#N canvas 752 241 597 613 10;
+#N canvas 752 579 597 613 10;
 #X obj 24 79 table notelength-\$1 \$2;
 #X obj 26 174 tabread notelength-\$1;
 #X floatatom 26 196 8 0 0 0 - - -, f 8;

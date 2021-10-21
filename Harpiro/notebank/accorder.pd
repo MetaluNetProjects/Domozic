@@ -1,6 +1,6 @@
-#N canvas 678 154 538 283 10;
+#N canvas 662 154 538 283 10;
 #X declare -stdpath moonlib -path moonlib;
-#N canvas 480 279 587 516 guts 1;
+#N canvas 87 734 587 694 guts 1;
 #N canvas 569 541 450 192 getnote 0;
 #X obj 141 111 tabread;
 #X obj 172 39 r \$0-bank;
@@ -35,7 +35,7 @@
 #X obj 34 267 list prepend;
 #X msg 34 92 \$1 getprops;
 #X obj 34 160 route props;
-#X obj 283 255 +~;
+#X obj 282 305 +~;
 #N canvas 812 131 590 453 playsample 0;
 #X obj 98 49 r \$0-bank;
 #X obj 67 27 r \$0-note;
@@ -113,7 +113,7 @@
 #X connect 32 0 22 0;
 #X connect 34 0 18 0;
 #X restore 283 74 pd playsample;
-#N canvas 983 403 210 324 playsynth 0;
+#N canvas 759 455 210 324 playsynth 0;
 #X obj 30 270 *~;
 #X obj 45 204 pow 2;
 #X msg 45 226 \$1 10;
@@ -128,6 +128,7 @@
 #X obj 77 115 * 5;
 #X obj 31 38 -;
 #X obj 61 37 r \$0-accordoffset;
+#X obj 159 96 outlet;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -141,6 +142,7 @@
 #X connect 10 0 0 0;
 #X connect 11 0 9 1;
 #X connect 12 0 7 0;
+#X connect 12 0 14 0;
 #X connect 13 0 12 1;
 #X restore 301 223 pd playsynth;
 #X obj 405 94 r \$0-synthsrc;
@@ -151,28 +153,28 @@
 #X obj 405 198 route 0, f 19;
 #X obj 405 220 s \$0-accord-rcv;
 #X obj 405 115 t b f, f 19;
-#X obj 301 202 r \$0-accord;
-#X obj 274 348 r \$0-accord;
-#X obj 259 370 f;
-#X obj 259 320 r \$0-save;
-#X obj 259 391 list prepend;
-#X obj 259 439 list prepend;
-#X obj 259 414 list prepend setaccord;
-#X obj 399 414 r \$0-bank;
-#X obj 399 435 + 1;
-#X obj 342 391 + 1;
-#X obj 342 371 r \$0-note;
-#X obj 259 460 s notebanks;
+#X obj 301 162 r \$0-accord;
+#X obj 215 431 r \$0-accord;
+#X obj 200 453 f;
+#X obj 200 403 r \$0-save;
+#X obj 200 474 list prepend;
+#X obj 200 522 list prepend;
+#X obj 200 497 list prepend setaccord;
+#X obj 340 497 r \$0-bank;
+#X obj 340 518 + 1;
+#X obj 283 474 + 1;
+#X obj 283 454 r \$0-note;
+#X obj 200 543 s notebanks;
 #X obj 42 430 r show-accorder;
 #X msg 42 451 vis 0 \, vis 1;
 #X obj 42 472 s accorder-canvas;
 #X obj 133 25 declare -stdpath moonlib -path moonlib;
 #X floatatom 514 220 5 0 0 0 - - -, f 5;
-#X msg 331 242 label accord:\$1;
-#X obj 331 263 s \$0-accord-rcv;
+#X msg 306 183 label accord:\$1;
+#X obj 306 204 s \$0-accord-rcv;
 #X obj 41 363 r \$0-on;
 #X obj 41 384 switch~;
-#X obj 283 282 throw~ master;
+#X obj 282 332 throw~ master;
 #X obj 155 126 tabread;
 #X obj 155 65 r \$0-bank;
 #X obj 155 86 + 1;
@@ -181,6 +183,41 @@
 #X obj 155 166 s \$0-accordoffset;
 #X obj 373 73 r \$0-accordoffset;
 #X obj 358 94 +;
+#N canvas 0 93 450 439 playsynth2 0;
+#X obj 30 270 *~;
+#X obj 45 204 pow 2;
+#X msg 45 226 \$1 10;
+#X obj 45 248 line~;
+#X obj 30 291 outlet~;
+#X obj 31 93 mtof;
+#X obj 31 116 ssaw~;
+#X obj 31 137 lop~;
+#X obj 31 158 hip~ 80;
+#X obj 77 115 * 5;
+#X obj 31 20 inlet;
+#X obj 65 42 t b f;
+#X obj 31 71 +;
+#X obj 81 7 r CoefSynth2;
+#X floatatom 161 74 5 0 0 0 - - -, f 5;
+#X obj 44 179 r \$0-volsynth2;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 1;
+#X connect 5 0 6 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 7 1;
+#X connect 10 0 12 0;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 12 0 5 0;
+#X connect 13 0 11 0;
+#X connect 13 0 14 0;
+#X connect 15 0 1 0;
+#X restore 351 277 pd playsynth2;
 #X connect 0 0 20 0;
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
@@ -203,6 +240,7 @@
 #X connect 17 0 16 0;
 #X connect 17 1 56 0;
 #X connect 18 0 16 0;
+#X connect 18 1 57 0;
 #X connect 19 0 26 0;
 #X connect 20 0 22 0;
 #X connect 21 0 23 0;
@@ -236,28 +274,37 @@
 #X connect 53 0 54 0;
 #X connect 55 0 56 1;
 #X connect 56 0 21 0;
+#X connect 57 0 16 0;
 #X restore 20 233 pd guts;
 #X obj 20 252 namecanvas accorder-canvas;
 #X obj 7 3 cnv 15 300 220 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 15 66 hradio 15 1 0 16 \$0-note \$0-note-rcv note 0 -8 0 10
--262144 -1 -1 3;
-#X obj 15 25 hradio 10 1 0 48 \$0-bank \$0-bank-rcv bank-16:RTWOS/ChantNathalie
-0 -8 0 10 -262144 -1 -1 15;
+#X obj 15 66 hradio 15 1 0 8 \$0-note \$0-note-rcv note 0 -8 0 10 -262144
+-1 -1 7;
+#X obj 15 25 hradio 10 1 0 48 \$0-bank \$0-bank-rcv bank-2:RTWOS/Cello
+0 -8 0 10 -262144 -1 -1 1;
 #X obj 112 108 bng 20 250 50 0 \$0-play empty play 0 -7 0 10 -4034
 -1 -1;
 #X obj 19 108 hsl 80 20 0 1 0 1 \$0-volsample empty volume-sample -2
 -8 0 10 -262144 -1 -1 3000 1;
 #X obj 20 146 hsl 80 20 0 1 0 1 \$0-volsynth empty volume-synthé -2
--8 0 10 -262144 -1 -1 1900 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X text 197 253 chaipu=brigitte;
 #X obj 112 135 vradio 20 1 0 2 \$0-synthsrc \$0-synthsrc-rcv empty
 0 -8 0 10 -262144 -1 -1 1;
 #X text 135 137 original;
 #X text 135 157 analyse;
-#X obj 19 188 hsl 240 20 30 100 0 0 \$0-accord \$0-accord-rcv accord:70.3321
--2 -8 0 10 -257985 -1 -1 13771 1;
+#X obj 19 188 hsl 240 20 30 100 0 0 \$0-accord \$0-accord-rcv accord:58.8699
+-2 -8 0 10 -257985 -1 -1 9857 1;
 #X obj 266 188 bng 20 250 50 0 \$0-save empty save 0 -7 0 10 -258113
 -1 -1;
 #X obj 257 70 tgl 20 0 \$0-on empty ON 4 10 0 10 -260097 -1 -1 0 1
 ;
+#X obj 342 102 hsl 80 20 0 1 0 1 \$0-volsynth2 empty volume-synthé2
+-2 -8 0 10 -262144 -1 -1 1500 1;
+#X obj 354 157 hsl 80 20 -4 4 0 1 CoefSynth2 empty coef-synthé2 -2
+-8 0 10 -262144 -1 -1 6599 1;
+#X floatatom 347 221 5 0 0 0 - - -, f 5;
+#X msg 461 118 2.683;
+#X connect 16 0 17 0;
+#X connect 18 0 16 0;

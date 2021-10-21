@@ -1,0 +1,49 @@
+#N canvas 244 145 633 541 10;
+#X obj 333 320 *~;
+#X obj 237 45 inlet~ signal;
+#X obj 244 466 outlet~;
+#X obj 278 214 r \$0-amount;
+#X obj 281 267 line~;
+#X msg 279 243 \$1 5;
+#X obj 355 269 cos~;
+#X obj 351 192 *~;
+#X obj 383 158 line~;
+#X msg 383 135 \$1 5;
+#X obj 352 241 -~ 0.25;
+#X obj 352 217 clip~ -2 2;
+#X obj 243 359 *~;
+#X obj 383 44 r \$0-adjust;
+#X obj 279 301 -~ 1;
+#X obj 281 324 *~ -1;
+#X obj 129 137 hsl 60 10 0 1 0 1 \$0-amount empty amount -2 -7 0 10
+-75483 -262144 -355 3700 1;
+#X obj 129 161 hsl 60 10 0 1 0 1 \$0-adjust empty adjust -2 -7 0 10
+-75483 -262144 -355 5000 1;
+#X obj 109 134 cnv 12 15 13 empty empty 0 1 6 0 12 -33289 -262144 0
+;
+#X obj 109 158 cnv 12 15 13 empty empty 1 1 6 0 12 -33289 -262144 0
+;
+#X obj 383 88 * 10;
+#X obj 383 113 + 0.2;
+#X obj 384 66 pow 2;
+#X connect 0 0 2 0;
+#X connect 1 0 12 0;
+#X connect 1 0 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 1;
+#X connect 4 0 14 0;
+#X connect 5 0 4 0;
+#X connect 6 0 0 0;
+#X connect 7 0 11 0;
+#X connect 8 0 7 1;
+#X connect 9 0 8 0;
+#X connect 10 0 6 0;
+#X connect 11 0 10 0;
+#X connect 12 0 2 0;
+#X connect 13 0 22 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 1;
+#X connect 20 0 21 0;
+#X connect 21 0 9 0;
+#X connect 22 0 20 0;
+#X coords 0 -1 1 1 100 80 1 100 100;
