@@ -1,5 +1,5 @@
 #N canvas 662 154 538 283 10;
-#X declare -stdpath moonlib -path moonlib;
+#X declare -path moonlib;
 #N canvas 87 734 587 694 guts 1;
 #N canvas 569 541 450 192 getnote 0;
 #X obj 141 111 tabread;
@@ -9,8 +9,8 @@
 #X obj 141 135 outlet;
 #X obj 172 60 + 1;
 #X obj 141 38 + 1;
-#X floatatom 103 74 5 0 0 0 - - -, f 5;
-#X floatatom 92 146 5 0 0 0 - - -, f 5;
+#X floatatom 103 74 5 0 0 0 - - - 0;
+#X floatatom 92 146 5 0 0 0 - - - 0;
 #X connect 0 0 4 0;
 #X connect 0 0 8 0;
 #X connect 1 0 5 0;
@@ -67,10 +67,10 @@
 #X obj 244 268 moses 110;
 #X text 326 280 mean midinote on sample;
 #X text 326 266 note midi moyenne sur le sample;
-#X floatatom 108 345 5 0 0 0 - - -, f 5;
+#X floatatom 108 345 5 0 0 0 - - - 0;
 #X msg 182 154 stop;
 #X obj 220 154 del 500;
-#X floatatom 120 394 5 0 0 0 - - -, f 5;
+#X floatatom 120 394 5 0 0 0 - - - 0;
 #X obj 187 225 sigmund~ -hop 4096 -stabletime 300 pitch;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
@@ -168,8 +168,7 @@
 #X obj 42 430 r show-accorder;
 #X msg 42 451 vis 0 \, vis 1;
 #X obj 42 472 s accorder-canvas;
-#X obj 133 25 declare -stdpath moonlib -path moonlib;
-#X floatatom 514 220 5 0 0 0 - - -, f 5;
+#X floatatom 514 220 5 0 0 0 - - - 0;
 #X msg 306 183 label accord:\$1;
 #X obj 306 204 s \$0-accord-rcv;
 #X obj 41 363 r \$0-on;
@@ -179,7 +178,7 @@
 #X obj 155 65 r \$0-bank;
 #X obj 155 86 + 1;
 #X msg 155 106 set props-\$1 \, 0;
-#X floatatom 155 147 5 0 0 0 - - -, f 5;
+#X floatatom 155 147 5 0 0 0 - - - 0;
 #X obj 155 166 s \$0-accordoffset;
 #X obj 373 73 r \$0-accordoffset;
 #X obj 358 94 +;
@@ -198,7 +197,7 @@
 #X obj 65 42 t b f;
 #X obj 31 71 +;
 #X obj 81 7 r CoefSynth2;
-#X floatatom 161 74 5 0 0 0 - - -, f 5;
+#X floatatom 161 74 5 0 0 0 - - - 0;
 #X obj 44 179 r \$0-volsynth2;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
@@ -218,6 +217,7 @@
 #X connect 13 0 14 0;
 #X connect 15 0 1 0;
 #X restore 351 277 pd playsynth2;
+#X obj 133 25 declare -path moonlib;
 #X connect 0 0 20 0;
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
@@ -236,23 +236,23 @@
 #X connect 13 0 12 0;
 #X connect 14 0 6 0;
 #X connect 15 0 8 0;
-#X connect 16 0 48 0;
+#X connect 16 0 47 0;
 #X connect 17 0 16 0;
-#X connect 17 1 56 0;
+#X connect 17 1 55 0;
 #X connect 18 0 16 0;
-#X connect 18 1 57 0;
+#X connect 18 1 56 0;
 #X connect 19 0 26 0;
 #X connect 20 0 22 0;
 #X connect 21 0 23 0;
 #X connect 22 0 24 0;
 #X connect 23 0 24 0;
 #X connect 24 0 25 0;
-#X connect 24 0 43 0;
+#X connect 24 0 42 0;
 #X connect 26 0 21 0;
 #X connect 26 0 20 0;
 #X connect 26 1 24 1;
 #X connect 27 0 18 0;
-#X connect 27 0 44 0;
+#X connect 27 0 43 0;
 #X connect 28 0 29 1;
 #X connect 29 0 31 0;
 #X connect 30 0 29 0;
@@ -265,46 +265,34 @@
 #X connect 37 0 36 0;
 #X connect 39 0 40 0;
 #X connect 40 0 41 0;
-#X connect 44 0 45 0;
-#X connect 46 0 47 0;
-#X connect 49 0 53 0;
+#X connect 43 0 44 0;
+#X connect 45 0 46 0;
+#X connect 48 0 52 0;
+#X connect 49 0 50 0;
 #X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 52 0 49 0;
-#X connect 53 0 54 0;
-#X connect 55 0 56 1;
-#X connect 56 0 21 0;
-#X connect 57 0 16 0;
+#X connect 51 0 48 0;
+#X connect 52 0 53 0;
+#X connect 54 0 55 1;
+#X connect 55 0 21 0;
+#X connect 56 0 16 0;
 #X restore 20 233 pd guts;
 #X obj 20 252 namecanvas accorder-canvas;
-#X obj 7 3 cnv 15 300 220 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 15 66 hradio 15 1 0 8 \$0-note \$0-note-rcv note 0 -8 0 10 -262144
--1 -1 7;
-#X obj 15 25 hradio 10 1 0 48 \$0-bank \$0-bank-rcv bank-2:RTWOS/Cello
-0 -8 0 10 -262144 -1 -1 1;
-#X obj 112 108 bng 20 250 50 0 \$0-play empty play 0 -7 0 10 -4034
--1 -1;
-#X obj 19 108 hsl 80 20 0 1 0 1 \$0-volsample empty volume-sample -2
--8 0 10 -262144 -1 -1 3000 1;
-#X obj 20 146 hsl 80 20 0 1 0 1 \$0-volsynth empty volume-synthé -2
--8 0 10 -262144 -1 -1 0 1;
+#X obj 7 3 cnv 15 300 220 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 15 66 hradio 15 1 0 8 \$0-note \$0-note-rcv note 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 15 25 hradio 10 1 0 48 \$0-bank \$0-bank-rcv bank-2:RTWOS/Cello 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X obj 112 108 bng 20 250 50 0 \$0-play empty play 0 -7 0 10 #00fc04 #000000 #000000;
+#X obj 19 108 hsl 80 20 0 1 0 1 \$0-volsample empty volume-sample -2 -8 0 10 #fcfcfc #000000 #000000 3000 1;
+#X obj 20 146 hsl 80 20 0 1 0 1 \$0-volsynth empty volume-synthé -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 197 253 chaipu=brigitte;
-#X obj 112 135 vradio 20 1 0 2 \$0-synthsrc \$0-synthsrc-rcv empty
-0 -8 0 10 -262144 -1 -1 1;
+#X obj 112 135 vradio 20 1 0 2 \$0-synthsrc \$0-synthsrc-rcv empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 135 137 original;
 #X text 135 157 analyse;
-#X obj 19 188 hsl 240 20 30 100 0 0 \$0-accord \$0-accord-rcv accord:58.8699
--2 -8 0 10 -257985 -1 -1 9857 1;
-#X obj 266 188 bng 20 250 50 0 \$0-save empty save 0 -7 0 10 -258113
--1 -1;
-#X obj 257 70 tgl 20 0 \$0-on empty ON 4 10 0 10 -260097 -1 -1 0 1
-;
-#X obj 342 102 hsl 80 20 0 1 0 1 \$0-volsynth2 empty volume-synthé2
--2 -8 0 10 -262144 -1 -1 1500 1;
-#X obj 354 157 hsl 80 20 -4 4 0 1 CoefSynth2 empty coef-synthé2 -2
--8 0 10 -262144 -1 -1 6599 1;
-#X floatatom 347 221 5 0 0 0 - - -, f 5;
+#X obj 19 188 hsl 240 20 30 100 0 0 \$0-accord \$0-accord-rcv accord:58.8699 -2 -8 0 10 #f8fc00 #000000 #000000 0 1;
+#X obj 266 188 bng 20 250 50 0 \$0-save empty save 0 -7 0 10 #fc0400 #000000 #000000;
+#X obj 257 70 tgl 20 0 \$0-on empty ON 4 10 0 10 #fc8000 #000000 #000000 0 1;
+#X obj 342 102 hsl 80 20 0 1 0 1 \$0-volsynth2 empty volume-synthé2 -2 -8 0 10 #fcfcfc #000000 #000000 1500 1;
+#X obj 354 157 hsl 80 20 -4 4 0 1 CoefSynth2 empty coef-synthé2 -2 -8 0 10 #fcfcfc #000000 #000000 6599 1;
+#X floatatom 347 221 5 0 0 0 - - - 0;
 #X msg 461 118 2.683;
 #X connect 16 0 17 0;
 #X connect 18 0 16 0;
