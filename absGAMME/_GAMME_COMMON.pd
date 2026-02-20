@@ -1,5 +1,5 @@
 #N canvas 7 81 722 570 10;
-#X declare -stdpath moonlib;
+#X declare -path moonlib;
 #X text 210 89 num val;
 #X obj 182 373 route 0 1;
 #X obj 182 468 &;
@@ -11,8 +11,7 @@
 #X obj 182 259 t f f;
 #X obj 182 349 pack f f;
 #X obj 182 324 == 0;
-#X obj 142 346 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 142 346 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 182 396 4095 \$1;
 #X obj 182 422 -;
 #N canvas 493 284 847 443 color2 0;
@@ -95,8 +94,7 @@
 #X obj 136 15 loadbang;
 #X obj 136 37 t b b;
 #X msg 220 34 0;
-#X obj 91 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 91 10 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 20 370 s \$2-s0-rcv;
 #X obj 63 272 s \$2-s1-rcv;
 #X obj 126 368 s \$2-s2-rcv;
@@ -234,8 +232,7 @@
 #X obj 30 132 route 0;
 #X msg 69 153 label \$1;
 #X msg 30 153 label;
-#X obj 8 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 8 79 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 195 280 r \$1;
 #X obj 197 446 r \$1;
 #X obj 248 443 r \$1;
@@ -247,8 +244,7 @@
 #X msg 304 251 1 \$1;
 #X obj 304 274 <<;
 #X obj 263 111 loadbang;
-#X obj 316 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 316 87 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 182 158 list prepend 0;
 #X obj 182 179 route 0 1;
 #X obj 30 104 list prepend \$3;
@@ -256,10 +252,10 @@
 #X obj 128 65 dispatch \$2-s 0 11;
 #X obj 182 111 r \$2-s-snd;
 #X obj 263 136 f \$3;
-#X floatatom 134 245 5 0 0 0 - - -, f 5;
+#X floatatom 134 245 5 0 0 0 - - - 0;
 #X obj 427 107 v \$1;
 #X obj 427 86 loadbang;
-#X obj 127 32 declare -stdpath moonlib;
+#X obj 127 32 declare -path moonlib;
 #X connect 1 0 12 0;
 #X connect 1 1 3 0;
 #X connect 2 0 24 0;
